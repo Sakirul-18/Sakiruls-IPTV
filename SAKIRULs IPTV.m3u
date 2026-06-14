@@ -204,16 +204,13 @@ https://mtlivestream.com/hls/asian/ytlive/index.m3u8
 
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/ATN_News_logo.svg/1280px-ATN_News_logo.svg.png",ATN News HD
-https://tvsen5.aynaott.com/atnbangla/index.m3u8?e=1779283752&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=e20058ae495a80a83ec09cb9d82b9253
-
+https://owrcovcrpy.gpcdn.net/bpk-tv/1706/output/1706.m3u8
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/5hy7S3wB/Ayna-TV.png",Ayna TV
 https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDEEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFseWRtaW51aiPhnPTI2/ayna.stream/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://imglink.cc/cdn/ofOLQDCLwk.png", Ananda TV
-https://tvsen6.aynaott.com/anandatv/index.m3u8?e=1779283759&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=504b9350b4703116ca4ab20e4013288e
-
-
+https://tvsen6.aynaott.com/anandatv/index.m3u8?e=1779283759&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=504b9350b4703116ca4ab20e4013288
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/5X1JmFbF/Bangla-Vision.png",Bangla Vision
 https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-video=1181200.m3u8

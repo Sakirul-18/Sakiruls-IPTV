@@ -63,15 +63,13 @@ http://114.130.57.224:8080/Somoy-TV-3Mb/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBa
 #EXTINF:-1 group-title="Sports" tvg-logo="https://cdn.livesoccertv.com/images/channels/thumbnails/win-sports-colombia.png", Win Sports
 https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Go 3 Sports 1
-
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/03/GO_Sport_logo.png", Go 3 Sports 1
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18000/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Go 3 Sports 2
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/03/GO_Sport_logo.png", Go 3 Sports 2
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18001/index.m3u8
 
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Go 3 Sports 3
+#EXTINF:-1 group-title="Sports" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/03/Go3_Sport.svg/revision/latest?cb=20230810135847", Go 3 Sports 3
 http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/6408/index.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://www.beinsports.com/_next/static/media/bein_logo.af017869.webp?ver=03-06-2025?w=3840&q=75", Bein Sports
@@ -80,32 +78,32 @@ https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
 #EXTINF:-1 group-title="Sports" tvg-logo="https://1000logos.net/wp-content/uploads/2024/10/DAZN-Logo-2016.png", Dazn Direct
 https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", PTV Sports 🇵🇰
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/en/0/0c/PTV_Logo.png", PTV Sports 🇵🇰
 http://198.195.239.50:8095/ptv/tracks-v1a1/mono.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TVP Sports
+#EXTINF:-1 group-title="Sports" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d6/TVP_Sport_2021.svg/revision/latest?cb=20210611155906", TVP Sports
 https://1nyaler.streamhostingcdn.top/stream/89/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", D Sports
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/5a/DSports.png", D Sports
 https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TYC Sports
+#EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/34/1/tyc-sports-logo-png_seeklogo-340604.png", TYC Sports
 https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Tv Azteca
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e4/Logotipo_de_TV_Azteca.png", Tv Azteca
 https://1nyaler.streamhostingcdn.top/stream/117/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Tudn Sports
+#EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/38/1/tudn-positivo-logo-png_seeklogo-387423.png", Tudn Sports
 https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Fox
-https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/64/Caz%C3%A9TV_logo.svg", Caze Tv 🇧🇷 Brazil
+https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/1080p-vtt/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Fussball Tv
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949446.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Fussball Tv B
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/93/Sportdigital_Fu%C3%9Fball_Logo_2019.svg", Fussball Tv 1
 http://starhub.pro/live/farhat-3379/67897-913379/745269.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/97/Sportdigital_Fu%C3%9Fball_2_Logo_2023.svg", Fussball Tv 2
+http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949446.ts
 
 
 # ─────────── Movies───────────

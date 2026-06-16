@@ -121,7 +121,7 @@ https://s1.itcnbd.live/united-sports-2/mono.m3u8
 # ─────────── Movies───────────
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/06/Harry_Potter.svg/revision/latest?cb=20180929195210", Harry Potter ⚡️LIVE
-https://www.youtube.com/@harrypotter/streams
+https://www.youtube.com/watch?v=WVwP298MU7I
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://imglink.cc/cdn/E86bN6IAxl.jpg", Goldmines
 https://cdn-2.pishow.tv/live/1459/master.m3u8
@@ -201,8 +201,26 @@ https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
 
 #--------------------Cartoon----------------------------
 
+#EXTINF:-1 group-title="Cartoon" tvg-logo="", Clarence
+https://www.youtube.com/watch?v=iWCDZDGM93Q
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="", We Bare Bears
+https://www.youtube.com/watch?v=RXoDbwZmXV8
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="", Hulk & The Agents of S.M.A.S.H
+https://www.youtube.com/watch?v=YbQwgoMoztA
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="", Marvel's Avengers Assemble
+https://www.youtube.com/watch?v=hNf5__nxw5s
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="", Marvel’s Spider-Man 🕷️
+https://www.youtube.com/watch?v=yABPtUc7KOg
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="", BEN 10 NEW
+https://www.youtube.com/watch?v=rPN4ZkssEeY
+
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4a/Shaun_the_Sheep.png", Shaun the Sheep 24/7 LIVE
-https://www.youtube.com/@ShauntheSheepOfficial
+https://www.youtube.com/watch?v=j6Mo4ZbQ5Yo
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://imglink.cc/cdn/TxPUulKGQh.jpg", Motu Patlu
 https://live20.bozztv.com/giatvplayout7/giatv-209622/tracks-v1a1/mono.ts.m3u8

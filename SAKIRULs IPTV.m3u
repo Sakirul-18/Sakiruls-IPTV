@@ -121,7 +121,7 @@ https://s1.itcnbd.live/united-sports-2/mono.m3u8
 # ─────────── Movies───────────
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/06/Harry_Potter.svg/revision/latest?cb=20180929195210", Harry Potter ⚡️LIVE
-https://www.youtube.com/watch?v=WVwP298MU7I
+https://www.youtube.com/@harrypotter/streams
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://imglink.cc/cdn/E86bN6IAxl.jpg", Goldmines
 https://cdn-2.pishow.tv/live/1459/master.m3u8
@@ -202,7 +202,7 @@ https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
 #--------------------Cartoon----------------------------
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4a/Shaun_the_Sheep.png", Shaun the Sheep 24/7 LIVE
-https://www.youtube.com/watch?v=j6Mo4ZbQ5Yo
+https://www.youtube.com/@ShauntheSheepOfficial
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://imglink.cc/cdn/TxPUulKGQh.jpg", Motu Patlu
 https://live20.bozztv.com/giatvplayout7/giatv-209622/tracks-v1a1/mono.ts.m3u8
@@ -247,8 +247,15 @@ https://tvsen6.aynaott.com/durontotv-live/index.m3u8?e=1779283757&u=78be6644-0a6
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/POGO-logo.png", POGO
 https://itcnbd.live/4c0f8c4f-6f34-43f9-9e9c-60044bda13ff
 
-#EXTINF:-1 group-title="Cartoon" tvg-logo="https://images.seeklogo.com/logo-png/28/1/tom-and-jerry-logo-png_seeklogo-289009.png", Classic Tom & Jerry 
-https://www.youtube.com/watch?v=400k2SKoeh4
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://images.seeklogo.com/logo-png/28/1/tom-and-jerry-logo-png_seeklogo-289009.png", Tom & Jerry 2 
+https://www.youtube.com/watch?v=COVffL_E9wI
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://images.seeklogo.com/logo-png/28/1/tom-and-jerry-logo-png_seeklogo-289009.png", Tom & Jerry 3
+https://www.youtube.com/watch?v=hYxF7WBSQsI
+
+
+
+
 # ───────────  Bangladesh───────────
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/mCwss66N/Asian-TV.png",Asian TV
@@ -420,8 +427,4 @@ https://nomawnoijl.gpcdn.net/akash/partyuniverse/chunks.m3u8
 
 #EXTINF:-1 group-title="Music" tvg-logo="https://imglink.cc/cdn/IYDn_LwwiV.png", Party Universe B
 https://nomawnoijl.gpcdn.net/akash/partyuniverse/playlist.m3u8
-
-#EXTINF:-1 group-title="Music" tvg-logo="https://imglink.cc/cdn/IYDn_LwwiV.png", halum
-ttps://rr4---sn-n0hhpujvh-q5je6.googlevideo.com/videoplayback?expire=1781641196&ei=jFsxap3IKdnb3LUPhKSPSA&ip=2404%3A3d40%3A5%3A217d%3A9c99%3A1a7a%3A9e20%3A43c1&id=WVwP298MU7I.3&source=yt_live_broadcast&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1781619596%2C&mh=7A&mm=44%2C26&mn=sn-n0hhpujvh-q5je6%2Csn-npoeen6s&ms=lva%2Conr&mv=m&mvi=4&pl=48&rms=lva%2Clva&initcwndbps=1382500&ss=1&ssa=1&spc=SQ-umhp6gGRCLGErhXEGTBjjmdXdfrt4k-bKHHHupz-g_9uJZCXg&live=1&hang=1&noclen=1&svpuc=1&ns=4BjgpfLeMvnbcyUUw8ZMt7EV&sabr=1&rqh=1&reg=0&mt=1781619148&fvip=3&keepalive=yes&fexp=51565116%2C51565681%2C51987687&c=WEB&n=arC10vVKIYxK6w&sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Css%2Cssa%2Cspc%2Clive%2Chang%2Cnoclen%2Csvpuc%2Cns%2Csabr%2Crqh%2Creg&sig=AHEqNM4wRAIgYV9npBY1XqXD3MaopgiKk0Fi-6sHauzusKXmNqGJWo4CIAMvhn9yZo5zJ4UOwjkMchkm0QCh_X3zDe60x1V6g7WL&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRAIgG9h6RAEM79_duf7cJO-DVC_c3YYOqM-tUHbnzQVHBVQCIG7m-PU0XIixU6OXsGTqHYfPGDMoRtoFyhprP3rKf9ez&cpn=StSbxVQDSdEu80d9&cver=2.20260615.01.00&rn=1&alr=yes
-
 

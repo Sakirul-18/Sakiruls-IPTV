@@ -120,6 +120,8 @@ https://s1.itcnbd.live/united-sports-2/mono.m3u8
 
 # ─────────── Movies───────────
 
+#EXTINF:-1 group-title="Movies" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/06/Harry_Potter.svg/revision/latest?cb=20180929195210", Harry Potter ⚡️LIVE
+https://www.youtube.com/watch?v=WVwP298MU7I
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://imglink.cc/cdn/E86bN6IAxl.jpg", Goldmines
 https://cdn-2.pishow.tv/live/1459/master.m3u8
@@ -165,6 +167,8 @@ https://s2.itcnbd.live/star-movies-hd/index.m3u8
 
 # ─────────── Entertainment───────────
 
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/54/Mr._Bean_%28animated_series%29.svg/revision/latest?cb=20260201140730", Mr Bean – 24/7
+https://www.youtube.com/watch?v=aYco1VpAoWc
 
 #EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/3TXPVSGzx5.png", Star Jalsha
 https://yupptvcatchupire.yuppcdn.net/preview/starjalsha/1800.m3u8
@@ -196,6 +200,9 @@ https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
 
 
 #--------------------Cartoon----------------------------
+
+#EXTINF:-1 group-title="Cartoon" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4a/Shaun_the_Sheep.png", Shaun the Sheep 24/7 LIVE
+https://www.youtube.com/watch?v=j6Mo4ZbQ5Yo
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://imglink.cc/cdn/TxPUulKGQh.jpg", Motu Patlu
 https://live20.bozztv.com/giatvplayout7/giatv-209622/tracks-v1a1/mono.ts.m3u8

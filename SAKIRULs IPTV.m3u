@@ -1,5 +1,5 @@
 #EXTM3U
-
+#EXTINF:-1 group-title="Sports" tvg-logo="", 1
 #-----------Sakirul_Islam----------------
 
 #EXTINF:-1 group-title="Sakirul_Islam" tvg-logo="https://imglink.cc/cdn/nD-91NF5Gb.jpg"tvg-name="RAAT"
@@ -7,114 +7,26 @@ C:\Users\user\Downloads\raat
 
 #--------------------Sports--------------
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://www.beinsports.com/_next/static/media/bein_logo.af017869.webp?ver=03-06-2025?w=3840&q=75"
-https://white-meadow-5b0f.sksuruj345.workers.dev/?url=https%3A%2F%2Flivecdn-tc-iptv.rumsport10.live%2Flive_abr%2F240885%2F720p%2Fchunks.m3u8%3Fis_vip%3Dfalse%26token%3D1782235895-Kv4cPTAAP5YTi-18f25f54b6e15e8fd4cb9ebd851e6d4a8619f624-59df57e264cadb06e3d3740072bd5d37&referer=https%3A%2F%2Fiframe.rumsport10.live%2F&ua=Mozilla%2F5.0%20(Linux%3B%20Android%2010%3B%20K)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F120.0.0.0%20Mobile%20Safari%2F537.36
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://www.beinsports.com/_next/static/media/bein_logo.af017869.webp?ver=03-06-2025?w=3840&q=75",
-https://otte.live.fly.ww.aiv-cdn.net/gru-nitro/live/clients/dash/enc/3gg2jnixjn/out/v1/e1840e01f3f14563b66bbb944d5cc54c/cenc_video_2_0_2381518.mp4?m=1777357510
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://www.beinsports.com/_next/static/media/bein_logo.af017869.webp?ver=03-06-2025?w=3840&q=75", Bein Sports
-https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/64/Caz%C3%A9TV_logo.svg", Caze Tv 🇧🇷 Brazil
-https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/1080p-vtt/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/5/5a/DSports.png", D Sports
-https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://1000logos.net/wp-content/uploads/2024/10/DAZN-Logo-2016.png", Dazn Direct
-https://1nyaler.streamhostingcdn.top/stream/94/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/93/Sportdigital_Fu%C3%9Fball_Logo_2019.svg", Fussball Tv 1
-http://starhub.pro/live/farhat-3379/67897-913379/745269.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/97/Sportdigital_Fu%C3%9Fball_2_Logo_2023.svg", Fussball Tv 2
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/1949446.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://cdn.freebiesupply.com/logos/large/2x/fox-5-2-logo-png-transparent.png", Fox
-http://84.17.50.102/fox/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/03/GO_Sport_logo.png", Go 3 Sports 1
-http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18000/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/03/GO_Sport_logo.png", Go 3 Sports 2
-http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/18001/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/03/Go3_Sport.svg/revision/latest?cb=20230810135847", Go 3 Sports 3
-http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/6408/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/en/0/0c/PTV_Logo.png", PTV Sports 🇵🇰
+#EXTINF:-1 group-title="Sports" tvg-logo="", 1
 http://198.195.239.50:8095/ptv/tracks-v1a1/mono.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png", Somoy TV 1
-https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
+#EXTINF:-1 group-title="Sports" tvg-logo="" 2
+https://live.thebosstv.com:30443/dwlive/Somoy-TV/playlist.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV 2
-http://114.130.57.224:8080/Somoy-TV-3Mb/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBan1
+http://84.17.50.102/fox/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV 3
-https://iptv.ryvoxtb.workers.dev/live/somoytv.m3u8?token=698bb62d6919e5c22ec8be7a017971f5&time=1781488364
+https://ranapkbd.site/JOIN@RANAPK33/XT/play.m3u8?id=146122
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV 4
-https://tv.beyondtaxconsultants.com/api/robi/lps/http://116.204.149.16/somoytv/tracks-v1a1/mono.m3u8
+http://starhub.pro/live/farhat-3379/67897-913379/744517.ts
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/53/1/somoy-tv-logo-png_seeklogo-536972.png", Somoy TV 5
-http://114.130.57.224:8080/Somoy-TV-3Mb/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBan1
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/TQ4uDIlWB_.png", T Sports 1
-http://198.195.239.50:8095/tsports/index.m3u8
+http://starhub.pro/live/farhat-3379/67897-913379/744517.ts
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/TQ4uDIlWB_.png", T Sports 2
-http://rgkkw.live:80/live/1Aoen7elp5/IgMJ60tmAa/130714.ts
+https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-1.png", TSN 1 🇺🇸 USA 
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/12350.ts
+https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-2.png", TSN 2 🇺🇸 USA
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/12351.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-3.png", TSN 3 🇺🇸 USA
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/12352.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-4.png", TSN 4 🇺🇸 USA
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/12353.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-5.png", TSN 5 🇺🇸 USA F1
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/12354.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-1.png", TSN 1 🇨🇦 Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/69660.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-2.png", TSN 2 🇨🇦 Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/69659.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-3.png", TSN 3 🇨🇦 Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/69658.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-4.png", TSN 4 🇨🇦 Canada
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/69657.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://brucetelecom.com/wp-content/uploads/2019/12/TSN-5.png", TSN 5 🇨🇦 Canada F1
-http://str2.v3v3v.xyz:2082/live/rokhsi25_951396/POm6KqnW/69656.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d6/TVP_Sport_2021.svg/revision/latest?cb=20210611155906", TVP Sports
-https://1nyaler.streamhostingcdn.top/stream/89/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/34/1/tyc-sports-logo-png_seeklogo-340604.png", TYC Sports
-https://1nyaler.streamhostingcdn.top/stream/84/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e4/Logotipo_de_TV_Azteca.png", Tv Azteca
-https://1nyaler.streamhostingcdn.top/stream/117/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/38/1/tudn-positivo-logo-png_seeklogo-387423.png", Tudn Sports
-https://1nyaler.streamhostingcdn.top/stream/52/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://www.lyngsat.com/logo/tv/uu/unite8-sports-1-in.png", Unite 8 Sports 1 HD 
-http://starhub.pro/live/farhat-3379/67897-913379/741567.ts
-
-#EXTINF:-1 group-title="Sports" tvg-logo="https://www.lyngsat.com/logo/tv/uu/unite8-sports-2-in.png", Unite 8 Sports 2 
-http://66.102.126.10:8000/play/a022/index.m3u8
-
+https://ua.online24.pm/play/1103/350B326FB34F4B8/video.m3u8
 
 # ─────────── Movies───────────
 

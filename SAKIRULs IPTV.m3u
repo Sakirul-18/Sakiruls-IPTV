@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1 group-title="Sports" tvg-logo="", 1
+
 #-----------Sakirul_Islam----------------
 
 #EXTINF:-1 group-title="Sakirul_Islam" tvg-logo="https://imglink.cc/cdn/nD-91NF5Gb.jpg"tvg-name="RAAT"
@@ -13,20 +13,29 @@ http://198.195.239.50:8095/ptv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Sports" tvg-logo="" 2
 https://live.thebosstv.com:30443/dwlive/Somoy-TV/playlist.m3u8
 
+#EXTINF:-1 group-title="Sports" tvg-logo="", 3
 http://84.17.50.102/fox/index.m3u8
 
+#EXTINF:-1 group-title="Sports" tvg-logo="", 4
 https://ranapkbd.site/JOIN@RANAPK33/XT/play.m3u8?id=146122
 
+#EXTINF:-1 group-title="Sports" tvg-logo="", 5
 http://starhub.pro/live/farhat-3379/67897-913379/744517.ts
 
-
+#EXTINF:-1 group-title="Sports" tvg-logo="", 6
 http://starhub.pro/live/farhat-3379/67897-913379/744517.ts
 
+#EXTINF:-1 group-title="Sports" tvg-logo="", 7
 https://1nyaler.streamhostingcdn.top/stream/106/index.m3u8
 
+#EXTINF:-1 group-title="Sports" tvg-logo="", 8
 https://1nyaler.streamhostingcdn.top/stream/32/index.m3u8
 
+#EXTINF:-1 group-title="Sports" tvg-logo="", 9
 https://ua.online24.pm/play/1103/350B326FB34F4B8/video.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="", 10
+http://103.89.248.30:8082/FIFA-World-Cup-Live-6/tracks-a1/index.fmp4.m3u8?token=c379799f6cc458cd53fa5ff883979551bd0f4b9b-6aef518f5d0a1f2068547871f7842755-1782169964-1782159164
 
 # ─────────── Movies───────────
 

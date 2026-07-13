@@ -164,6 +164,10 @@ http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745195.ts
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Extra
 http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745211.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d9/Sky_Sports_F1_logo_2020.svg", SKY F1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/1312181.m3u8
+
 # ─────────── Movies───────────
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://imglink.cc/cdn/cScI5tEUjV.png", HBO 2

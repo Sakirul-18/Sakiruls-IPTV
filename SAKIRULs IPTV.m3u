@@ -5,180 +5,176 @@
 #EXTINF:-1 group-title="Sakirul_Islam" tvg-logo="https://imglink.cc/cdn/nD-91NF5Gb.jpg"tvg-name="RAAT"
 C:\Users\user\Downloads\raat
 
-#--------------------Sports--------------
-#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Spain vs France
-https://prod-cdn01-live.toffeelive.com/live/FIFA-2026/sst/0/master_1500.m3u8?hdntl=Expires=1784138990~_GO=Generated~URLPrefix=aHR0cHM6Ly9wcm9kLWNkbjAxLWxpdmUudG9mZmVlbGl2ZS5jb20~Data=eyJzdWJzY3JpYmVyX2lkIjoiMjk2NmI0NzEtNTVlMS00ZWY0LThjNzQtMzdlYjgzMDllMjNjIn0~Signature=AWucVz5zoyFG9GoZWJ5H9TY2PBlU-s6RqOmT0STcs4Pm4gBHlDpjlkPbcI0Qc_eVbi7nkBY3-QcqI8vF2tg_atHaJs4P
+
+
+
+# ─────────── Live Time Play───────────
+
+#EXTINF:-1 group-title="Live Stream" tvg-logo="https://imglink.cc/cdn/_2k_i1fRwN.jpg", WC26 Final - CTV
+https://test-streams.mux.dev/xz.m3u8
+
+# ─────────── Sports───────────
+
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Soco Live QF
 https://pull.niues.live/live/stream-9912060_lhd.m3u8?auth_key=1783284383-0-0-ba541e77b9330eab42075af6aa5029e4
 
-#EXTINF:-1 tvg-chno="41" tvg-id="Soccer.Dummy.us" tvg-name="[FIFA World Cup] England vs Argentina (FAWA)" tvg-logo="https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/4.png" group-title="Live Events",[FIFA World Cup] England vs Argentina (FAWA)
-#EXTVLCOPT:http-referrer=http://www.fawanews.sc/
-#EXTVLCOPT:http-origin=http://www.fawanews.sc/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0
-http://193.47.62.47/hls/YYYYY.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", ┃RTG┃ ANTENA WORLD CUP 1 HD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1765324.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", ┃RTG┃ ANTENA WORLD CUP 2 HD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1765325.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BBC 1 HD [UK]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745114.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BEIN SPORTS MAX 1 HD [AR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745083.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BEIN SPORTS MAX 2 HD [AR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745084.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BEIN SPORTS MAX 3 HD [EN]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745085.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BEIN SPORTS MAX 4 HD [EN]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745086.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BEIN SPORTS MAX 5 HD [FR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745087.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ BEIN SPORTS MAX 6 HD [FR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745088.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ DAS ERSTE HD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745090.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ DAZN MUNDIAL 1 HD [ES]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745110.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ DAZN MUNDIAL 2 HD [ES]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745111.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ DAZN MUNDIAL 3 HD [ES]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745112.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ DAZN MUNDIAL 4 HD [ES]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745113.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ EPT 1 HD [GR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745107.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FOX SPORTS 1 HD [USA]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745108.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FOX SPORTS 2 HD [USA]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745109.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 1.png", ┃RTG┃ FUSSBALL.TV 1 FHD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745176.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 1.png", ┃RTG┃ FUSSBALL.TV 1 HD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745177.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FUSSBALL.TV 1 HD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745092.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 1.png", ┃RTG┃ FUSSBALL.TV 1 UHD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745180.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FUSSBALL.TV 1 UHD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745095.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 2.png", ┃RTG┃ FUSSBALL.TV 2 FHD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745178.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FUSSBALL.TV 2 HD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745093.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 2.png", ┃RTG┃ FUSSBALL.TV 2 UHD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745181.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FUSSBALL.TV 2 UHD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745096.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 3.png", ┃RTG┃ FUSSBALL.TV 3 FHD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745179.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FUSSBALL.TV 3 HD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745094.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/GERMANY/Sports/FUSSBALL.TV 3.png", ┃RTG┃ FUSSBALL.TV 3 UHD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/1745182.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ FUSSBALL.TV 3 UHD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745097.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ ITV 1 HD [UK]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745115.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ KLAN TV HD [AL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745103.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ M6 HD [FR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745089.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ NPO 1 HD [NL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745078.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ NPO 2 HD [NL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745079.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ NPO 3 HD [NL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745080.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/PAKISTAN/SPORTS/PTV SPORTS.png", ┃RTG┃ PTV SPORTS
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/911325.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/ASIA/PAKISTAN/ptvsports.png", ┃RTG┃ PTV SPORTS HD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/373120.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/PAKISTAN/SPORTS/PTV SPORTS.png", ┃RTG┃ PTV SPORTS HD
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sps1/911324.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ RAI 1 HD [IT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745099.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ RTK 1 HD [AL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745102.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d9/Sky_Sports_F1_logo_2020.svg", SKY F1
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/1312181.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ SERVUS TV HD [AT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745098.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://piSportscon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ SPORT TV 1 HD [PT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745117.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ SPORT TV 2 HD [PT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745118.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ SPORT TV 3 HD [PT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745119.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ SPORT TV 4 HD [PT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745120.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ SPORT TV+ HD [PT]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745116.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TABII SPOR HD [TR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745101.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TIPIK HD [BE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745082.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TRT 1 HD [TR]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745100.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TVP 1 HD [PL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745105.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TVP 2 HD [PL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745106.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TVP SPORT HD [PL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745104.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ VRT 1 HD [BE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745081.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ ZDF HD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745091.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/bein/BEIN4.png", WC-4K| BEIN SPORTS MAX ᵁᴴᴰ 4K NM
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2097322.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/bein/BEIN4.png", WC-4K| BEIN SPORTS MAX ᵁᴴᴰ 4K
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095904.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| BBC ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095903.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FOX ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095902.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FOX [BK] ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095901.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FOX SPORTS 1 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095900.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FOX SPORTS 1 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095899.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| NOW SPORTS 616 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095898.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| NOW SPORTS 617 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095897.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| M6 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095896.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FUSSBALL.TV1 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095895.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FUSSBALL.TV 1 ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095894.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FUSSBALL.TV 2 ᵁᴴᴰ ³⁸⁴⁰ᴾᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095893.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FUSSBALL.TV 1 [BK] ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095892.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| FUSSBALL.TV 2 [BK] ᵁᴴᴰ ³⁸⁴⁰ᴾᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095891.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| MW FUSSBALL 1 DE ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095890.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| MW FUSSBALL 2 DE ᵁᴴᴰ ³⁸⁴⁰ᴾᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095889.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| UNIVERSO ᵁᴴᴰ ³⁸⁴⁰ᴾ
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2095888.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| 4K 1
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2104163.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| 4K 2
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2104162.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| 4K 3
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2104161.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| 4K 4
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2104160.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/logos/WORLDCUP2026REPLAY.png", WC-4K| 4K 5
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2104159.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="http://51.158.145.100/picons/logos/bein/BEIN4.png", WC-4K| BEIN SPORTS MAX ᵁᴴᴰ 4K FM
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s3/2098112.m3u8
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TT1
+https://pull.niues.live/live/stream-9912115_lsd.m3u8?auth_key=1784190684-0-0-3c5279f84103aab627da50150c1da4a7
 
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TT2
+https://liveplay1.camel4.live/live/sd-6MweKqVsYPdBkvbkrT.m3u8?txSecret=fa7289589bfafd5201f066d87410d354&txTime=6A588C36&lat=9000&auth=ff3d7f805ab82dd90ddbfe858e7ccb0d
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", T Sports WC
+https://flussonic.deltainfonet.com/01_Tsports_HD/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy Tv WC
+https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", BTV Live NS
+http://103.165.93.31:8095/btv/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", BTV Live 
+http://103.14.151.101:11/manik-kuttar-baccha-telegram-batpar.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV 
+http://114.130.57.233:8080/Somoy-TV-3Mb/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBan1
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV A
+http://198.195.239.50:8095/somoyTv/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV B 
+https://live.thebosstv.com:30443/dwlive/Somoy-TV/chunks.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV C 
+https://iptv.ryvoxtb.workers.dev/live/somoytv.m3u8?token=698bb62d6919e5c22ec8be7a017971f5&time=1781488364
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Somoy TV D
+https://tv.beyondtaxconsultants.com/api/robi/lps/http://116.204.149.16/somoytv/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", T Sports 
+http://114.130.57.233:8080/TsportHD/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBan1
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TSN 1 WC
+http://premiumtvs.space/live/ARORA005/65553356/748388.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TSN 3
+http://premiumtvs.space/live/ARORA005/65553356/756450.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite 8 Sports 1 (Hindi)
+http://premiumtvs.space/live/ARORA005/65553356/741567.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite 8 Sports 2
+http://premiumtvs.space/live/ARORA005/65553356/745202.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports Direct
+https://1nyaler.streamhostingcdn.top/stream/23/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 1 HD
+http://fastshare1.com/live/25711345/late8airline/744517.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 2 HD
+http://fastshare1.com/live/25711345/late8airline/744518.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 3 HD
+http://fastshare1.com/live/25711345/late8airline/744519.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 4 HD
+http://fastshare1.com/live/25711345/late8airline/744520.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 5 HD
+http://fastshare1.com/live/25711345/late8airline/744521.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 6 HD
+http://fastshare1.com/live/25711345/late8airline/744522.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 1 FHD
+http://fastshare1.com/live/25711345/late8airline/744523.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 2 FHD
+http://fastshare1.com/live/25711345/late8airline/744524.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 3 FHD
+http://fastshare1.com/live/25711345/late8airline/744525.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 4 FHD
+http://fastshare1.com/live/25711345/late8airline/744526.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 5 FHD
+http://fastshare1.com/live/25711345/late8airline/744527.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Bein Sports 6 FHD
+http://fastshare1.com/live/25711345/late8airline/744528.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite Sports 1 (Hindi)
+http://180.94.28.28:8097/Fifa-2026/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite Sports B
+http://fastshare1.com/live/25711345/late8airline/745202.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Fox 1
+http://fastshare1.com/live/25711345/late8airline/751354.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Central A
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745149.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Central B
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745149.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TVP Sports
+https://1nyaler.streamhostingcdn.top/stream/89/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", 616 Sports 4K
+http://starhub.pro/live/farhat-3379/67897-913379/745270.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", 616 Sports 4K B
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745270.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", World Cup A1 
+http://rgkkw.live:80/live/1Aoen7elp5/IgMJ60tmAa/130714.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", World Cup A2 
+http://198.195.239.50:8095/tsports/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", World Cup A3
+http://198.195.239.50:8095/ptv/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", T Sports 
+http://114.130.57.233:8080/TsportHD/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBan1
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", BTV Live 
+http://103.14.151.101:11/manik-kuttar-baccha-telegram-batpar.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", P Sports
+http://114.130.57.233:8080/manik-kutta-moharaza-kuttar-baccha-t.me/tvserverhd/video.m3u8?token=manik-kuttar-baccha-t.me/tvserverhd
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Mahsun Sports
+https://andro.226503.xyz/checklist/androstreamlivebs1.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite 8 Sports 1 HD Hindi
+http://starhub.pro/live/farhat-3379/67897-913379/741567.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite 8 Sports 1 HD B
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/741567.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite 8 Sports 2 HD
+http://202.70.146.135:8000/play/a06s/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite 8 Sports 2
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745202.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Central A
+http://rgkkw.live/live/1Aoen7elp5/IgMJ60tmAa/745149.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Central B
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745149.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Pass
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745195.ts
+
+#EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", S Live Extra
+http://fastshare1.com/live/1Aoen7elp5/IgMJ60tmAa/745211.ts
 # ─────────── Movies───────────
 
 #EXTINF:-1 group-title="Movies" tvg-logo="https://imglink.cc/cdn/cScI5tEUjV.png", HBO 2

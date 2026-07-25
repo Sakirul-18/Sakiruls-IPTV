@@ -346,108 +346,97 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 # ─────────── Sports ───────────
 
-#EXTINF:-1 group-title="Sports", 616 Sports 4K
-
 #EXTINF:-1 group-title="Sports", beIN Sports 1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/507386.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 2
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/507385.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 3
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/507384.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 4
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1330440.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 5
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1330441.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 6
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1330442.m3u8
 
 #EXTINF:-1 group-title="Sports", BTV
-
-#EXTINF:-1 group-title="Sports", DAS ERSTE HD
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/889024.m3u8
 
 #EXTINF:-1 group-title="Sports", Eurosport
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/760961.m3u8
 
 #EXTINF:-1 group-title="Sports", F1 TV
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/2032223.m3u8
+
+#EXTINF:-1 group-title="Sports", Motorsport TV
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/132601.m3u8
+
+#EXTINF:-1 group-title="Sports", Sky Sports Cricket
+https://cdn6.zohanayaan.com:1686/hls/skyscric.m3u8?md5=MSybMPQZjyLG8AZYZSTLAw&expires=1785007221
+
+#EXTINF:-1 group-title="Sports", Sky Sports F1
+https://cdn7.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=TzP8OnpnWlbnArRIfG2E8Q&expires=1785007223
+
+#EXTINF:-1 group-title="Sports", Sky Sports Football
+https://cdn7.zohanayaan.com:1686/hls/skysfott.m3u8?md5=DfzQN7ifc8GDHjqrcoc29Q&expires=1785007223
+
+#EXTINF:-1 group-title="Sports", Sky Sports Main Event
+https://cdn4.zohanayaan.com:1686/hls/skysme.m3u8?md5=ghzNJ-PbtNIe8q64jfpqqg&expires=1785007221
+
+#EXTINF:-1 group-title="Sports", Sky Sports Premier League
+https://cdn2.zohanayaan.com:1686/hls/skysprem.m3u8?md5=04G9v9zIKKtXoXJHmeqfhA&expires=1785007223
+
+#EXTINF:-1 group-title="Sports", Sony Sports Ten 1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282670.m3u8
+
+#EXTINF:-1 group-title="Sports", Sony Sports Ten 2
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282671.m3u8
+
+#EXTINF:-1 group-title="Sports", Sony Sports Ten 3
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282672.m3u8
+
+#EXTINF:-1 group-title="Sports", Sports18
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/827990.m3u8
+
+#EXTINF:-1 group-title="Sports", Star Sports 1
+https://cdn1.zohanayaan.com:1686/hls/star1in.m3u8?md5=BVGexFJHK28SD5oljC03lQ&expires=1785007220
+
+#EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
+https://cdn6.zohanayaan.com:1686/hls/starhindi.m3u8?md5=Laaip_C71N5KuW5x0vsMDw&expires=1785007220
+
+#EXTINF:-1 group-title="Sports", Star Sports Select 1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1114583.m3u8
+
+#EXTINF:-1 group-title="Sports", Star Sports Select 2
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1114584.m3u8
+
+#EXTINF:-1 group-title="Sports", SuperSport Cricket
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/396876.m3u8
+
+#EXTINF:-1 group-title="Sports", SuperSport Football
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/396882.m3u8
+
+#EXTINF:-1 group-title="Sports", SuperSport Premier League
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/396881.m3u8
+
+#EXTINF:-1 group-title="Sports", T Sports
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/156016.m3u8
+
+#EXTINF:-1 group-title="Sports", Willow Cricket
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1142110.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
 https://bd-mc-pdlive.fancode.com/mumbai/143633_english_hls_37959550fb58134_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
-https://bd-mc-pdlive.fancode.com/mumbai/4246721_english_hls_414959cb1224583_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
 
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Tennis
 https://bd-mc-pdlive.fancode.com/mumbai/143514_english_hls_9205c863a887330_1ta-di_h264/index.m3u8
+
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
 
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Golf
 https://bd-mc-pdlive.fancode.com/mumbai/4246803_english_hls_7c0d958ec349342_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
-
-#EXTINF:-1 group-title="Sports", FIFA World Cup
-
-#EXTINF:-1 group-title="Sports", FOX Sports 1
-
-#EXTINF:-1 group-title="Sports", MotoGP
-
-#EXTINF:-1 group-title="Sports", Motorsport TV
-
-#EXTINF:-1 group-title="Sports", NPO 1 HD
-
-#EXTINF:-1 group-title="Sports", NPO 2 HD
-
-#EXTINF:-1 group-title="Sports", NPO 3 HD
-
-#EXTINF:-1 group-title="Sports", Sky Sports Cricket
-
-#EXTINF:-1 group-title="Sports", Sky Sports F1
-
-#EXTINF:-1 group-title="Sports", Sky Sports Football
-
-#EXTINF:-1 group-title="Sports", Sky Sports Main Event
-
-#EXTINF:-1 group-title="Sports", Sky Sports Premier League
-
-#EXTINF:-1 group-title="Sports", Sony Sports Ten 1
-
-#EXTINF:-1 group-title="Sports", Sony Sports Ten 2
-
-#EXTINF:-1 group-title="Sports", Sony Sports Ten 3
-
-#EXTINF:-1 group-title="Sports", Sports18
-
-#EXTINF:-1 group-title="Sports", Star Sports 1
-
-#EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
-
-#EXTINF:-1 group-title="Sports", Star Sports Select 1
-
-#EXTINF:-1 group-title="Sports", Star Sports Select 2
-
-#EXTINF:-1 group-title="Sports", SuperSport Cricket
-
-#EXTINF:-1 group-title="Sports", SuperSport Football
-
-#EXTINF:-1 group-title="Sports", SuperSport Premier League
-
-#EXTINF:-1 group-title="Sports", T Sports
-
-#EXTINF:-1 group-title="Sports", Tennis Channel
-
-#EXTINF:-1 group-title="Sports", TIPIK HD
-
-#EXTINF:-1 group-title="Sports", TNT Sports 1
-
-#EXTINF:-1 group-title="Sports", TNT Sports 2
-
-#EXTINF:-1 group-title="Sports", TNT Sports 3
-
-#EXTINF:-1 group-title="Sports", TSN 1
-
-#EXTINF:-1 group-title="Sports", TSN 3
-
-#EXTINF:-1 group-title="Sports", TVP Sports
-
-#EXTINF:-1 group-title="Sports", USA Network
-
-#EXTINF:-1 group-title="Sports", VRT 1 HD
-
-#EXTINF:-1 group-title="Sports", Willow Cricket

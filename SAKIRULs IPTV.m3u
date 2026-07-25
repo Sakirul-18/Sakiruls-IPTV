@@ -355,6 +355,8 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 # ─────────── Sports ───────────
 
+
+
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", 616 Sports 4K
 http://starhub.pro/live/farhat-3379/67897-913379/745270.ts
 
@@ -409,6 +411,9 @@ http://103.14.151.101:11/manik-kuttar-baccha-telegram-batpar.m3u8
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", BTV Live NS
 http://103.165.93.31:8095/btv/tracks-v1a1/mono.m3u8
 
+#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", DAS ERSTE HD [DE]
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745090.m3u8
+
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
 https://bd-mc-pdlive.fancode.com/mumbai/4246705_english_hls_492297ca2b39793_1ta-di_h264/index.m3u8
 
@@ -418,23 +423,32 @@ https://bd-mc-pdlive.fancode.com/mumbai/143633_english_hls_37959550fb58134_1ta-d
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
 https://bd-mc-pdlive.fancode.com/mumbai/4246721_english_hls_414959cb1224583_1ta-di_h264/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Tennis
-https://bd-mc-pdlive.fancode.com/mumbai/143352_english_hls_cd4f806e1b92407_1ta-di_h264/index.m3u8
-
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
-https://bd-mc-pdlive.fancode.com/mumbai/4247419_english_hls_7529753d6233196_1ta-di_h264/index.m3u8
-
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Golf
 https://bd-mc-pdlive.fancode.com/mumbai/4246803_english_hls_7c0d958ec349342_1ta-di_h264/index.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
+https://bd-mc-pdlive.fancode.com/mumbai/4247419_english_hls_7529753d6233196_1ta-di_h264/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
 https://bd-mc-pdlive.fancode.com/mumbai/139475_english_hls_a385b5276b60495_1ta-di_h264/index.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Tennis
+https://bd-mc-pdlive.fancode.com/mumbai/143352_english_hls_cd4f806e1b92407_1ta-di_h264/index.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Fox 1
 http://fastshare1.com/live/25711345/late8airline/751354.ts
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Mahsun Sports
 https://andro.226503.xyz/checklist/androstreamlivebs1.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", NPO 1 HD [NL]
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745078.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", NPO 2 HD [NL]
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745079.m3u8
+
+#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", NPO 3 HD [NL]
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745080.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", P Sports
 http://114.130.57.233:8080/manik-kutta-moharaza-kuttar-baccha-t.me/tvserverhd/video.m3u8?token=manik-kuttar-baccha-t.me/tvserverhd
@@ -478,6 +492,9 @@ http://114.130.57.233:8080/TsportHD/tracks-v1a1/mono.m3u8?token=SkQuhAXZxgBan1
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", T Sports WC
 https://flussonic.deltainfonet.com/01_Tsports_HD/tracks-v1a1/mono.m3u8
 
+#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", TIPIK HD [BE]
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745082.m3u8
+
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", TSN 1 WC
 http://premiumtvs.space/live/ARORA005/65553356/748388.ts
 
@@ -514,6 +531,9 @@ http://180.94.28.28:8097/Fifa-2026/index.m3u8
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", Unite Sports B
 http://fastshare1.com/live/25711345/late8airline/745202.ts
 
+#EXTINF:-1 group-title="Sports" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", VRT 1 HD [BE]
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745081.m3u8
+
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", World Cup A1
 http://rgkkw.live:80/live/1Aoen7elp5/IgMJ60tmAa/130714.ts
 
@@ -522,24 +542,3 @@ http://198.195.239.50:8095/tsports/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", World Cup A3
 http://198.195.239.50:8095/ptv/tracks-v1a1/mono.m3u8
-
-
-# ─────────── ┃RTG WC┃ ───────────
-
-#EXTINF:-1 group-title="┃RTG WC┃" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ DAS ERSTE HD [DE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745090.m3u8
-
-#EXTINF:-1 group-title="┃RTG WC┃" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ NPO 1 HD [NL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745078.m3u8
-
-#EXTINF:-1 group-title="┃RTG WC┃" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ NPO 2 HD [NL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745079.m3u8
-
-#EXTINF:-1 group-title="┃RTG WC┃" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ NPO 3 HD [NL]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745080.m3u8
-
-#EXTINF:-1 group-title="┃RTG WC┃" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ TIPIK HD [BE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745082.m3u8
-
-#EXTINF:-1 group-title="┃RTG WC┃" tvg-logo="http://picon.tivi-ott.net:25461/picon/WORLD CUP 2026/WORLD CUP 2026.png", ┃RTG┃ VRT 1 HD [BE]
-https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/s2/1745081.m3u8

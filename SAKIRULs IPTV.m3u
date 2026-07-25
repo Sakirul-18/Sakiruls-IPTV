@@ -377,19 +377,19 @@ https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/203222
 https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/132601.m3u8
 
 #EXTINF:-1 group-title="Sports", Sky Sports Cricket
-https://cdn6.zohanayaan.com:1686/hls/skyscric.m3u8?md5=MSybMPQZjyLG8AZYZSTLAw&expires=1785007221
+https://cdn1.zohanayaan.com:1686/hls/skyscric.m3u8?md5=EUevAlg5qT9Fdq4DKV7WLw&expires=1785007882
 
 #EXTINF:-1 group-title="Sports", Sky Sports F1
-https://cdn7.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=TzP8OnpnWlbnArRIfG2E8Q&expires=1785007223
+https://cdn9.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=wxf82uc3NhP2L3_NYKwfWg&expires=1785007885
 
 #EXTINF:-1 group-title="Sports", Sky Sports Football
-https://cdn7.zohanayaan.com:1686/hls/skysfott.m3u8?md5=DfzQN7ifc8GDHjqrcoc29Q&expires=1785007223
+https://cdn1.zohanayaan.com:1686/hls/skysfott.m3u8?md5=xTvp-YjW_2jpLVWhtrNoRw&expires=1785007885
 
 #EXTINF:-1 group-title="Sports", Sky Sports Main Event
-https://cdn4.zohanayaan.com:1686/hls/skysme.m3u8?md5=ghzNJ-PbtNIe8q64jfpqqg&expires=1785007221
+https://cdn1.zohanayaan.com:1686/hls/skysme.m3u8?md5=nzhNuQ9inwTvwO2Q9eBBMg&expires=1785007883
 
 #EXTINF:-1 group-title="Sports", Sky Sports Premier League
-https://cdn2.zohanayaan.com:1686/hls/skysprem.m3u8?md5=04G9v9zIKKtXoXJHmeqfhA&expires=1785007223
+https://cdn7.zohanayaan.com:1686/hls/skysprem.m3u8?md5=-ylPz0h1qQw9KP8Vc7GPQw&expires=1785007885
 
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 1
 https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282670.m3u8
@@ -404,10 +404,10 @@ https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282672
 https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/827990.m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
-https://cdn1.zohanayaan.com:1686/hls/star1in.m3u8?md5=BVGexFJHK28SD5oljC03lQ&expires=1785007220
+https://cdn5.zohanayaan.com:1686/hls/star1in.m3u8?md5=XcGhJKBr_LhVU0LNhNduUQ&expires=1785007881
 
 #EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
-https://cdn6.zohanayaan.com:1686/hls/starhindi.m3u8?md5=Laaip_C71N5KuW5x0vsMDw&expires=1785007220
+https://cdn10.zohanayaan.com:1686/hls/starhindi.m3u8?md5=rKsRYbOQ5BVSrkM5YvQMRQ&expires=1785007881
 
 #EXTINF:-1 group-title="Sports", Star Sports Select 1
 https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1114583.m3u8

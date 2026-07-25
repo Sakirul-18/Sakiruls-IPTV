@@ -7,18 +7,41 @@ Rules:
 - Search 7 sources for matching channels.
 - Replace only URLs.
 - Never delete missing channels.
-- FanCode categories (Cricket, Motorsport, Golf, Tennis, ...) are auto-pooled
-  and assigned in order, since the source only lists them by category name
-  (e.g. "FanCode Cricket") without numbering.
-- T Sports is handled specially (prefers the dedicated T-Sports source).
-- If an exact name match isn't found, a "loose" match is tried that ignores
-  generic filler words (sports/hd/channel/tv/the) so e.g. "TNT Sports 1"
-  can match a source's "TNT 1".
+
+Matching strategy (in order of confidence):
+  1. Exact match (ignoring case/punctuation).
+  2. Token containment: your channel name's words appear as a contiguous
+     run inside the source channel's name (or vice versa), e.g. "TNT
+     Sports 1" <-> "TNT 1", or "BEIN SPORTS 1" <-> "FR| BEIN SPORTS 1 HD".
+  3. Same as #2, but also ignoring quality tags (HD/FHD/UHD/...), e.g.
+     "NPO 1 HD" <-> "NPO 1  8K+ UHD".
+  A match is only accepted if it shares at least one real, non-generic
+  word - this stops junk like a "##### SPORTS HD #####" divider entry
+  from matching every "X Sports HD" channel.
+
+FanCode is special: the source doesn't publish "FanCode Cricket 1/2/3"
+by name - it publishes whatever match is *currently live* under a
+group-title like "Fancode-Cricket". This script pools every URL it
+finds per category (Cricket/Golf/Tennis/Motorsport/...) and assigns
+them in order to your numbered FanCode slots. This means:
+  - FanCode channels only fill in when something in that category is
+    actually live/listed on FanCode at the time the script runs.
+  - If FanCode adds a channel or category tomorrow, it's picked up
+    automatically, with no code changes needed.
+
+Speed test: when a channel has more than one candidate URL (e.g. the
+same channel from 3 different regions, or several mirrors), each
+candidate is tested concurrently (HTTP HEAD/GET with a short timeout)
+and the fastest one that actually responds is used. If none respond,
+the first candidate found is used as a best-effort fallback rather
+than leaving the channel empty.
 """
 
 from pathlib import Path
 import re
+import time
 import requests
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
@@ -125,20 +148,79 @@ CHANNELS = [
     "Willow Cricket HD",
 ]
 
-# Words that are always safe to ignore (packaging/quality descriptors,
-# never part of a channel's actual identity).
-MILD_GENERIC_WORDS = {"hd", "channel", "tv", "the"}
 
-# Words that are usually filler but occasionally ARE the channel's identity
-# (e.g. "T Sports" - stripping "Sports" there would leave just "T"). Only
-# used as a second-pass fallback, and only trusted if enough of the name
-# survives.
-AGGRESSIVE_GENERIC_WORDS = MILD_GENERIC_WORDS | {"sports", "sport"}
+# ---------------------------------------------------------------------------
+# Name normalization / matching
+# ---------------------------------------------------------------------------
 
-# Minimum length (after stripping generic words) before we trust a loose
-# match. Prevents very short leftovers (like "T" from "T Sports HD") from
-# matching all sorts of unrelated channels.
-MIN_LOOSE_LEN = 3
+QUALITY_WORDS = {
+    "hd", "fhd", "uhd", "shd", "sd", "4k", "8k", "2k", "hq", "sq", "lq", "fullhd"
+}
+
+# Words too generic to ever count as "the thing that makes two names match".
+GENERIC_FILLER = QUALITY_WORDS | {"sports", "sport", "channel", "tv", "the", "live", "plus"}
+
+# Minimum number of tokens the shorter side must have before we trust a
+# containment match at all (avoids single-token noise matches).
+MIN_MATCH_TOKENS = 2
+
+# Speed test tuning
+MAX_CANDIDATES_TO_TEST = 8
+REQUEST_TIMEOUT = 6
+MAX_TEST_WORKERS = 8
+
+
+def normalize(name):
+    """Strict normalization: lowercase, alphanumeric only."""
+    return re.sub(r"[^a-z0-9]", "", name.lower())
+
+
+def tokenize(name):
+    """Split into lowercase word/number tokens, dropping punctuation."""
+    name = name.lower()
+    name = re.sub(r"[^a-z0-9]+", " ", name)
+    return tuple(w for w in name.split() if w)
+
+
+def strip_quality(tokens):
+    return tuple(t for t in tokens if t not in QUALITY_WORDS)
+
+
+def contiguous_subseq(short, long_):
+    """True if `short` appears as a contiguous run inside `long_`."""
+    ls, ll = len(short), len(long_)
+    if ls == 0 or ls > ll:
+        return False
+    for i in range(ll - ls + 1):
+        if long_[i:i + ls] == short:
+            return True
+    return False
+
+
+def tokens_containment_match(a_tokens, b_tokens):
+    """
+    True if one token sequence is a contiguous run inside the other,
+    AND that shared run includes at least one non-generic word.
+    """
+    if not a_tokens or not b_tokens:
+        return False
+
+    shorter, longer = (a_tokens, b_tokens) if len(a_tokens) <= len(b_tokens) else (b_tokens, a_tokens)
+
+    if len(shorter) < MIN_MATCH_TOKENS:
+        return False
+
+    if not contiguous_subseq(shorter, longer):
+        return False
+
+    return any(t not in GENERIC_FILLER for t in shorter)
+
+
+# ---------------------------------------------------------------------------
+# M3U parsing
+# ---------------------------------------------------------------------------
+
+GROUP_TITLE_RE = re.compile(r'group-title="([^"]*)"', re.IGNORECASE)
 
 
 def download_playlist(url):
@@ -162,45 +244,24 @@ def download_playlist(url):
     return ""
 
 
-def normalize(name):
-    """Strict normalization: lowercase, alphanumeric only."""
-    return re.sub(
-        r"[^a-z0-9]",
-        "",
-        name.lower()
-    )
-
-
-def loose_normalize(name, aggressive=False):
-    """
-    Loose normalization: drops generic filler words.
-    aggressive=False strips only truly generic words (hd/tv/channel/the).
-    aggressive=True additionally strips "sports"/"sport", which usually
-    is filler (e.g. "TNT Sports 1" ~ "TNT 1") but occasionally is part of
-    a channel's real identity (e.g. "T Sports").
-    """
-    n = name.lower()
-    n = re.sub(r"[^a-z0-9\s]", " ", n)
-    stopwords = AGGRESSIVE_GENERIC_WORDS if aggressive else MILD_GENERIC_WORDS
-    words = [w for w in n.split() if w not in stopwords]
-    return "".join(words)
-
-
 def parse_m3u(content):
     """
     Convert M3U into:
     [
-        {
-            "name": channel name,
-            "url": stream url
-        }
+        {"name": channel name, "url": stream url, "group": group-title}
     ]
+
+    Uses rsplit on the LAST comma to get the display name, since some
+    sources (e.g. FanCode) put an extra comma earlier in the #EXTINF
+    line (right after the duration), which would otherwise corrupt a
+    naive "split on first comma" parse.
     """
 
     channels = []
 
     lines = content.splitlines()
     current_name = None
+    current_group = ""
 
     for line in lines:
         line = line.strip()
@@ -210,8 +271,13 @@ def parse_m3u(content):
 
         if line.startswith("#EXTINF"):
 
+            gt_match = GROUP_TITLE_RE.search(line)
+            current_group = gt_match.group(1) if gt_match else ""
+
             if "," in line:
-                current_name = line.split(",", 1)[1].strip()
+                current_name = line.rsplit(",", 1)[-1].strip()
+            else:
+                current_name = None
 
         elif not line.startswith("#"):
 
@@ -219,25 +285,48 @@ def parse_m3u(content):
                 channels.append(
                     {
                         "name": current_name,
-                        "url": line
+                        "url": line,
+                        "group": current_group,
                     }
                 )
 
-                current_name = None
+            current_name = None
+            current_group = ""
 
     return channels
 
 
-# Matches a master-list FanCode entry like "FanCode Cricket 1" or
-# "FanCode Golf" (no trailing number = implicitly slot 1).
+def load_sources():
+
+    all_channels = []
+
+    for url in SOURCE_URLS:
+
+        data = download_playlist(url)
+
+        if data:
+
+            channels = parse_m3u(data)
+            all_channels.extend(channels)
+
+            print(f"Loaded {len(channels)} channels from {url}")
+
+    return all_channels
+
+
+# ---------------------------------------------------------------------------
+# FanCode: pooled-by-category, since the source lists live events, not
+# fixed channel names.
+# ---------------------------------------------------------------------------
+
 FANCODE_MASTER_RE = re.compile(r"^FanCode\s+([A-Za-z]+)\s*(\d+)?$", re.IGNORECASE)
+FANCODE_SOURCE_RE = re.compile(r"fan\s*code[\s\-]*([a-z]+)", re.IGNORECASE)
 
 
 def parse_master_fancode(channel_name):
     """
-    If channel_name is a numbered FanCode master entry
-    (e.g. "FanCode Cricket 1", "FanCode Golf"), return (category, index).
-    Otherwise return None.
+    If channel_name is a numbered FanCode master entry (e.g. "FanCode
+    Cricket 1", "FanCode Golf"), return (category, index). Otherwise None.
     """
     m = FANCODE_MASTER_RE.match(channel_name.strip())
     if not m:
@@ -248,53 +337,44 @@ def parse_master_fancode(channel_name):
     return category, index
 
 
-def extract_source_fancode_category(source_channel_name):
+def extract_source_fancode_category(channel):
     """
-    If a source channel is a FanCode channel (e.g. "FanCode Cricket",
-    "FanCode Cricket 2", "Fancode Golf"), return its category
-    (e.g. "cricket"). Otherwise return None.
-
-    This is intentionally generic (no hardcoded category list) so that
-    if the source adds a brand-new FanCode category tomorrow, it still
-    gets picked up automatically.
+    Figure out a source channel's FanCode category, checking group-title
+    first (that's where FanCode-BD actually puts it, e.g.
+    group-title="Fancode-Cricket") and falling back to the channel name.
+    Generic on purpose - a brand new category tomorrow is picked up
+    automatically, no code changes needed.
     """
-    n = source_channel_name.strip()
-
-    if not re.match(r"^fan\s*code\b", n, re.IGNORECASE):
-        return None
-
-    rest = re.sub(r"^fan\s*code\s*", "", n, flags=re.IGNORECASE).strip()
-    rest = re.sub(r"\s*\d+\s*$", "", rest).strip()
-
-    if not rest:
-        return None
-
-    return rest.lower()
+    for text in (channel.get("group", ""), channel.get("name", "")):
+        if not text:
+            continue
+        m = FANCODE_SOURCE_RE.search(text)
+        if m:
+            cat = m.group(1).strip().lower()
+            if cat:
+                return cat
+    return None
 
 
-def build_fancode_pool(sources):
+def build_fancode_pool(all_channels):
     """
-    Build a dict: category -> ordered list of deduped URLs, gathered from
-    every source. This lets us fill FanCode Cricket 1/2/3 etc even when the
-    source itself has no numbering, and automatically grows if the source
-    adds more channels for that category later.
+    category -> ordered list of deduped URLs, gathered from every source.
     """
     pool = {}
     seen_urls = {}
 
-    for source in sources:
-        for channel in source["channels"]:
-            category = extract_source_fancode_category(channel["name"])
+    for channel in all_channels:
+        category = extract_source_fancode_category(channel)
 
-            if not category:
-                continue
+        if not category:
+            continue
 
-            pool.setdefault(category, [])
-            seen_urls.setdefault(category, set())
+        pool.setdefault(category, [])
+        seen_urls.setdefault(category, set())
 
-            if channel["url"] not in seen_urls[category]:
-                seen_urls[category].add(channel["url"])
-                pool[category].append(channel["url"])
+        if channel["url"] not in seen_urls[category]:
+            seen_urls[category].add(channel["url"])
+            pool[category].append(channel["url"])
 
     for category, urls in pool.items():
         print(f"[FANCODE POOL] {category}: {len(urls)} channel(s) found")
@@ -302,96 +382,131 @@ def build_fancode_pool(sources):
     return pool
 
 
-def find_channel_url(channel_name, sources):
+# ---------------------------------------------------------------------------
+# General matching
+# ---------------------------------------------------------------------------
+
+def get_all_matches(channel_name, all_channels):
     """
-    Search all sources for a matching channel name.
-    Tries an exact (strict) match first, then falls back to a "loose"
-    match that ignores generic filler words. Returns URL if found,
-    otherwise None.
+    Search every source for name matches, in order of confidence:
+      1. exact normalized match
+      2. token containment (full tokens)
+      3. token containment ignoring quality words (hd/fhd/uhd/...)
+    Returns (deduped URL list, tier name) from the first tier with any
+    hits, or ([], None) if nothing matched at all.
     """
+    target_strict = normalize(channel_name)
+    target_tokens = tokenize(channel_name)
+    target_tokens_q = strip_quality(target_tokens)
 
-    target = normalize(channel_name)
-    mild_target = loose_normalize(channel_name, aggressive=False)
-    aggressive_target = loose_normalize(channel_name, aggressive=True)
+    exact_hits, full_token_hits, quality_hits = [], [], []
 
-    ordered_sources = sources
+    for channel in all_channels:
+        cand_name = channel["name"]
+        cand_strict = normalize(cand_name)
 
-    # FanCode priority
-    if channel_name.startswith("FanCode"):
-        ordered_sources = sorted(
-            sources,
-            key=lambda x: "fancode" not in x["source"].lower()
-        )
+        if cand_strict == target_strict:
+            exact_hits.append(channel["url"])
+            continue
 
-    # T Sports priority
-    if channel_name == "T Sports HD":
-        ordered_sources = sorted(
-            sources,
-            key=lambda x: "t-sports" not in x["source"].lower()
-        )
+        cand_tokens = tokenize(cand_name)
 
-    # Phase 1: exact strict match
-    for source in ordered_sources:
-        for channel in source["channels"]:
-            if normalize(channel["name"]) == target:
-                print(
-                    f"[FOUND] {channel_name} "
-                    f"from {source['source']}"
-                )
-                return channel["url"]
+        if tokens_containment_match(target_tokens, cand_tokens):
+            full_token_hits.append(channel["url"])
+            continue
 
-    # Phase 2: mild loose match (ignores hd/tv/channel/the only)
-    if len(mild_target) >= MIN_LOOSE_LEN:
-        for source in ordered_sources:
-            for channel in source["channels"]:
-                if loose_normalize(channel["name"], aggressive=False) == mild_target:
-                    print(
-                        f"[FOUND-FUZZY] {channel_name} ~ {channel['name']} "
-                        f"from {source['source']}"
-                    )
-                    return channel["url"]
+        cand_tokens_q = strip_quality(cand_tokens)
+        if tokens_containment_match(target_tokens_q, cand_tokens_q):
+            quality_hits.append(channel["url"])
 
-    # Phase 3: aggressive loose match (also ignores sports/sport)
-    if len(aggressive_target) >= MIN_LOOSE_LEN:
-        for source in ordered_sources:
-            for channel in source["channels"]:
-                if loose_normalize(channel["name"], aggressive=True) == aggressive_target:
-                    print(
-                        f"[FOUND-FUZZY-AGGRESSIVE] {channel_name} ~ {channel['name']} "
-                        f"from {source['source']}"
-                    )
-                    return channel["url"]
+    def dedupe(urls):
+        seen = set()
+        out = []
+        for u in urls:
+            if u not in seen:
+                seen.add(u)
+                out.append(u)
+        return out
 
-    print(f"[NOT FOUND] {channel_name}")
+    if exact_hits:
+        return dedupe(exact_hits), "exact"
+    if full_token_hits:
+        return dedupe(full_token_hits), "token"
+    if quality_hits:
+        return dedupe(quality_hits), "token-quality-stripped"
+
+    return [], None
+
+
+# ---------------------------------------------------------------------------
+# Speed test: when there's more than one candidate, test them and use
+# whichever responds fastest.
+# ---------------------------------------------------------------------------
+
+def test_url(url, timeout=REQUEST_TIMEOUT):
+    """Return response time in seconds if the URL responds OK, else None."""
+    try:
+        start = time.monotonic()
+        resp = requests.head(url, headers=HEADERS, timeout=timeout, allow_redirects=True)
+        elapsed = time.monotonic() - start
+        if resp.status_code < 400:
+            return elapsed
+    except Exception:
+        pass
+
+    try:
+        start = time.monotonic()
+        resp = requests.get(url, headers=HEADERS, timeout=timeout, stream=True)
+        elapsed = time.monotonic() - start
+        if resp.status_code < 400:
+            resp.close()
+            return elapsed
+    except Exception:
+        pass
 
     return None
 
 
-def load_sources():
+def pick_fastest(urls):
+    """
+    Given candidate URLs, test them concurrently and return whichever
+    responds fastest. Falls back to the first candidate if none respond
+    (better to hand the player *something* than nothing).
+    """
+    if not urls:
+        return None
 
-    all_sources = []
+    candidates = urls[:MAX_CANDIDATES_TO_TEST]
 
-    for url in SOURCE_URLS:
+    if len(candidates) == 1:
+        return candidates[0]
 
-        data = download_playlist(url)
+    results = {}
+    with ThreadPoolExecutor(max_workers=min(MAX_TEST_WORKERS, len(candidates))) as executor:
+        future_to_url = {executor.submit(test_url, u): u for u in candidates}
+        for future in as_completed(future_to_url):
+            url = future_to_url[future]
+            try:
+                elapsed = future.result()
+            except Exception:
+                elapsed = None
+            if elapsed is not None:
+                results[url] = elapsed
+                print(f"    [SPEED] {elapsed:.2f}s  {url}")
+            else:
+                print(f"    [SPEED] failed        {url}")
 
-        if data:
+    if not results:
+        print("    [SPEED] none responded, keeping first candidate as best effort")
+        return candidates[0]
 
-            channels = parse_m3u(data)
+    best_url = min(results, key=results.get)
+    return best_url
 
-            all_sources.append(
-                {
-                    "source": url,
-                    "channels": channels
-                }
-            )
 
-            print(
-                f"Loaded {len(channels)} channels"
-            )
-
-    return all_sources
-
+# ---------------------------------------------------------------------------
+# Playlist update
+# ---------------------------------------------------------------------------
 
 def read_playlist():
     if not PLAYLIST_FILE.exists():
@@ -403,7 +518,7 @@ def read_playlist():
     ).splitlines()
 
 
-def update_sports_section(lines, sources, fancode_pool):
+def update_sports_section(lines, all_channels, fancode_pool):
 
     output = []
 
@@ -419,15 +534,14 @@ def update_sports_section(lines, sources, fancode_pool):
             and 'group-title="Sports"' in line
         ):
 
-            channel_name = line.split(",", 1)[1].strip()
+            channel_name = line.rsplit(",", 1)[-1].strip()
 
             output.append(line)
             i += 1
 
             # Only treat the next line as an existing URL if it actually
-            # looks like one (not another #EXTINF / comment line, and not
-            # simply absent). Some channels in the master playlist have no
-            # URL line at all yet - don't swallow the next channel's
+            # looks like one. Many channels in the master playlist have
+            # no URL line at all - don't swallow the next channel's
             # #EXTINF line as if it were a URL.
             old_url = None
             if i < n and lines[i].strip() and not lines[i].lstrip().startswith("#"):
@@ -444,9 +558,16 @@ def update_sports_section(lines, sources, fancode_pool):
                     print(f"[FANCODE FOUND] {channel_name} -> pool[{category}][{index - 1}]")
                 else:
                     new_url = None
-                    print(f"[FANCODE NOT FOUND] {channel_name} (only {len(pooled_urls)} in pool)")
+                    print(f"[FANCODE NOT FOUND] {channel_name} (only {len(pooled_urls)} live in pool)")
             else:
-                new_url = find_channel_url(channel_name, sources)
+                matches, tier = get_all_matches(channel_name, all_channels)
+
+                if matches:
+                    print(f"[{len(matches)} MATCH(ES) - {tier}] {channel_name}")
+                    new_url = pick_fastest(matches)
+                else:
+                    new_url = None
+                    print(f"[NOT FOUND] {channel_name}")
 
             final_url = new_url if new_url else old_url
 
@@ -478,9 +599,9 @@ def main():
 
     print("Starting Sports updater...")
 
-    sources = load_sources()
+    all_channels = load_sources()
 
-    if not sources:
+    if not all_channels:
         print("No sources available. Stopping.")
         return
 
@@ -490,11 +611,11 @@ def main():
         print("Playlist is empty. Stopping.")
         return
 
-    fancode_pool = build_fancode_pool(sources)
+    fancode_pool = build_fancode_pool(all_channels)
 
     updated_playlist = update_sports_section(
         playlist,
-        sources,
+        all_channels,
         fancode_pool
     )
 

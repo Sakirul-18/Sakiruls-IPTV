@@ -161,8 +161,12 @@ QUALITY_WORDS = {
     "hd", "fhd", "uhd", "shd", "sd", "4k", "8k", "2k", "hq", "sq", "lq", "fullhd"
 }
 
+REGION_WORDS = {
+    "uk", "usa", "us", "fr", "de", "es", "it", "ca", "au", "eu", "in", "bd", "nl", "be"
+}
+
 # Words too generic to ever count as "the thing that makes two names match".
-GENERIC_FILLER = QUALITY_WORDS | {"sports", "sport", "channel", "tv", "the", "live", "plus"}
+GENERIC_FILLER = QUALITY_WORDS | REGION_WORDS | {"sports", "sport", "channel", "tv", "the", "live", "plus"}
 
 # Minimum number of tokens the shorter side must have before we trust a
 # containment match at all (avoids single-token noise matches).
@@ -174,16 +178,36 @@ REQUEST_TIMEOUT = 6
 MAX_TEST_WORKERS = 8
 
 
+def clean_channel_name(name):
+    """
+    Strips region prefixes/suffixes, decorative symbols, and brackets so that
+    names like "┃UK┃ SKY SPORTS CRICKET HD" become "SKY SPORTS CRICKET HD".
+    """
+    # Replace non-alphanumeric decorative characters (bars, brackets, stars, etc.) with space
+    cleaned = re.sub(r"[┃\|│║\[\]\(\)\{\}#\-_\*]+", " ", name)
+    
+    # Remove standalone region tokens at start or end of string
+    tokens = cleaned.split()
+    if tokens and tokens[0].lower() in REGION_WORDS:
+        tokens.pop(0)
+    if tokens and tokens[-1].lower() in REGION_WORDS:
+        tokens.pop()
+
+    return " ".join(tokens)
+
+
 def normalize(name):
-    """Strict normalization: lowercase, alphanumeric only."""
-    return re.sub(r"[^a-z0-9]", "", name.lower())
+    """Strict normalization: lowercase, alphanumeric only after cleaning decor."""
+    cleaned = clean_channel_name(name)
+    return re.sub(r"[^a-z0-9]", "", cleaned.lower())
 
 
 def tokenize(name):
-    """Split into lowercase word/number tokens, dropping punctuation."""
-    name = name.lower()
-    name = re.sub(r"[^a-z0-9]+", " ", name)
-    return tuple(w for w in name.split() if w)
+    """Split into lowercase word/number tokens, dropping punctuation and region noise."""
+    cleaned = clean_channel_name(name).lower()
+    cleaned = re.sub(r"[^a-z0-9]+", " ", cleaned)
+    tokens = tuple(w for w in cleaned.split() if w and w not in REGION_WORDS)
+    return tokens
 
 
 def strip_quality(tokens):

@@ -89,6 +89,13 @@ CHANNELS = [
     "Willow Cricket",
 ]
 
+PROTECTED_CHANNELS = [
+    "Fancode-Cricket",
+    "Fancode-Tennis",
+    "Fancode-Motorsports",
+    "Fancode-Golf",
+]
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
 }
@@ -285,8 +292,6 @@ def main():
             print(f"[MISSING] {channel}")
             continue
 
-    new_sports_text = "\n\n".join(sports_blocks)
-
     # ---- Merge into the existing playlist, if any ----
     if PLAYLIST_FILE.exists():
         existing_content = PLAYLIST_FILE.read_text(encoding="utf-8")
@@ -295,10 +300,40 @@ def main():
 
     header, blocks = parse_target_playlist(existing_content)
 
+    # Extract existing protected Sports channels before clearing the category
+    existing_protected_sports = []
+    for b in blocks:
+        if b["group"].strip().lower() == SPORTS_GROUP_TITLE.lower():
+            first_line = b["text"].splitlines()[0]
+
+            for protected in PROTECTED_CHANNELS:
+                if normalize(protected) in normalize(first_line):
+                    existing_protected_sports.append(b["text"])
+
     non_sports_blocks = [
         b["text"] for b in blocks
         if b["group"].strip().lower() != SPORTS_GROUP_TITLE.lower()
     ]
+
+    # Keep protected manual Sports channels
+    all_sports_blocks = sports_blocks + existing_protected_sports
+
+    # Remove duplicate channel names
+    unique = {}
+    for block in all_sports_blocks:
+        first_line = block.splitlines()[0]
+
+        if "," in first_line:
+            channel_name = first_line.split(",", 1)[1].strip()
+        else:
+            channel_name = first_line
+
+        name = normalize(channel_name)
+
+        if name and name not in unique:
+            unique[name] = block
+
+    new_sports_text = "\n\n".join(unique.values())
 
     # Remember where the old Sports section was so the new one
     # goes back in roughly the same place instead of always at
@@ -309,7 +344,7 @@ def main():
         None,
     )
 
-    if not sports_blocks:
+    if not unique:
         # Nothing was found at all -> leave non-sports groups as-is
         # rather than inserting an empty Sports block.
         final_blocks = non_sports_blocks

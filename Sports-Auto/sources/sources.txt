@@ -1,7 +1,0 @@
-https://github.com/IPTVFlixBD/OopsTv
-https://github.com/IPTVFlixBD/RynoCast-IPTV-M3u-Playlist
-https://github.com/abusaeeidx/BDxTV
-https://github.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent
-https://github.com/abusaeeidx/IPTV-Scraper-Zilla
-https://github.com/abusaeeidx/Toffee-playlist
-https://github.com/abusaeeidx/T-Sports-Playlist-Auto-Update

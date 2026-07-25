@@ -117,6 +117,8 @@ CHANNELS = [
 
     "Willow Cricket HD",
 ]
+
+
 def download_playlist(url):
     try:
         response = requests.get(
@@ -186,7 +188,9 @@ def parse_m3u(content):
                 current_name = None
 
     return channels
-    def find_channel_url(channel_name, sources):
+
+
+def find_channel_url(channel_name, sources):
     """
     Search all sources for an identical channel name.
     Returns URL if found, otherwise None.
@@ -249,7 +253,9 @@ def load_sources():
             )
 
     return all_sources
-    def read_playlist():
+
+
+def read_playlist():
     if not PLAYLIST_FILE.exists():
         print("Playlist not found!")
         return []
@@ -311,9 +317,6 @@ def save_playlist(lines):
     )
 
     print("Playlist saved successfully.")
-
-
-
 
 
 def main():

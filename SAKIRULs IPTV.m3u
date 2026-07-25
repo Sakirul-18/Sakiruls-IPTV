@@ -398,15 +398,15 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 #EXTINF:-1 group-title="Sports", NPO 3 HD
 
 #EXTINF:-1 group-title="Sports", Sky Sports Cricket
-
+https://cdn2.zohanayaan.com:1686/hls/skyscric.m3u8?md5=TVgefOmzymJg9i-JkIOp7A&expires=1785018020
 #EXTINF:-1 group-title="Sports", Sky Sports F1
-
+https://cdn1.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=JhhKmKslzaT35X4cJ7jQ4w&expires=1785018022
 #EXTINF:-1 group-title="Sports", Sky Sports Football
-
+https://cdn8.zohanayaan.com:1686/hls/skysfott.m3u8?md5=hOCFI_IlN5Dbx04-VAlPvQ&expires=1785018022
 #EXTINF:-1 group-title="Sports", Sky Sports Main Event
-
+https://cdn5.zohanayaan.com:1686/hls/skysme.m3u8?md5=tDPjHc0xcnAdq_ntc_H5mQ&expires=1785018020
 #EXTINF:-1 group-title="Sports", Sky Sports Premier League
-
+https://cdn8.zohanayaan.com:1686/hls/skysprem.m3u8?md5=iEEOKJD3BGzkUVHClWh6tA&expires=1785018022
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 1
 
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 2
@@ -416,9 +416,9 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 #EXTINF:-1 group-title="Sports", Sports18 1 HD
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
-
+https://cdn4.zohanayaan.com:1686/hls/star1in.m3u8?md5=DdBGnEV7VO2Ip1fG7y5XOg&expires=1785018020
 #EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
-
+https://cdn8.zohanayaan.com:1686/hls/starhindi.m3u8?md5=i-VZd8uHf4Q14hQJSrUPbQ&expires=1785018020
 #EXTINF:-1 group-title="Sports", Star Sports Select 1
 
 #EXTINF:-1 group-title="Sports", Star Sports Select 2

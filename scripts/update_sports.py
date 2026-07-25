@@ -4,7 +4,7 @@ SAKIRULs IPTV Sports Auto Updater
 
 Rules:
 - Your channel names are the master list.
-- Search 7 sources for matching channels.
+- Search sources for matching channels.
 - Replace only URLs.
 - Never delete missing channels.
 
@@ -53,7 +53,10 @@ FANCODE_EXCLUSIVE_SOURCE = "https://raw.githubusercontent.com/IPTVFlixBD/Fancode
 
 
 SOURCE_URLS = [
-    # IPTVFlixBD Sports
+    # IPTVFlixBD Sports S1
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sports-s1.m3u",
+
+    # IPTVFlixBD Sports S2
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s2.m3u",
 
     # IPTVFlixBD World

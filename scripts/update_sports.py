@@ -48,6 +48,10 @@ PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
 SPORTS_GROUP = "Sports"
 
 
+SKY_SPORTS_PREFERRED_SOURCE = "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s2.m3u"
+FANCODE_EXCLUSIVE_SOURCE = "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/playlist.m3u"
+
+
 SOURCE_URLS = [
     # IPTVFlixBD Sports
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s2.m3u",
@@ -244,11 +248,11 @@ def download_playlist(url):
     return ""
 
 
-def parse_m3u(content):
+def parse_m3u(content, source_url=""):
     """
     Convert M3U into:
     [
-        {"name": channel name, "url": stream url, "group": group-title}
+        {"name": channel name, "url": stream url, "group": group-title, "source_url": source_url}
     ]
 
     Uses rsplit on the LAST comma to get the display name, since some
@@ -287,6 +291,7 @@ def parse_m3u(content):
                         "name": current_name,
                         "url": line,
                         "group": current_group,
+                        "source_url": source_url,
                     }
                 )
 
@@ -306,7 +311,7 @@ def load_sources():
 
         if data:
 
-            channels = parse_m3u(data)
+            channels = parse_m3u(data, source_url=url)
             all_channels.extend(channels)
 
             print(f"Loaded {len(channels)} channels from {url}")
@@ -358,12 +363,15 @@ def extract_source_fancode_category(channel):
 
 def build_fancode_pool(all_channels):
     """
-    category -> ordered list of deduped URLs, gathered from every source.
+    category -> ordered list of deduped URLs, gathered ONLY from the designated FanCode source.
     """
     pool = {}
     seen_urls = {}
 
     for channel in all_channels:
+        if channel.get("source_url") != FANCODE_EXCLUSIVE_SOURCE:
+            continue
+
         category = extract_source_fancode_category(channel)
 
         if not category:
@@ -388,13 +396,18 @@ def build_fancode_pool(all_channels):
 
 def get_all_matches(channel_name, all_channels):
     """
-    Search every source for name matches, in order of confidence:
+    Search sources for name matches, in order of confidence:
       1. exact normalized match
       2. token containment (full tokens)
       3. token containment ignoring quality words (hd/fhd/uhd/...)
     Returns (deduped URL list, tier name) from the first tier with any
     hits, or ([], None) if nothing matched at all.
+
+    Note: Channels starting with "Sky Sports" are restricted ONLY to
+    SKY_SPORTS_PREFERRED_SOURCE.
     """
+    is_sky_sports = channel_name.strip().lower().startswith("sky sports")
+
     target_strict = normalize(channel_name)
     target_tokens = tokenize(channel_name)
     target_tokens_q = strip_quality(target_tokens)
@@ -402,6 +415,9 @@ def get_all_matches(channel_name, all_channels):
     exact_hits, full_token_hits, quality_hits = [], [], []
 
     for channel in all_channels:
+        if is_sky_sports and channel.get("source_url") != SKY_SPORTS_PREFERRED_SOURCE:
+            continue
+
         cand_name = channel["name"]
         cand_strict = normalize(cand_name)
 

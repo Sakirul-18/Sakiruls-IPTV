@@ -52,6 +52,13 @@ CHANNELS = [
     "DAS ERSTE HD",
     "Eurosport",
     "F1 TV",
+    "Fancode-Cricket",
+    "Fancode-Cricket",
+    "Fancode-Cricket",
+    "Fancode-Tennis",
+    "Fancode-Motorsports",
+    "Fancode-Golf",
+    "Fancode-Motorsports",
     "FIFA World Cup",
     "FOX Sports 1",
     "MotoGP",
@@ -91,9 +98,12 @@ CHANNELS = [
 
 PROTECTED_CHANNELS = [
     "Fancode-Cricket",
+    "Fancode-Cricket",
+    "Fancode-Cricket",
     "Fancode-Tennis",
     "Fancode-Motorsports",
     "Fancode-Golf",
+    "Fancode-Motorsports",
 ]
 
 HEADERS = {

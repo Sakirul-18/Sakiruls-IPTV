@@ -1,37 +1,44 @@
-name: Update Sports Playlist
+name: Update Sports IPTV
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"   # Runs every 5 minutes
   workflow_dispatch:
+
+  schedule:
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
 
 jobs:
   update:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install requests
         run: |
-          pip install requests beautifulsoup4 lxml
+          pip install requests
 
-      - name: Run updater
-        run: python scripts/update_sports.py
+      - name: Run script
+        run: |
+          python scripts/update_sports.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.email "actions@github.com"
+
           git add .
-          git diff --cached --quiet || git commit -m "Auto update sports playlist"
+
+          git diff --cached --quiet || git commit -m "Auto update Sports IPTV"
+
           git push

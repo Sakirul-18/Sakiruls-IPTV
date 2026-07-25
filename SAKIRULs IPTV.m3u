@@ -345,52 +345,51 @@ http://index2.circleftp.net/FILE/English%20%26%20Foreign%20Dubbed%20Movies/2026/
 http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%20%282026%29%201080p%20HDTC%20%5BDual%20Audio%5D%20%5BHindi%20%28Line%29%2BEnglish%5D%20x264/Toy%20Story%205%20%282026%29%201080p%20HDTC%20%5BDual%20Audio%5D%20%5BHindi%20%28Line%29%2BEnglish%5D%20x264.mkv
 
 # ─────────── Sports ───────────
-
 #EXTM3U
 
 #EXTINF:-1 group-title="Sports", 616 Sports 4K
 
-#EXTINF:-1 group-title="Sports", beIN Sports 1
+#EXTINF:-1 group-title="Sports", beIN SPORTS 1
 
-#EXTINF:-1 group-title="Sports", beIN Sports 2
+#EXTINF:-1 group-title="Sports", beIN SPORTS 2
 
-#EXTINF:-1 group-title="Sports", beIN Sports 3
+#EXTINF:-1 group-title="Sports", beIN SPORTS 3
 
-#EXTINF:-1 group-title="Sports", beIN Sports 4
+#EXTINF:-1 group-title="Sports", beIN SPORTS 4
 
-#EXTINF:-1 group-title="Sports", beIN Sports 5
+#EXTINF:-1 group-title="Sports", beIN SPORTS 5
 
-#EXTINF:-1 group-title="Sports", beIN Sports 6
+#EXTINF:-1 group-title="Sports", beIN SPORTS 6
 
-#EXTINF:-1 group-title="Sports", BTV
+#EXTINF:-1 group-title="Sports", BTV World
 
-#EXTINF:-1 group-title="Sports", DAS ERSTE HD
+#EXTINF:-1 group-title="Sports", Das Erste HD
 
-#EXTINF:-1 group-title="Sports", Eurosport
+#EXTINF:-1 group-title="Sports", Eurosport 1
 
-#EXTINF:-1 group-title="Sports", F1 TV
+#EXTINF:-1 group-title="Sports", F1 TV Pro
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Cricket 1
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Cricket 2
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Cricket 3
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Tennis
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Tennis
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Motorsport 1
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Golf
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Golf
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
+#EXTINF:-1 group-title="Sports" tvg-logo="", FanCode Motorsport 2
 
-#EXTINF:-1 group-title="Sports", FIFA World Cup
+#EXTINF:-1 group-title="Sports", FIFA Plus Channel
 
-#EXTINF:-1 group-title="Sports", FOX Sports 1
+#EXTINF:-1 group-title="Sports", FOX Sports 1 USA
 
-#EXTINF:-1 group-title="Sports", MotoGP
+#EXTINF:-1 group-title="Sports", MotoGP VideoPass
 
-#EXTINF:-1 group-title="Sports", Motorsport TV
+#EXTINF:-1 group-title="Sports", Motorsport.tv
 
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 
@@ -414,7 +413,7 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 3
 
-#EXTINF:-1 group-title="Sports", Sports18
+#EXTINF:-1 group-title="Sports", Sports18 1 HD
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
 
@@ -430,11 +429,11 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 #EXTINF:-1 group-title="Sports", SuperSport Premier League
 
-#EXTINF:-1 group-title="Sports", T Sports
+#EXTINF:-1 group-title="Sports", T Sports HD
 
 #EXTINF:-1 group-title="Sports", Tennis Channel
 
-#EXTINF:-1 group-title="Sports", TIPIK HD
+#EXTINF:-1 group-title="Sports", Tipik HD
 
 #EXTINF:-1 group-title="Sports", TNT Sports 1
 
@@ -446,10 +445,10 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 #EXTINF:-1 group-title="Sports", TSN 3
 
-#EXTINF:-1 group-title="Sports", TVP Sports
+#EXTINF:-1 group-title="Sports", TVP Sport HD
 
 #EXTINF:-1 group-title="Sports", USA Network
 
 #EXTINF:-1 group-title="Sports", VRT 1 HD
 
-#EXTINF:-1 group-title="Sports", Willow Cricket
+#EXTINF:-1 group-title="Sports", Willow Cricket HD

@@ -2,7 +2,8 @@ name: Update Sports IPTV
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/10 * * * *"
+
   workflow_dispatch:
 
 permissions:
@@ -13,21 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: pip install requests
+      - name: Install Dependencies
+        run: |
+          pip install requests
 
       - name: Run Sports Updater
-        run: python scripts/update_sports.py
+        run: |
+          python scripts/update_sports.py
 
-      - name: Commit changes
+      - name: Commit Changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

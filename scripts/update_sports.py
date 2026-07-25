@@ -46,3 +46,74 @@ SOURCE_URLS = [
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
 }
+CHANNELS = [
+    "616 Sports 4K",
+
+    "beIN SPORTS 1",
+    "beIN SPORTS 2",
+    "beIN SPORTS 3",
+    "beIN SPORTS 4",
+    "beIN SPORTS 5",
+    "beIN SPORTS 6",
+
+    "BTV World",
+    "Das Erste HD",
+    "Eurosport 1",
+    "F1 TV Pro",
+
+    "FanCode Cricket 1",
+    "FanCode Cricket 2",
+    "FanCode Cricket 3",
+    "FanCode Tennis",
+    "FanCode Motorsport 1",
+    "FanCode Golf",
+    "FanCode Motorsport 2",
+
+    "FIFA Plus Channel",
+    "FOX Sports 1 USA",
+
+    "MotoGP VideoPass",
+    "Motorsport.tv",
+
+    "NPO 1 HD",
+    "NPO 2 HD",
+    "NPO 3 HD",
+
+    "Sky Sports Cricket",
+    "Sky Sports F1",
+    "Sky Sports Football",
+    "Sky Sports Main Event",
+    "Sky Sports Premier League",
+
+    "Sony Sports Ten 1",
+    "Sony Sports Ten 2",
+    "Sony Sports Ten 3",
+
+    "Sports18 1 HD",
+
+    "Star Sports 1",
+    "Star Sports 1 Hindi",
+    "Star Sports Select 1",
+    "Star Sports Select 2",
+
+    "SuperSport Cricket",
+    "SuperSport Football",
+    "SuperSport Premier League",
+
+    "T Sports HD",
+    "Tennis Channel",
+    "Tipik HD",
+
+    "TNT Sports 1",
+    "TNT Sports 2",
+    "TNT Sports 3",
+
+    "TSN 1",
+    "TSN 3",
+
+    "TVP Sport HD",
+    "USA Network",
+    "VRT 1 HD",
+
+    "Willow Cricket HD",
+]

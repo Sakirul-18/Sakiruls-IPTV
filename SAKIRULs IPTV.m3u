@@ -376,9 +376,6 @@ https://bd-mc-pdlive.fancode.com/mumbai/4247419_english_hls_7529753d6233196_1ta-
 #EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
 https://bd-mc-pdlive.fancode.com/mumbai/139644_english_hls_465160e66264722_1ta-di_h264/index.m3u8
 
-#EXTINF:-1 group-title="Sports" tvg-logo="", auto
-https://raw.githubusercontent.com/Sakirul-18/auto/refs/heads/main/auto
-
 #EXTINF:-1 group-title="Sports" tvg-logo="https://imglink.cc/cdn/RY7jBwPKAr.jpg", 616 Sports 4K
 http://starhub.pro/live/farhat-3379/67897-913379/745270.ts
 

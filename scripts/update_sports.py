@@ -5,6 +5,11 @@ update_sports.py
 Automatically updates the Sports section of:
 SAKIRULs IPTV.m3u
 
+Only the entries under group-title="Sports" are refreshed;
+every other channel/group already in the playlist is left
+untouched. If the playlist doesn't exist yet, it is created
+containing just the Sports section.
+
 Sources:
 - IPTVFlixBD
 - BDxTV
@@ -12,13 +17,9 @@ Sources:
 - IPTV-Scraper-Zilla
 - Toffee
 - RynoCast
-
-Author: ChatGPT
 """
 
-import os
 import re
-import sys
 from pathlib import Path
 
 import requests
@@ -28,12 +29,13 @@ import requests
 # -------------------------------------------------------
 
 PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
+SPORTS_GROUP_TITLE = "Sports"
 
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s2.m3u",
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/world-1.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/BDxTV/main/playlist.m3u",
-    "https://raw.githubusercontent.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent/main/crichd.m3u",
+    "https://raw.githubusercontent.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent/main/ALL.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/Toffee-playlist/main/ott_navigator.m3u",
     "https://raw.githubusercontent.com/IPTVFlixBD/RynoCast-IPTV-M3u-Playlist/main/all.m3u",
 ]
@@ -113,12 +115,14 @@ def download(url):
         print(e)
 
     return ""
-  # --------------------------------------------------
-# Parse M3U
+
+
+# --------------------------------------------------
+# Parse a source M3U into (name, url) pairs
 # --------------------------------------------------
 
 def parse_playlist(content):
-    """Return [(name, url)] from an M3U playlist."""
+    """Return [(name, url)] from a source M3U playlist."""
     channels = []
 
     current_name = None
@@ -144,107 +148,200 @@ def parse_playlist(content):
 
 
 # --------------------------------------------------
+# Parse the *target* playlist, preserving every block
+# (needed so we can leave non-Sports groups untouched)
+# --------------------------------------------------
+
+def parse_target_playlist(content):
+    """
+    Split an existing playlist into:
+      - header: everything before the first #EXTINF (e.g. #EXTM3U)
+      - blocks: list of dicts {group, text} where `text` is the
+        raw, untouched text of that entry (EXTINF line + any
+        extra #-lines + the stream URL)
+    """
+    lines = content.splitlines()
+
+    header_lines = []
+    blocks = []
+
+    current_block_lines = []
+    seen_first_entry = False
+
+    def flush_block():
+        if current_block_lines:
+            text = "\n".join(current_block_lines)
+            group_match = re.search(r'group-title="([^"]*)"', current_block_lines[0])
+            group = group_match.group(1) if group_match else ""
+            blocks.append({"group": group, "text": text})
+
+    for line in lines:
+        stripped = line.strip()
+
+        if stripped.startswith("#EXTINF"):
+            flush_block()
+            current_block_lines = [line]
+            seen_first_entry = True
+
+        elif not seen_first_entry:
+            if stripped:
+                header_lines.append(line)
+
+        else:
+            if not stripped:
+                # blank separator line between blocks -> ignore
+                continue
+
+            current_block_lines.append(line)
+            if not stripped.startswith("#"):
+                # this line is the stream URL -> block is complete
+                flush_block()
+                current_block_lines = []
+
+    flush_block()
+
+    header = "\n".join(header_lines) if header_lines else "#EXTM3U"
+
+    return header, blocks
+
+
+# --------------------------------------------------
 # Search Channel
 # --------------------------------------------------
 
+def normalize(text):
+    return re.sub(r'[^a-z0-9]', '', text.lower())
+
+
 def find_channel(channel_name, playlists):
     """
-    Find a channel using exact match first,
-    then partial match.
+    Find a channel using exact match first, then a normalized
+    (case/space/punctuation-insensitive) substring match in
+    either direction.
     """
+    target = normalize(channel_name)
 
-    target = channel_name.lower()
-
-    # Exact match
+    # Exact
     for playlist in playlists:
         for name, url in playlist:
-            if name.lower() == target:
+            if normalize(name) == target:
                 return url
 
-    # Partial match
+    # Contains
     for playlist in playlists:
         for name, url in playlist:
-            if target in name.lower():
+            source = normalize(name)
+
+            if not source:
+                # Names that normalize to "" (e.g. non a-z0-9 names)
+                # would otherwise match every target, since "" is a
+                # substring of everything in Python.
+                continue
+
+            if target in source:
                 return url
 
-    # Reverse partial
-    for playlist in playlists:
-        for name, url in playlist:
-            if name.lower() in target:
+            if source in target:
                 return url
 
     return None
 
 
 # --------------------------------------------------
-# Download All Source Playlists
+# Main
 # --------------------------------------------------
 
-all_playlists = []
+def main():
+    # ---- Download all source playlists ----
+    all_playlists = []
 
-for source in SOURCES:
+    for source in SOURCE_URLS:
+        print(f"Downloading: {source}")
 
-    print(f"Downloading: {source}")
+        data = download(source)
 
-    data = download(source)
+        if data:
+            parsed = parse_playlist(data)
+            print(f"Found {len(parsed)} channels")
+            all_playlists.append(parsed)
+        else:
+            print("Skipped.")
 
-    if data:
+    # ---- Build the new Sports blocks ----
+    sports_blocks = []
+    found = 0
+    missing = 0
 
-        parsed = parse_playlist(data)
+    for channel in CHANNELS:
+        url = find_channel(channel, all_playlists)
 
-        print(f"Found {len(parsed)} channels")
+        if url:
+            found += 1
+            text = f'#EXTINF:-1 group-title="Sports", {channel}\n{url}'
+            sports_blocks.append(text)
+            print(f"[FOUND] {channel}")
+        else:
+            missing += 1
+            print(f"[MISSING] {channel}")
+            continue
 
-        all_playlists.append(parsed)
+    new_sports_text = "\n\n".join(sports_blocks)
 
+    # ---- Merge into the existing playlist, if any ----
+    if PLAYLIST_FILE.exists():
+        existing_content = PLAYLIST_FILE.read_text(encoding="utf-8")
     else:
+        existing_content = "#EXTM3U"
 
-        print("Skipped.")
-      # --------------------------------------------------
-# Build Updated Playlist
-# --------------------------------------------------
+    header, blocks = parse_target_playlist(existing_content)
 
-output = "#EXTM3U\n\n"
+    non_sports_blocks = [
+        b["text"] for b in blocks
+        if b["group"].strip().lower() != SPORTS_GROUP_TITLE.lower()
+    ]
 
-found = 0
-missing = 0
+    # Remember where the old Sports section was so the new one
+    # goes back in roughly the same place instead of always at
+    # the bottom of the file.
+    sports_insert_index = next(
+        (i for i, b in enumerate(blocks)
+         if b["group"].strip().lower() == SPORTS_GROUP_TITLE.lower()),
+        None,
+    )
 
-for channel in TARGET_CHANNELS:
-
-    url = find_channel(channel, all_playlists)
-
-    if url:
-
-        found += 1
-
-        output += (
-            f'#EXTINF:-1 group-title="Sports", {channel}\n'
-            f'{url}\n\n'
+    if not sports_blocks:
+        # Nothing was found at all -> leave non-sports groups as-is
+        # rather than inserting an empty Sports block.
+        final_blocks = non_sports_blocks
+    elif sports_insert_index is None:
+        # No previous Sports section -> append at the end
+        final_blocks = non_sports_blocks + [new_sports_text]
+    else:
+        # Count how many non-sports blocks came before the old
+        # Sports section, and reinsert at that same position.
+        insert_at = sum(
+            1 for b in blocks[:sports_insert_index]
+            if b["group"].strip().lower() != SPORTS_GROUP_TITLE.lower()
+        )
+        final_blocks = (
+            non_sports_blocks[:insert_at]
+            + [new_sports_text]
+            + non_sports_blocks[insert_at:]
         )
 
-        print(f"[FOUND] {channel}")
+    output = header + "\n\n" + "\n\n".join(final_blocks) + "\n"
 
-    else:
+    # ---- Save Playlist ----
+    PLAYLIST_FILE.write_text(output, encoding="utf-8")
 
-        missing += 1
+    print()
+    print("=" * 40)
+    print("Finished!")
+    print(f"Found   : {found}")
+    print(f"Missing : {missing}")
+    print(f"Saved   : {PLAYLIST_FILE}")
+    print("=" * 40)
 
-        output += (
-            f'#EXTINF:-1 group-title="Sports", {channel}\n\n'
-        )
 
-        print(f"[MISSING] {channel}")
-
-
-# --------------------------------------------------
-# Save Playlist
-# --------------------------------------------------
-
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    f.write(output)
-
-print()
-print("=" * 40)
-print("Finished!")
-print(f"Found   : {found}")
-print(f"Missing : {missing}")
-print(f"Saved   : {OUTPUT_FILE}")
-print("=" * 40)
+if __name__ == "__main__":
+    main()

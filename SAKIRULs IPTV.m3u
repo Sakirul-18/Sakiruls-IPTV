@@ -1,13 +1,10 @@
 #EXTM3U
-
 #-----------Sakirul_Islam----------------
 
 #EXTINF:-1 group-title="Sakirul_Islam" tvg-logo="https://imglink.cc/cdn/nD-91NF5Gb.jpg"tvg-name="RAAT"
 C:\Users\user\Downloads\raat
 
 # SHAIKH SAKIRUL ISLAM ( RAAT )
-
-
 # ─────────── Bangladesh ───────────
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/mCwss66N/Asian-TV.png", Asian TV
@@ -124,7 +121,6 @@ https://itcnbd.live/watch/31
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://imglink.cc/cdn/rw8iAU9ZcB.jpg", Thikana
 https://5dd3981940faa.streamlock.net:443/thikanatv/thikanatv/playlist.m3u8
 
-
 # ─────────── Cartoon ───────────
 
 #EXTINF:-1 group-title="Cartoon" tvg-logo="https://imglink.cc/cdn/_OIh6UYTpa.jpg", Bantul The Great
@@ -196,7 +192,6 @@ https://live20.bozztv.com/giatvplayout7/giatv-208314/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 group-title="Cartoon" tvg-logo="", We Bare Bears
 https://www.youtube.com/watch?v=RXoDbwZmXV8
 
-
 # ─────────── Entertainment ───────────
 
 #EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/oDQ4LN8zlN.png", Colors Bangla
@@ -222,7 +217,6 @@ http://27.124.71.27/Sun_Bangla/index.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/qonZADSZua.png", Zee Bangla HD
 http://main.epgmaker.com/live/y49sz6KMQs/6115263489/536.ts
-
 
 # ─────────── Movies ───────────
 
@@ -292,7 +286,6 @@ http://fastshare1.com/live/25711345/late8airline/218.ts
 #EXTINF:-1 group-title="Movies" tvg-logo="https://imglink.cc/cdn/Nkj7hqlPz-.jpg", Star Gold
 http://fastshare1.com/live/25711345/late8airline/9375.ts
 
-
 # ─────────── Music ───────────
 
 #EXTINF:-1 group-title="Music" tvg-logo="https://imglink.cc/cdn/IYDn_LwwiV.png", 9X Jalwa
@@ -318,7 +311,6 @@ https://nomawnoijl.gpcdn.net/akash/partyuniverse/playlist.m3u8
 
 #EXTINF:-1 group-title="Music" tvg-logo="https://imglink.cc/cdn/LmVOSdl3ku.png", Sangeet Bangla
 https://cdn-4.pishow.tv/live/1143/master.m3u8
-
 
 # ─────────── Raats Server ───────────
 
@@ -352,111 +344,88 @@ http://index2.circleftp.net/FILE/English%20%26%20Foreign%20Dubbed%20Movies/2026/
 #EXTINF:-1 group-title="Raats Server" tvg-logo="http://new.circleftp.net:5000/uploads/999a2298-4648-4917-bcff-851068cf70ac.jpeg", Toy Story 5 (2026) hallprint
 http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%20%282026%29%201080p%20HDTC%20%5BDual%20Audio%5D%20%5BHindi%20%28Line%29%2BEnglish%5D%20x264/Toy%20Story%205%20%282026%29%201080p%20HDTC%20%5BDual%20Audio%5D%20%5BHindi%20%28Line%29%2BEnglish%5D%20x264.mkv
 
-
 # ─────────── Sports ───────────
 
-#EXTINF:-1 group-title="Sports", 616 Sports 4K
-
 #EXTINF:-1 group-title="Sports", beIN Sports 1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/507386.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 2
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/507385.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 3
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/507384.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 4
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1330440.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 5
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1330441.m3u8
 
 #EXTINF:-1 group-title="Sports", beIN Sports 6
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1330442.m3u8
 
 #EXTINF:-1 group-title="Sports", BTV
-
-#EXTINF:-1 group-title="Sports", DAS ERSTE HD
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/889024.m3u8
 
 #EXTINF:-1 group-title="Sports", Eurosport
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/760961.m3u8
 
 #EXTINF:-1 group-title="Sports", F1 TV
-
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
-https://bd-mc-pdlive.fancode.com/mumbai/143633_english_hls_37959550fb58134_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
-https://bd-mc-pdlive.fancode.com/mumbai/4246721_english_hls_414959cb1224583_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Cricket
-https://bd-mc-pdlive.fancode.com/mumbai/4246721_english_hls_414959cb1224583_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Tennis
-https://bd-mc-pdlive.fancode.com/mumbai/143514_english_hls_9205c863a887330_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
-
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Golf
-https://bd-mc-pdlive.fancode.com/mumbai/4246803_english_hls_7c0d958ec349342_1ta-di_h264/index.m3u8
-#EXTINF:-1 group-title="Sports" tvg-logo="", Fancode-Motorsports
-
-#EXTINF:-1 group-title="Sports", FIFA World Cup
-
-#EXTINF:-1 group-title="Sports", FOX Sports 1
-
-#EXTINF:-1 group-title="Sports", MotoGP
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/2032223.m3u8
 
 #EXTINF:-1 group-title="Sports", Motorsport TV
-
-#EXTINF:-1 group-title="Sports", NPO 1 HD
-
-#EXTINF:-1 group-title="Sports", NPO 2 HD
-
-#EXTINF:-1 group-title="Sports", NPO 3 HD
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/132601.m3u8
 
 #EXTINF:-1 group-title="Sports", Sky Sports Cricket
+https://cdn3.zohanayaan.com:1686/hls/skyscric.m3u8?md5=XSuv6_9Unkam88K54SIPqQ&expires=1785005416
 
 #EXTINF:-1 group-title="Sports", Sky Sports F1
+https://cdn10.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=5XOR7iLwL0D3rtXu_gnwaQ&expires=1785005418
 
 #EXTINF:-1 group-title="Sports", Sky Sports Football
+https://cdn10.zohanayaan.com:1686/hls/skysfott.m3u8?md5=il8pztqkLSB6mRPaeX8i0A&expires=1785005418
 
 #EXTINF:-1 group-title="Sports", Sky Sports Main Event
+https://cdn2.zohanayaan.com:1686/hls/skysme.m3u8?md5=zs2r66ZHznkqMGpyUW3oWw&expires=1785005416
 
 #EXTINF:-1 group-title="Sports", Sky Sports Premier League
+https://cdn7.zohanayaan.com:1686/hls/skysprem.m3u8?md5=bOAa98xv2hL4TlEvjxKLAA&expires=1785005418
 
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282670.m3u8
 
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 2
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282671.m3u8
 
 #EXTINF:-1 group-title="Sports", Sony Sports Ten 3
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/282672.m3u8
 
 #EXTINF:-1 group-title="Sports", Sports18
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/827990.m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
+https://cdn4.zohanayaan.com:1686/hls/star1in.m3u8?md5=WWfsZij8ua0LuyAudlCIwg&expires=1785005415
 
 #EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
+https://cdn2.zohanayaan.com:1686/hls/starhindi.m3u8?md5=lAumRJnlvcf5vaX5WK7XpQ&expires=1785005415
 
 #EXTINF:-1 group-title="Sports", Star Sports Select 1
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1114583.m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports Select 2
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1114584.m3u8
 
 #EXTINF:-1 group-title="Sports", SuperSport Cricket
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/396876.m3u8
 
 #EXTINF:-1 group-title="Sports", SuperSport Football
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/396882.m3u8
 
 #EXTINF:-1 group-title="Sports", SuperSport Premier League
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/396881.m3u8
 
 #EXTINF:-1 group-title="Sports", T Sports
-
-#EXTINF:-1 group-title="Sports", Tennis Channel
-
-#EXTINF:-1 group-title="Sports", TIPIK HD
-
-#EXTINF:-1 group-title="Sports", TNT Sports 1
-
-#EXTINF:-1 group-title="Sports", TNT Sports 2
-
-#EXTINF:-1 group-title="Sports", TNT Sports 3
-
-#EXTINF:-1 group-title="Sports", TSN 1
-
-#EXTINF:-1 group-title="Sports", TSN 3
-
-#EXTINF:-1 group-title="Sports", TVP Sports
-
-#EXTINF:-1 group-title="Sports", USA Network
-
-#EXTINF:-1 group-title="Sports", VRT 1 HD
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/156016.m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/world/1142110.m3u8

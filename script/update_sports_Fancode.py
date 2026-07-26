@@ -10,19 +10,26 @@ Rules:
   leave the remaining channels unchanged.
 """
 from pathlib import Path
+import json
 import requests
 
 # ========= SETTINGS =========
-SCRIPT_DIR = Path(__file__).resolve().parent
-PLAYLIST_FILE = SCRIPT_DIR.parent / "SAKIRULs IPTV.m3u"
-SOURCE_URL = "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/data.json"
+PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
+SOURCE_URL = (
+    "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/data.json"
+)
 
-# Match by simple channel-name keywords in your playlist
-CHANNEL_TO_CATEGORY = {
-    "cricket": "Cricket",
-    "golf": "Golf",
-    "motorsport": "Motorsports",
-    "tennis": "Tennis",
+# Maps the source's "event_category" value -> your playlist's channel name.
+# Matching is done case-insensitively, so "Fancode Cricket" and
+# "FanCode Cricket" are treated the same.
+# NOTE: verify "Motorsports" matches exactly what the source uses -- some
+# FanCode mirrors spell it "Motorsport" (singular). Check data.json if
+# the Motorsport channel stops updating.
+CATEGORY_TO_CHANNEL = {
+    "Cricket": "Fancode Cricket",
+    "Golf": "Fancode Golf",
+    "Motorsports": "Fancode Motorsport",
+    "Tennis": "Fancode Tennis",
 }
 
 TIMEOUT = 20
@@ -30,154 +37,98 @@ TIMEOUT = 20
 
 def download_source():
     """Download the FanCode source JSON."""
-    print(f"Source URL: {SOURCE_URL}")
     response = requests.get(SOURCE_URL, timeout=TIMEOUT)
     response.raise_for_status()
-    return response.json()
+    return response.json()  # parsed dict, not raw text lines
 
 
 def parse_source(data):
     """
-    Read the FanCode source JSON and collect stream URLs grouped by source category.
+    Read the FanCode source JSON and collect stream URLs by target
+    channel name, keyed off each match's "event_category" field.
+    Prefers "adfree_url"; falls back to "dai_url" if the ad-free
+    link isn't posted yet for that match.
     """
-    category_urls = {}
+    urls = {name: [] for name in CATEGORY_TO_CHANNEL.values()}
+
     for match in data.get("matches", []):
         category = match.get("event_category")
-        if not category:
-            continue
+        channel_name = CATEGORY_TO_CHANNEL.get(category)
+        if channel_name is None:
+            continue  # not a category we track (e.g. Football)
 
         stream_url = match.get("adfree_url") or match.get("dai_url")
         if stream_url:
-            category_urls.setdefault(category, []).append(stream_url)
+            urls[channel_name].append(stream_url)
 
-    return category_urls
+    return urls
 
 
-def count_playlist_slots(lines):
+def update_playlist(source_urls):
     """
-    Count how many matching FanCode #EXTINF entries exist in the playlist
-    for each configured category.
+    Update the FanCode channel entries in the playlist.
+
+    Some FanCode slots in the playlist are placeholders with no URL yet
+    (an #EXTINF line followed by a blank line instead of an http line).
+    This handles both cases:
+      - If a URL line already exists after #EXTINF, replace it.
+      - If it's a blank placeholder, insert a URL line if one is
+        available; otherwise leave the blank line untouched.
     """
-    counts = {cat: 0 for cat in CHANNEL_TO_CATEGORY.values()}
-
-    for line in lines:
-        if not line.startswith("#EXTINF"):
-            continue
-
-        lower_line = line.lower()
-        for pattern, category in CHANNEL_TO_CATEGORY.items():
-            if pattern in lower_line:
-                counts[category] += 1
-                break
-
-    return counts
-
-
-def update_playlist(source_categories):
-    """
-    Update the FanCode channel entries in the playlist sequentially.
-    """
-    playlist_path = PLAYLIST_FILE.resolve()
-    print(f"Playlist path: {playlist_path}")
-
-    if not PLAYLIST_FILE.exists():
-        raise FileNotFoundError(f"Playlist file not found: {playlist_path}")
-
     lines = PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
-
-    playlist_counts = count_playlist_slots(lines)
-    print("\nPlaylist FanCode slots found:")
-    for category in CHANNEL_TO_CATEGORY.values():
-        print(f"  {category}: {playlist_counts.get(category, 0)} entry(ies)")
-
-    print("\nSource URLs found:")
-    for category in CHANNEL_TO_CATEGORY.values():
-        print(f"  {category}: {len(source_categories.get(category, []))} URL(s)")
-
-    category_counters = {cat: 0 for cat in CHANNEL_TO_CATEGORY.values()}
+    counters = {name: 0 for name in CATEGORY_TO_CHANNEL.values()}
     output = []
     i = 0
-    replacements = 0
-    kept_existing = 0
-    inserted_blank = 0
-
     while i < len(lines):
         line = lines[i]
         output.append(line)
 
         if line.startswith("#EXTINF"):
             lower_line = line.lower()
-            matched_category = None
-
-            for pattern, source_cat in CHANNEL_TO_CATEGORY.items():
-                if pattern in lower_line:
-                    matched_category = source_cat
+            current = None
+            for channel_name in CATEGORY_TO_CHANNEL.values():
+                if channel_name.lower() in lower_line:
+                    current = channel_name
                     break
 
-            if matched_category:
-                urls = source_categories.get(matched_category, [])
-                index = category_counters[matched_category]
-
+            if current:
+                index = counters[current]
                 has_next = i + 1 < len(lines)
-                next_line = lines[i + 1] if has_next else ""
-                next_is_url = has_next and next_line.strip().startswith("http")
+                next_is_url = has_next and lines[i + 1].strip().startswith("http")
 
                 if next_is_url:
-                    if index < len(urls):
-                        old_url = next_line
-                        new_url = urls[index]
-                        output.append(new_url)
-                        replacements += 1
-                        print(
-                            f"Replaced {matched_category} #{index + 1}: "
-                            f"{old_url} -> {new_url}"
-                        )
+                    # Existing URL line -- replace it if we have a new one
+                    if index < len(source_urls[current]):
+                        output.append(source_urls[current][index])
                     else:
-                        output.append(next_line)
-                        kept_existing += 1
-                        print(
-                            f"Kept existing {matched_category} #{index + 1}: "
-                            f"no new URL available"
-                        )
-                    i += 1
+                        output.append(lines[i + 1])
+                    i += 1  # consumed the original URL line
                 else:
-                    if index < len(urls):
-                        new_url = urls[index]
-                        output.append(new_url)
-                        inserted_blank += 1
-                        print(
-                            f"Inserted {matched_category} #{index + 1}: "
-                            f"{new_url}"
-                        )
-                        if has_next and next_line.strip() == "":
-                            i += 1
-                    else:
-                        print(
-                            f"Left blank {matched_category} #{index + 1}: "
-                            f"no new URL available"
-                        )
+                    # Blank placeholder -- insert a URL if one is available
+                    if index < len(source_urls[current]):
+                        output.append(source_urls[current][index])
+                        if has_next and lines[i + 1].strip() == "":
+                            i += 1  # consume the blank placeholder line
+                    # else: leave the blank placeholder exactly as it is
 
-                category_counters[matched_category] += 1
+                counters[current] += 1
 
         i += 1
 
-    PLAYLIST_FILE.write_text("\n".join(output) + "\n", encoding="utf-8")
-
-    print("\nSaved playlist to:")
-    print(f"  {playlist_path}")
-    print("\nSummary:")
-    print(f"  Replacements made: {replacements}")
-    print(f"  Inserted into blank slots: {inserted_blank}")
-    print(f"  Existing URLs kept: {kept_existing}")
+    PLAYLIST_FILE.write_text(
+        "\n".join(output) + "\n",
+        encoding="utf-8"
+    )
 
 
 def main():
     print("Downloading FanCode source...")
     source_data = download_source()
-    source_categories = parse_source(source_data)
-
-    print("\nUpdating playlist...")
-    update_playlist(source_categories)
+    source_urls = parse_source(source_data)
+    for name, urls in source_urls.items():
+        print(f"  {name}: {len(urls)} URL(s) found")
+    print("Updating playlist...")
+    update_playlist(source_urls)
     print("Done!")
 
 

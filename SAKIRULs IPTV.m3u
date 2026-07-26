@@ -366,20 +366,29 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827993&extens
 
 #EXTINF:-1 group-title="Sports", Das Erste HD
 
+
 #EXTINF:-1 group-title="Sports", Eurosport 1
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1149499&extension=m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=2024855&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507387&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", FanCode Cricket 1
+
 #EXTINF:-1 group-title="Sports", FanCode Cricket 2
+
 #EXTINF:-1 group-title="Sports", FanCode Cricket 3
+
 #EXTINF:-1 group-title="Sports", FanCode Golf
+
 #EXTINF:-1 group-title="Sports", FanCode Motorsport 1
+
 #EXTINF:-1 group-title="Sports", FanCode Motorsport 2
+
 #EXTINF:-1 group-title="Sports", FanCode Tennis
 
+
 #EXTINF:-1 group-title="Sports", FIFA+
+
 
 #EXTINF:-1 group-title="Sports", LaLiga TV
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827985&extension=m3u8
@@ -396,7 +405,7 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=814497&ext
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507397&extension=m3u8
 #EXTINF:-1 group-title="Sports", NPO 2 HD
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=392163&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=392164&extension=m3u8
 #EXTINF:-1 group-title="Sports", NPO 3 HD
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=392162&extension=m3u8
 
@@ -406,10 +415,11 @@ https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=TQU-FQKoM2B8d7E7UCgE4Q&e
 https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=4J2LFVb8I6dPNXKOqpvXOQ&expires=1785059421
 #EXTINF:-1 group-title="Sports", PTV
 
+
 #EXTINF:-1 group-title="Sports", Racing TV
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=156848&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=156876&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312830&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312833&extension=m3u8
@@ -418,7 +428,7 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312833&ext
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=761080&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Servus TV Motorsport
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=761092&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1149502&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sky Sports Action
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312180&extension=m3u8
@@ -471,11 +481,11 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373202&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373201&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", SuperSport Cricket
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1104669&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144421&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Football
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=396882&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=833275&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Golf
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112196&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=396875&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport La Liga
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=833278&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Motorsport
@@ -483,17 +493,17 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=833280&ext
 #EXTINF:-1 group-title="Sports", SuperSport Premier League
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=833281&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Rugby
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=396877&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144420&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Tennis
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112195&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Variety 1
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=833283&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=396886&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Variety 2
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144414&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Variety 3
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=396884&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144419&extension=m3u8
 #EXTINF:-1 group-title="Sports", SuperSport Variety 4
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112857&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=833286&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", T Sports HD
 http://103.158.133.53:8080/viralclub/index.m3u8
@@ -506,11 +516,14 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311900&ext
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311901&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", UFC TV
+
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 1
+
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 2
 
+
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=2069731&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1104677&extension=m3u8

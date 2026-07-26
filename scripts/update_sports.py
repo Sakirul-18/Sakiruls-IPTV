@@ -7,9 +7,9 @@ Features:
 - Advanced normalization (accents, camelCase, letter-number splits).
 - 4-Tier Matching System (Exact, Token, Token Quality-Stripped, Merged-Token).
 - Configurable Source Priority Engine (Lock & Prefer routing).
-- Deep Stream Validation (M3U8 signature detection, rejects HTML/blocks).
-- Weighted stream scoring (prioritizes HLS/Media over raw latency).
-- Exact URL deduplication (preserves authentication tokens).
+- Raw Wrapper URL Resolution (Regex extraction, prefers .m3u8, preserves tokens).
+- FanCode Dedicated Source (Dynamic semantic assignment, stateful fallback).
+- Deep Stream Validation & Weighted Scoring.
 - Timestamped, detailed diagnostic reports.
 """
 
@@ -67,12 +67,12 @@ SOURCE_URLS = [
 ]
 
 # Source Priority Engine
-# Keys should be lowercase keywords found in the channel name.
-# "lock": Will ONLY use sources in this list.
-# "prefer": Will prioritize these sources, but fallback to others if needed.
 SOURCE_PRIORITIES = {
     "sky sports": {
         "lock": [SKY_SPORTS_PREFERRED_SOURCE]
+    },
+    "fancode": {
+        "lock": [FANCODE_EXCLUSIVE_SOURCE]
     },
     "t sports": {
         "prefer": [TSPORTS_SOURCE]
@@ -176,7 +176,6 @@ def clean_channel_name(name: str) -> str:
     name = transliterate(name)
     name = ''.join(c for c in unicodedata.normalize('NFKD', str(name)) if unicodedata.category(c) != 'Mn')
     
-    # Smart token splitting (camelCase and alphanumeric)
     name = re.sub(r'([a-z])([A-Z])', r'\1 \2', name)
     name = re.sub(r'([a-zA-Z])(\d)', r'\1 \2', name)
     name = re.sub(r'(\d)([a-zA-Z])', r'\1 \2', name)
@@ -231,13 +230,12 @@ def merge_variants(tokens: Tuple[str, ...], max_window: int = MAX_MERGE_WINDOW) 
     return variants
 
 # ---------------------------------------------------------------------------
-# Core Playlist Processing
+# Core Playlist Processing & Wrapper Resolution
 # ---------------------------------------------------------------------------
 
 GROUP_TITLE_RE = re.compile(r'group-title="([^"]*)"', re.IGNORECASE)
 
 def get_http_session() -> requests.Session:
-    """Creates a configured requests Session with connection pooling."""
     session = requests.Session()
     retry = Retry(total=2, backoff_factor=0.2, status_forcelist=[500, 502, 503, 504])
     adapter = HTTPAdapter(max_retries=retry, pool_connections=MAX_TEST_WORKERS, pool_maxsize=MAX_TEST_WORKERS)
@@ -255,6 +253,32 @@ def download_playlist(url: str, session: requests.Session) -> str:
     except Exception as e:
         print(f"[ERROR] {url} -> {e}")
     return ""
+
+def resolve_stream_url(url: str, session: requests.Session) -> str:
+    """
+    Detects wrapper URLs (e.g., raw GitHub pointers), downloads their payload, 
+    and uses regex to extract the real playable stream URL.
+    Prefers .m3u8 endpoints and preserves all query tokens.
+    """
+    if "raw.githubusercontent.com" in url or url.endswith((".m3u8", ".m3u", ".txt")):
+        try:
+            resp = session.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+            if resp.status_code == 200:
+                content = resp.text
+                
+                # Regex extracts all valid HTTP/HTTPS links (stopping at quotes or whitespace)
+                urls = re.findall(r'(https?://[^\s"\'<>]+)', content)
+                
+                if urls:
+                    # Prefer standard HLS streams
+                    m3u8_urls = [u for u in urls if ".m3u8" in u.lower()]
+                    if m3u8_urls:
+                        return m3u8_urls[0]
+                    # Fallback to the first found URL
+                    return urls[0]
+        except Exception:
+            pass
+    return url
 
 def parse_m3u(content: str, source_url: str = "") -> List[ChannelData]:
     channels = []
@@ -301,53 +325,10 @@ def load_sources() -> List[ChannelData]:
     return all_channels
 
 # ---------------------------------------------------------------------------
-# FanCode Logic
-# ---------------------------------------------------------------------------
-
-FANCODE_MASTER_RE = re.compile(r"^FanCode\s+([A-Za-z]+)\s*(\d+)?$", re.IGNORECASE)
-FANCODE_SOURCE_RE = re.compile(r"fan\s*code[\s\-]*([a-z]+)", re.IGNORECASE)
-
-def parse_master_fancode(channel_name: str) -> Optional[Tuple[str, int]]:
-    m = FANCODE_MASTER_RE.match(channel_name.strip())
-    if not m: return None
-    category = m.group(1).lower()
-    index = int(m.group(2)) if m.group(2) else 1
-    return category, index
-
-def extract_source_fancode_category(channel: ChannelData) -> Optional[str]:
-    for text in (channel.group, channel.name):
-        if not text: continue
-        m = FANCODE_SOURCE_RE.search(text)
-        if m:
-            cat = m.group(1).strip().lower()
-            if cat: return cat
-    return None
-
-def build_fancode_pool(all_channels: List[ChannelData]) -> Dict[str, List[str]]:
-    pool = {}
-    seen_urls = {}
-    for ch in all_channels:
-        if ch.source_url != FANCODE_EXCLUSIVE_SOURCE: continue
-        category = extract_source_fancode_category(ch)
-        if not category: continue
-        
-        pool.setdefault(category, [])
-        seen_urls.setdefault(category, set())
-        
-        if ch.url not in seen_urls[category]:
-            seen_urls[category].add(ch.url)
-            pool[category].append(ch.url)
-
-    for category, urls in pool.items():
-        print(f"[FANCODE POOL] {category}: {len(urls)} live event(s) found")
-    return pool
-
-# ---------------------------------------------------------------------------
 # Master Verification
 # ---------------------------------------------------------------------------
 
 def verify_master_playlist(playlist_lines: List[str]):
-    """Checks the physical M3U file against the expected CHANNELS list."""
     found_in_m3u = []
     
     for line in playlist_lines:
@@ -362,7 +343,6 @@ def verify_master_playlist(playlist_lines: List[str]):
     missing = master_set - found_set
     unknown = found_set - master_set
     
-    # Detect duplicates in M3U
     seen = set()
     duplicates = [x for x in found_in_m3u if x in seen or seen.add(x)]
 
@@ -392,7 +372,6 @@ def verify_master_playlist(playlist_lines: List[str]):
 # ---------------------------------------------------------------------------
 
 def get_source_rules(channel_name: str) -> Dict[str, List[str]]:
-    """Returns lock/prefer rules based on the channel name."""
     name_lower = channel_name.lower()
     for keyword, rules in SOURCE_PRIORITIES.items():
         if keyword in name_lower:
@@ -414,7 +393,6 @@ def get_all_matches(channel_name: str, all_channels: List[ChannelData]) -> Tuple
         closest = []
         
         for ch in channel_list:
-            # difflib similarity for logging closest matches
             sim_score = difflib.SequenceMatcher(None, target_strict, ch.strict).ratio()
             if sim_score > 0.5:
                 closest.append((sim_score, ch.name, ch.source_url))
@@ -440,7 +418,6 @@ def get_all_matches(channel_name: str, all_channels: List[ChannelData]) -> Tuple
             if matched_variant:
                 merged.append(ch)
 
-        # Sort closest descending
         closest = sorted(closest, key=lambda x: x[0], reverse=True)[:5]
         
         if exact: return exact, "exact", closest
@@ -449,21 +426,18 @@ def get_all_matches(channel_name: str, all_channels: List[ChannelData]) -> Tuple
         if merged: return merged, "merged-token", closest
         return [], None, closest
 
-    # Pass 1: Preferred / Locked Sources
     preferred_channels = [c for c in all_channels if c.source_url in allowed_sources] if allowed_sources else all_channels
     hits, tier, closest = search_pass(preferred_channels)
     
     if hits:
         return hits, tier, closest, preferred_channels
 
-    # Pass 2: Fallback to non-preferred (only if not locked)
     if not is_locked and allowed_sources:
         non_preferred = [c for c in all_channels if c.source_url not in allowed_sources]
         hits2, tier2, closest2 = search_pass(non_preferred)
         if hits2:
             return hits2, tier2, closest2, non_preferred
         
-        # Combine closest if nothing found
         all_closest = sorted(closest + closest2, key=lambda x: x[0], reverse=True)[:5]
         return [], None, all_closest, preferred_channels + non_preferred
 
@@ -474,11 +448,6 @@ def get_all_matches(channel_name: str, all_channels: List[ChannelData]) -> Tuple
 # ---------------------------------------------------------------------------
 
 def validate_stream(url: str, session: requests.Session, is_preferred: bool) -> StreamScore:
-    """
-    Downloads chunk to verify payload.
-    Scoring logic prioritizes real HLS data, subtracts latency.
-    Highest score wins.
-    """
     try:
         start = time.monotonic()
         resp = session.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT, stream=True, allow_redirects=True)
@@ -489,12 +458,10 @@ def validate_stream(url: str, session: requests.Session, is_preferred: bool) -> 
             
         c_type = resp.headers.get("Content-Type", "").lower()
         
-        # Immediate rejection of Cloudflare blocks or login pages
         if "text/html" in c_type:
             resp.close()
             return StreamScore(url, 0, False, latency, c_type, "Rejected: HTML Page (Block/Login)")
 
-        # Read the first few KB for deep inspection
         chunk = next(resp.iter_content(chunk_size=DOWNLOAD_CHUNK_SIZE), b"")
         text_content = chunk.decode(errors="ignore")
         resp.close()
@@ -505,14 +472,10 @@ def validate_stream(url: str, session: requests.Session, is_preferred: bool) -> 
         if not (is_hls or is_media):
             return StreamScore(url, 0, False, latency, c_type, "Rejected: Invalid payload signature")
 
-        # Base score starts at 0. Add bonuses.
         score = 0.0
         if is_hls: score += 1000.0
         if is_media: score += 800.0
         if is_preferred: score += 500.0
-        
-        # Latency penalty: 1 second = -10 points. 
-        # So a 100ms stream is preferred over a 900ms stream of the same type.
         score -= (latency * 10)
 
         return StreamScore(url, round(score, 2), True, latency, c_type, "Valid Stream")
@@ -523,13 +486,24 @@ def validate_stream(url: str, session: requests.Session, is_preferred: bool) -> 
 def pick_best_stream(candidates: List[ChannelData], preferred_sources: List[str], session: requests.Session) -> Optional[ChannelData]:
     if not candidates: return None
     
-    # Exact URL Deduplication (keeps unique query params/tokens intact)
     seen_urls = set()
     unique_candidates = []
     for cand in candidates:
-        if cand.url not in seen_urls:
-            seen_urls.add(cand.url)
-            unique_candidates.append(cand)
+        # Resolve wrapper URL before deduplication & testing
+        resolved_url = resolve_stream_url(cand.url, session)
+        if resolved_url not in seen_urls:
+            seen_urls.add(resolved_url)
+            resolved_cand = ChannelData(
+                name=cand.name,
+                url=resolved_url,
+                group=cand.group,
+                source_url=cand.source_url,
+                strict=cand.strict,
+                tokens=cand.tokens,
+                tokens_q=cand.tokens_q,
+                variants=cand.variants
+            )
+            unique_candidates.append(resolved_cand)
 
     test_candidates = unique_candidates[:MAX_CANDIDATES_TO_TEST]
     if len(test_candidates) == 1:
@@ -557,7 +531,6 @@ def pick_best_stream(candidates: List[ChannelData], preferred_sources: List[str]
         print("    [WARNING] No streams passed validation! Falling back to first candidate.")
         return test_candidates[0]
 
-    # Sort descending by score
     valid_scores.sort(key=lambda x: x[0].score, reverse=True)
     best_score, best_cand = valid_scores[0]
     
@@ -574,14 +547,15 @@ def read_playlist() -> List[str]:
         return []
     return PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
 
-def update_sports_section(lines: List[str], all_channels: List[ChannelData], fancode_pool: Dict[str, List[str]]) -> List[str]:
+def update_sports_section(lines: List[str], all_channels: List[ChannelData], session: requests.Session) -> List[str]:
     output = []
     i = 0
     n = len(lines)
     
     verify_master_playlist(lines)
     
-    session = get_http_session()
+    # State tracking: prevents duplicate assignment of the same live FanCode stream
+    consumed_fancode_urls = set()
 
     while i < n:
         line = lines[i]
@@ -595,61 +569,64 @@ def update_sports_section(lines: List[str], all_channels: List[ChannelData], fan
             if i < n and lines[i].strip() and not lines[i].lstrip().startswith("#"):
                 old_url = lines[i]
 
-            fancode_info = parse_master_fancode(channel_name)
             new_url_str = None
+            is_fancode = "fancode" in channel_name.lower()
+            current_pool = all_channels
 
-            if fancode_info:
-                category, index = fancode_info
-                pooled_urls = fancode_pool.get(category, [])
-                if index - 1 < len(pooled_urls):
-                    new_url_str = pooled_urls[index - 1]
-                    print(f"[FANCODE FOUND] {channel_name} -> pool[{category}][{index - 1}]")
-                    STATS["fancode"] += 1
-                    STATS["matched"] += 1
-                else:
-                    print(f"[FANCODE NOT FOUND] {channel_name} (only {len(pooled_urls)} live)")
-                    STATS["unmatched"] += 1
-                    REPORT_UNMATCHED.append(f"Channel: {channel_name} | Type: FanCode | Reason: Only {len(pooled_urls)} live in pool.")
-            else:
-                matches_info, tier, closest, searched_pool = get_all_matches(channel_name, all_channels)
+            # If dealing with a FanCode channel, exclude already assigned streams
+            if is_fancode:
+                current_pool = [
+                    c for c in all_channels 
+                    if not (c.source_url == FANCODE_EXCLUSIVE_SOURCE and c.url in consumed_fancode_urls)
+                ]
+
+            matches_info, tier, closest, searched_pool = get_all_matches(channel_name, current_pool)
+            
+            if matches_info:
+                print(f"[{len(matches_info)} MATCH(ES) - {tier}] {channel_name}")
+                STATS["matched"] += 1
                 
-                if matches_info:
-                    print(f"[{len(matches_info)} MATCH(ES) - {tier}] {channel_name}")
-                    STATS["matched"] += 1
-                    
-                    if "exact" in tier: STATS["exact"] += 1
-                    elif "quality" in tier or tier == "token": STATS["token"] += 1
-                    elif "merged" in tier: STATS["merged"] += 1
+                if is_fancode: STATS["fancode"] += 1
+                if "exact" in tier: STATS["exact"] += 1
+                elif "quality" in tier or tier == "token": STATS["token"] += 1
+                elif "merged" in tier: STATS["merged"] += 1
 
-                    rules = get_source_rules(channel_name)
-                    pref = rules.get("lock") or rules.get("prefer") or []
-                    best_match = pick_best_stream(matches_info, pref, session)
+                rules = get_source_rules(channel_name)
+                pref = rules.get("lock") or rules.get("prefer") or []
+                
+                best_match = pick_best_stream(matches_info, pref, session)
+                
+                if best_match:
                     new_url_str = best_match.url
                     
-                    # Log to candidate report
-                    c_report = [f"Master Channel: {channel_name}"]
-                    for m in matches_info:
-                        c_report.append(f"  - Candidate: {m.name} | Source: {m.source_url.split('/')[-1]}")
-                    c_report.append(f"  > Winner: {best_match.source_url.split('/')[-1]} ({new_url_str})")
-                    REPORT_CANDIDATES.append("\n".join(c_report))
+                    # Mark the winner as consumed so it isn't assigned to the next FanCode slot
+                    if is_fancode and best_match.source_url == FANCODE_EXCLUSIVE_SOURCE:
+                        consumed_fancode_urls.add(best_match.url)
                 
+                c_report = [f"Master Channel: {channel_name}"]
+                for m in matches_info:
+                    c_report.append(f"  - Candidate: {m.name} | Source: {m.source_url.split('/')[-1]}")
+                if best_match:
+                    c_report.append(f"  > Winner: {best_match.source_url.split('/')[-1]} ({new_url_str})")
+                REPORT_CANDIDATES.append("\n".join(c_report))
+            
+            else:
+                print(f"[NOT FOUND] {channel_name} -> Keeping old URL.")
+                STATS["unmatched"] += 1
+                STATS["failed"] += 1
+                
+                u_report = [
+                    f"Channel: {channel_name}",
+                    f"Searched {len(searched_pool)} allowed sources.",
+                    f"Tiers attempted: Exact, Token, Merged-Token"
+                ]
+                if closest:
+                    u_report.append("Closest fallback candidates found (Levenshtein ratio):")
+                    for score, c_name, src in closest:
+                        u_report.append(f"  - {c_name} (Ratio: {score:.2f} | {src.split('/')[-1]})")
                 else:
-                    print(f"[NOT FOUND] {channel_name}")
-                    STATS["unmatched"] += 1
-                    STATS["failed"] += 1
-                    
-                    u_report = [
-                        f"Channel: {channel_name}",
-                        f"Searched {len(searched_pool)} allowed sources.",
-                        f"Tiers attempted: Exact, Token, Merged-Token"
-                    ]
-                    if closest:
-                        u_report.append("Closest fallback candidates found (Levenshtein ratio):")
-                        for score, c_name, src in closest:
-                            u_report.append(f"  - {c_name} (Ratio: {score:.2f} | {src.split('/')[-1]})")
-                    else:
-                        u_report.append("Closest candidates: None")
-                    REPORT_UNMATCHED.append("\n".join(u_report))
+                    u_report.append("Closest candidates: None")
+                REPORT_UNMATCHED.append("\n".join(u_report))
 
             final_url = new_url_str if new_url_str else old_url
 
@@ -667,7 +644,6 @@ def update_sports_section(lines: List[str], all_channels: List[ChannelData], fan
             output.append(line)
             i += 1
 
-    session.close()
     return output
 
 def save_playlist(lines: List[str]):
@@ -688,7 +664,7 @@ def generate_reports():
     print(f"Exact Matches              : {STATS['exact']}")
     print(f"Token Matches              : {STATS['token']}")
     print(f"Merged-Token Matches       : {STATS['merged']}")
-    print(f"FanCode Live Events        : {STATS['fancode']}")
+    print(f"FanCode Live Events Set    : {STATS['fancode']}")
     print("-" * 45)
     print(f"Updated URLs               : {STATS['updated']}")
     print(f"Kept Old URLs (Failed)     : {STATS['kept']}")
@@ -711,26 +687,29 @@ def generate_reports():
 
 def main():
     print("Starting Production Sports Updater...")
+    session = get_http_session()
+    
     all_channels = load_sources()
     if not all_channels:
         print("No sources available. Stopping.")
+        session.close()
         return
 
     playlist = read_playlist()
     if not playlist:
         print("Playlist is empty. Stopping.")
+        session.close()
         return
-
-    fancode_pool = build_fancode_pool(all_channels)
 
     updated_playlist = update_sports_section(
         playlist,
         all_channels,
-        fancode_pool
+        session
     )
 
     save_playlist(updated_playlist)
     generate_reports()
+    session.close()
     print("Update completed gracefully.")
 
 if __name__ == "__main__":

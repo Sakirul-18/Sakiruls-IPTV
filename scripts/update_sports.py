@@ -570,9 +570,9 @@ def update_sports_section(lines: List[str], all_channels: List[ChannelData], ses
             output.append(line)
             i += 1
 
-            old_url = None
+            # Skip past the old URL line pointer in the raw playlist
             if i < n and lines[i].strip() and not lines[i].lstrip().startswith("#"):
-                old_url = lines[i]
+                i += 1
 
             new_url_str = None
             is_fancode = "fancode" in channel_name.lower()
@@ -616,7 +616,7 @@ def update_sports_section(lines: List[str], all_channels: List[ChannelData], ses
                 REPORT_CANDIDATES.append("\n".join(c_report))
             
             else:
-                print(f"[NOT FOUND] {channel_name} -> Keeping old URL.")
+                print(f"[NOT FOUND] {channel_name} -> Setting channel URL to blank.")
                 STATS["unmatched"] += 1
                 STATS["failed"] += 1
                 
@@ -633,18 +633,15 @@ def update_sports_section(lines: List[str], all_channels: List[ChannelData], ses
                     u_report.append("Closest candidates: None")
                 REPORT_UNMATCHED.append("\n".join(u_report))
 
-            final_url = new_url_str if new_url_str else old_url
+            # STRICT RULE: If a working URL is found, save it. If not found, leave the URL line completely BLANK (do not delete channel, do not keep old dead URLs).
+            final_url = new_url_str if new_url_str else ""
 
             if new_url_str:
                 STATS["updated"] += 1
             else:
                 STATS["kept"] += 1
 
-            if old_url is not None:
-                i += 1
-
-            if final_url:
-                output.append(final_url)
+            output.append(final_url)
         else:
             output.append(line)
             i += 1

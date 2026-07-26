@@ -65,8 +65,8 @@ def update_playlist(source_categories):
     """
     lines = PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
     
-    # Track how many URLs we have consumed per source category
-    category_counters = {cat: 0 for cat in source_categories.values()}
+    # Track how many URLs we have consumed per source category key
+    category_counters = {cat: 0 for cat in source_categories.keys()}
     
     output = []
     i = 0

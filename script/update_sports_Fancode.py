@@ -10,7 +10,6 @@ Rules:
   leave the remaining channels unchanged.
 """
 from pathlib import Path
-import json
 import requests
 
 # ========= SETTINGS =========
@@ -21,7 +20,7 @@ SOURCE_URL = (
 )
 
 # Maps your playlist channel name patterns (case-insensitive) to the source's "event_category"
-# Because you have multiple channels with the exact same name, the script 
+# Because you have multiple channels with the exact same name, the script
 # consumes URLs from the category list sequentially.
 CHANNEL_TO_CATEGORY = {
     "fancode cricket": "Cricket",
@@ -45,17 +44,14 @@ def parse_source(data):
     Read the FanCode source JSON and collect stream URLs grouped by source category.
     """
     category_urls = {}
-
     for match in data.get("matches", []):
         category = match.get("event_category")
         if not category:
             continue
-            
+
         stream_url = match.get("adfree_url") or match.get("dai_url")
         if stream_url:
-            if category not in category_urls:
-                category_urls[category] = []
-            category_urls[category].append(stream_url)
+            category_urls.setdefault(category, []).append(stream_url)
 
     return category_urls
 
@@ -64,13 +60,21 @@ def update_playlist(source_categories):
     """
     Update the FanCode channel entries in the playlist sequentially.
     """
+    playlist_path = PLAYLIST_FILE.resolve()
+    print(f"Playlist path: {playlist_path}")
+
+    if not PLAYLIST_FILE.exists():
+        raise FileNotFoundError(f"Playlist file not found: {playlist_path}")
+
     lines = PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
-    
+
     # Track how many URLs we have consumed per source category key
     category_counters = {cat: 0 for cat in CHANNEL_TO_CATEGORY.values()}
-    
+
     output = []
     i = 0
+    replacements = 0
+
     while i < len(lines):
         line = lines[i]
         output.append(line)
@@ -78,7 +82,7 @@ def update_playlist(source_categories):
         if line.startswith("#EXTINF"):
             lower_line = line.lower()
             matched_category = None
-            
+
             # Find which category this #EXTINF line belongs to
             for ch_pattern, source_cat in CHANNEL_TO_CATEGORY.items():
                 if ch_pattern in lower_line:
@@ -88,7 +92,7 @@ def update_playlist(source_categories):
             if matched_category:
                 urls = source_categories.get(matched_category, [])
                 index = category_counters[matched_category]
-                
+
                 has_next = i + 1 < len(lines)
                 next_is_url = has_next and lines[i + 1].strip().startswith("http")
 
@@ -96,13 +100,15 @@ def update_playlist(source_categories):
                     # Existing URL line -- replace it if a new URL is available
                     if index < len(urls):
                         output.append(urls[index])
+                        replacements += 1
                     else:
-                        output.append(lines[i + 1]) # Keep old URL if no new one exists
+                        output.append(lines[i + 1])  # Keep old URL if no new one exists
                     i += 1  # consumed the original URL line
                 else:
                     # Blank placeholder -- insert a URL if one is available
                     if index < len(urls):
                         output.append(urls[index])
+                        replacements += 1
                         if has_next and lines[i + 1].strip() == "":
                             i += 1  # consume the blank placeholder line
 
@@ -110,20 +116,21 @@ def update_playlist(source_categories):
 
         i += 1
 
-    PLAYLIST_FILE.write_text(
-        "\n".join(output) + "\n",
-        encoding="utf-8"
-    )
+    PLAYLIST_FILE.write_text("\n".join(output) + "\n", encoding="utf-8")
+    print(f"Saved playlist to: {playlist_path}")
+    print(f"Total URL replacements made: {replacements}")
 
 
 def main():
     print("Downloading FanCode source...")
+    print(f"Source URL: {SOURCE_URL}")
+
     source_data = download_source()
     source_categories = parse_source(source_data)
-    
+
     for cat, urls in source_categories.items():
         print(f"  Category '{cat}': {len(urls)} URL(s) found")
-        
+
     print("Updating playlist...")
     update_playlist(source_categories)
     print("Done!")

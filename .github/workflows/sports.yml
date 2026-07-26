@@ -9,7 +9,7 @@
 name: Update Sports IPTV
 
 on:
-  # Runs automatically every 3 minutes
+  # Runs automatically every 1 minutes
   schedule:
     - cron: "*/1 * * * *"
   # Allows on-demand runs from the Actions tab

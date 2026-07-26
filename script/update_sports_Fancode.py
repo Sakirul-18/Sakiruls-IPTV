@@ -19,18 +19,21 @@ SOURCE_URL = (
     "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/data.json"
 )
 
-# Maps the source's "event_category" value -> your playlist's channel name.
-# Matching is done case-insensitively, so "Fancode Cricket" and
-# "FanCode Cricket" are treated the same.
-# NOTE: verify "Motorsports" matches exactly what the source uses -- some
-# FanCode mirrors spell it "Motorsport" (singular). Check data.json if
-# the Motorsport channel stops updating.
-CATEGORY_TO_CHANNEL = {
-    "Cricket": "Fancode Cricket",
-    "Golf": "Fancode Golf",
-    "Motorsports": "Fancode Motorsport",
-    "Tennis": "Fancode Tennis",
+# Maps the source's "event_category" value -> a list of your playlist's channel names.
+# This handles multiple playlist slots corresponding to the same source category.
+CATEGORY_TO_CHANNELS = {
+    "Cricket": ["Fancode Cricket", "FanCode Cricket 2", "FanCode Cricket 3"],  # Adjust names to match your .m3u file exactly
+    "Golf": ["Fancode Golf"],
+    "Motorsports": ["Fancode Motorsport", "Fancode Motorsport 2"],
+    "Tennis": ["Fancode Tennis", "Fancode Tennis 2"],
+    "Football": ["Fancode Football"],  # Added if you expanded to football or other sports
+    "Basketball": ["Fancode Basketball"],
+    "Badminton": ["Fancode Badminton"],
+    "Volleyball": ["Fancode Volleyball"]
 }
+
+# Flattened list of all target channel names for iteration/counters
+ALL_TARGET_CHANNELS = [ch for channels in CATEGORY_TO_CHANNELS.values() for ch in channels]
 
 TIMEOUT = 20
 
@@ -44,22 +47,28 @@ def download_source():
 
 def parse_source(data):
     """
-    Read the FanCode source JSON and collect stream URLs by target
-    channel name, keyed off each match's "event_category" field.
-    Prefers "adfree_url"; falls back to "dai_url" if the ad-free
-    link isn't posted yet for that match.
+    Read the FanCode source JSON and collect stream URLs by source category,
+    then map them out to all corresponding target channels.
     """
-    urls = {name: [] for name in CATEGORY_TO_CHANNEL.values()}
+    # Group raw URLs by source category first
+    category_urls = {category: [] for category in CATEGORY_TO_CHANNELS.keys()}
 
     for match in data.get("matches", []):
         category = match.get("event_category")
-        channel_name = CATEGORY_TO_CHANNEL.get(category)
-        if channel_name is None:
-            continue  # not a category we track (e.g. Football)
+        if category not in category_urls:
+            continue  # not a category we track
 
         stream_url = match.get("adfree_url") or match.get("dai_url")
         if stream_url:
-            urls[channel_name].append(stream_url)
+            category_urls[category].append(stream_url)
+
+    # Distribute the URLs to each target channel mapped to that category
+    urls = {name: [] for name in ALL_TARGET_CHANNELS}
+    for category, target_channels in CATEGORY_TO_CHANNELS.items():
+        avail_urls = category_urls.get(category, [])
+        for channel_name in target_channels:
+            # Assign a copy of the category's streams to each mapped channel slot
+            urls[channel_name] = list(avail_urls)
 
     return urls
 
@@ -67,16 +76,9 @@ def parse_source(data):
 def update_playlist(source_urls):
     """
     Update the FanCode channel entries in the playlist.
-
-    Some FanCode slots in the playlist are placeholders with no URL yet
-    (an #EXTINF line followed by a blank line instead of an http line).
-    This handles both cases:
-      - If a URL line already exists after #EXTINF, replace it.
-      - If it's a blank placeholder, insert a URL line if one is
-        available; otherwise leave the blank line untouched.
     """
     lines = PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
-    counters = {name: 0 for name in CATEGORY_TO_CHANNEL.values()}
+    counters = {name: 0 for name in ALL_TARGET_CHANNELS}
     output = []
     i = 0
     while i < len(lines):
@@ -86,7 +88,7 @@ def update_playlist(source_urls):
         if line.startswith("#EXTINF"):
             lower_line = line.lower()
             current = None
-            for channel_name in CATEGORY_TO_CHANNEL.values():
+            for channel_name in ALL_TARGET_CHANNELS:
                 if channel_name.lower() in lower_line:
                     current = channel_name
                     break
@@ -109,7 +111,6 @@ def update_playlist(source_urls):
                         output.append(source_urls[current][index])
                         if has_next and lines[i + 1].strip() == "":
                             i += 1  # consume the blank placeholder line
-                    # else: leave the blank placeholder exactly as it is
 
                 counters[current] += 1
 

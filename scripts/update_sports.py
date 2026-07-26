@@ -52,7 +52,14 @@ REPORTS_DIR.mkdir(exist_ok=True)
 
 SKY_SPORTS_PREFERRED_SOURCE = "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s2.m3u"
 FANCODE_EXCLUSIVE_SOURCE = "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/playlist.m3u"
-TSPORTS_SOURCE = "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/combine_playlist.m3u"
+
+# Multiple T-Sports Sources Combined
+TSPORTS_SOURCES = [
+    "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/combine_playlist.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/refs/heads/main/Github%20Auto%20Update%20Channel.m3u",
+    # Added base raw handler if available, or additional mirror links can be placed here
+]
+
 SPORTS_S1 = "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sports-s1.m3u"
 
 SOURCE_URLS = [
@@ -61,10 +68,8 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/world-1.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/Toffee-playlist/main/ott_navigator.m3u",
     FANCODE_EXCLUSIVE_SOURCE,
-    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/refs/heads/main/Github%20Auto%20Update%20Channel.m3u",
-    TSPORTS_SOURCE,
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/CricHD.m3u",
-]
+] + TSPORTS_SOURCES  # Automatically registers all T-Sports backup sources into the download pool
 
 # Source Priority Engine
 SOURCE_PRIORITIES = {
@@ -75,7 +80,7 @@ SOURCE_PRIORITIES = {
         "lock": [FANCODE_EXCLUSIVE_SOURCE]
     },
     "t sports": {
-        "prefer": [TSPORTS_SOURCE]
+        "prefer": TSPORTS_SOURCES
     },
     "sony sports": {
         "prefer": [SPORTS_S1, SKY_SPORTS_PREFERRED_SOURCE]

@@ -372,17 +372,17 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1149499&exten
 #EXTINF:-1 group-title="Sports", Eurosport 2
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507387&extension=m3u8
 
-#EXTINF:-1 group-title="Sports", FanCode Cricket 1
+#EXTINF:-1 group-title="Sports", FanCode Cricket 
 
-#EXTINF:-1 group-title="Sports", FanCode Cricket 2
+#EXTINF:-1 group-title="Sports", FanCode Cricket 
 
-#EXTINF:-1 group-title="Sports", FanCode Cricket 3
+#EXTINF:-1 group-title="Sports", FanCode Cricket 
 
 #EXTINF:-1 group-title="Sports", FanCode Golf
 
-#EXTINF:-1 group-title="Sports", FanCode Motorsport 1
+#EXTINF:-1 group-title="Sports", FanCode Motorsport 
 
-#EXTINF:-1 group-title="Sports", FanCode Motorsport 2
+#EXTINF:-1 group-title="Sports", FanCode Motorsport 
 
 #EXTINF:-1 group-title="Sports", FanCode Tennis
 

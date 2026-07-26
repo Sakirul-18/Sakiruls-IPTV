@@ -14,7 +14,8 @@ import json
 import requests
 
 # ========= SETTINGS =========
-PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
+SCRIPT_DIR = Path(__file__).resolve().parent
+PLAYLIST_FILE = SCRIPT_DIR.parent / "SAKIRULs IPTV.m3u"
 SOURCE_URL = (
     "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/data.json"
 )
@@ -66,7 +67,7 @@ def update_playlist(source_categories):
     lines = PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
     
     # Track how many URLs we have consumed per source category key
-    category_counters = {cat: 0 for cat in source_categories.keys()}
+    category_counters = {cat: 0 for cat in CHANNEL_TO_CATEGORY.values()}
     
     output = []
     i = 0
@@ -84,8 +85,8 @@ def update_playlist(source_categories):
                     matched_category = source_cat
                     break
 
-            if matched_category and matched_category in source_categories:
-                urls = source_categories[matched_category]
+            if matched_category:
+                urls = source_categories.get(matched_category, [])
                 index = category_counters[matched_category]
                 
                 has_next = i + 1 < len(lines)

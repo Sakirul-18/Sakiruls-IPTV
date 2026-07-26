@@ -44,26 +44,36 @@ jobs:
           fetch-depth: 0
 
       # ----------------------------------------------------------------
-      # Python 3.11 with pip dependency caching. Cache key is derived from
-      # requirements.txt, so setup-python can locate it (fixes "no file
-      # matched requirements.txt or pyproject.toml").
+      # Python 3.11. No cache-dependency-path here -- this repo has no
+      # requirements.txt/pyproject.toml, and relying on one caused
+      # "no file matched" failures. Caching is handled explicitly below.
       # ----------------------------------------------------------------
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements.txt
 
       # ----------------------------------------------------------------
-      # Install only the dependencies listed in requirements.txt.
+      # Manual pip cache keyed on OS + package name -- no manifest file
+      # required, so this can't break due to a missing/uncommitted file.
+      # ----------------------------------------------------------------
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-requests
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # ----------------------------------------------------------------
+      # Install only the dependency the updater script actually needs.
       # ----------------------------------------------------------------
       - name: Install Dependencies
         shell: bash
         run: |
           set -euo pipefail
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests
 
       # ----------------------------------------------------------------
       # Run the playlist updater. Its logic is untouched by this workflow.

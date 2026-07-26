@@ -374,13 +374,13 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1149499&exten
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=760962&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-
+https://livecf.fancode.com/143633_english_hls_37959550fb90160_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-
+https://livecf.fancode.com/4246713_english_hls_17e2efa8db87720_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-
+https://livecf.fancode.com/4247431_english_hls_2e615b273261719_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
-
+https://livecf.fancode.com/4246805_english_hls_302416363781824_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
@@ -388,7 +388,7 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=760962&extens
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Tennis 
-
+https://livecf.fancode.com/143515_english_hls_284844bbb921864_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Tennis 
 
 #EXTINF:-1 group-title="Sports", FIFA+

@@ -1,44 +1,138 @@
+# ============================================================================
+# Update Sports IPTV Playlist
+#
+# Refreshes the sports IPTV playlist and commits the result back to the
+# repository. Runs on a schedule and can also be triggered manually.
+# Idempotent: if the generated playlist is unchanged, the workflow exits
+# cleanly without committing anything.
+# ============================================================================
 name: Update Sports IPTV
 
 on:
+  # Runs automatically every 10 minutes
   schedule:
     - cron: "*/10 * * * *"
-
+  # Allows on-demand runs from the Actions tab
   workflow_dispatch:
 
+# Least-privilege token: only write access to repo contents is required
+# to commit and push the updated playlist.
 permissions:
   contents: write
+
+# Prevent overlapping runs so two jobs never race to commit/push at once.
+# New runs queue behind an in-progress run rather than cancelling it, so
+# an update is never interrupted midway.
+concurrency:
+  group: update-sports-iptv
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    # Hard ceiling so a hung run can never block the next scheduled trigger.
+    timeout-minutes: 10
 
     steps:
-
+      # ----------------------------------------------------------------
+      # Full history is needed to reliably detect the default branch and
+      # rebase/push later in the job.
+      # ----------------------------------------------------------------
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
+      # ----------------------------------------------------------------
+      # Python 3.11 with pip dependency caching for faster, consistent runs.
+      # ----------------------------------------------------------------
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: pip
 
+      # ----------------------------------------------------------------
+      # Install only the dependency the updater script actually needs.
+      # ----------------------------------------------------------------
       - name: Install Dependencies
+        shell: bash
         run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
           pip install requests
 
+      # ----------------------------------------------------------------
+      # Run the playlist updater. Its logic is untouched by this workflow.
+      # ----------------------------------------------------------------
       - name: Run Sports Updater
+        shell: bash
         run: |
+          set -euo pipefail
           python scripts/update_sports.py
 
-      - name: Commit Changes
+      # ----------------------------------------------------------------
+      # Configure the commit identity, stage only the playlist file, and
+      # determine whether anything actually changed. Downstream steps use
+      # the "detected" output to skip commit/push entirely when the
+      # playlist is identical -- the job still exits successfully.
+      # ----------------------------------------------------------------
+      - name: Configure Git and Detect Changes
+        id: changes
+        shell: bash
         run: |
+          set -euo pipefail
+
+          # Official GitHub Actions bot identity
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Stage only the intended playlist file -- never anything else
           git add "SAKIRULs IPTV.m3u"
 
-          git diff --cached --quiet || (
-            git commit -m "Auto update Sports playlist"
-            git push
-          )
+          if git diff --cached --quiet; then
+            echo "No changes detected in playlist. Nothing to commit."
+            echo "detected=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changes detected in playlist."
+            echo "detected=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ----------------------------------------------------------------
+      # Commit, then sync and push. Only runs when a real change was
+      # staged. The default branch is detected dynamically via git (no
+      # GitHub API calls), so this works unmodified whether the repo uses
+      # "main", "master", or any other default branch name. The push is
+      # retried with a fresh rebase if a concurrent update causes a
+      # non-fast-forward rejection.
+      # ----------------------------------------------------------------
+      - name: Commit, Sync, and Push
+        if: steps.changes.outputs.detected == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git commit -m "Auto update Sports playlist [skip ci]"
+
+          # Ensure origin/HEAD is set, then read the default branch from it
+          git remote set-head origin --auto
+          DEFAULT_BRANCH="$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"
+          echo "Target default branch: ${DEFAULT_BRANCH}"
+
+          # Rebase onto the latest remote state before attempting to push
+          git pull --rebase origin "${DEFAULT_BRANCH}"
+
+          # Push, retrying with a fresh rebase on non-fast-forward conflicts
+          max_attempts=3
+          attempt=1
+          until git push origin "HEAD:${DEFAULT_BRANCH}"; do
+            if [ "${attempt}" -ge "${max_attempts}" ]; then
+              echo "::error::Push failed after ${max_attempts} attempts due to repeated conflicts."
+              exit 1
+            fi
+            echo "Push rejected (non-fast-forward). Retrying (${attempt}/${max_attempts})..."
+            git pull --rebase origin "${DEFAULT_BRANCH}"
+            attempt=$((attempt + 1))
+          done
+
+          echo "Push completed successfully."

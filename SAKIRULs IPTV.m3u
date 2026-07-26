@@ -373,31 +373,22 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1149499&exten
 #EXTINF:-1 group-title="Sports", Eurosport 2
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=760962&extension=m3u8
 
-#EXTINF:-1 group-title="Sports", FanCode Cricket 
+#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode-Cricket
 
+#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode-Cricket
 
-#EXTINF:-1 group-title="Sports", FanCode Cricket 
+#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode-Cricket
 
+#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode-Golf
 
-#EXTINF:-1 group-title="Sports", FanCode Cricket 
+#EXTINF:-1 group-title="Sports",Fancode-Motorsports
 
+#EXTINF:-1 group-title="Sports",Fancode-Motorsports
 
-#EXTINF:-1 group-title="Sports", FanCode Golf
-
-
-#EXTINF:-1 group-title="Sports", FanCode Motorsport 
-
-
-#EXTINF:-1 group-title="Sports", FanCode Motorsport 
-
-
-#EXTINF:-1 group-title="Sports", FanCode Tennis
-
+#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode-Tennis 
 
 
 #EXTINF:-1 group-title="Sports", FIFA+
-
-
 
 #EXTINF:-1 group-title="Sports", LaLiga TV
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312836&extension=m3u8

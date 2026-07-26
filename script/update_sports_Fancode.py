@@ -12,16 +12,15 @@ Rules:
 """
 
 from pathlib import Path
-from collections import defaultdict
+import json
 import requests
-import re
 
 # ========= SETTINGS =========
 
 PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
 
 SOURCE_URL = (
-    "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/playlist.m3u"
+    "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/data.json"
 )
 
 TARGET_CHANNELS = [

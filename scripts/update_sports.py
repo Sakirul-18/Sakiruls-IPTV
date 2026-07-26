@@ -100,9 +100,9 @@ HEADERS = {
 CHANNELS = [
     "beIN SPORTS 1", "beIN SPORTS 2", "beIN SPORTS 3", "beIN SPORTS 4",
     "beIN SPORTS 5", "beIN SPORTS 6", "BTV World", "DAZN 1", "Das Erste HD",
-    "Eurosport 1", "Eurosport 2", "FanCode Cricket 1", "FanCode Cricket 2",
-    "FanCode Cricket 3", "FanCode Golf", "FanCode Motorsport 1",
-    "FanCode Motorsport 2", "FanCode Tennis", "FIFA+", "LaLiga TV", "LFC TV",
+    "Eurosport 1", "Eurosport 2", "FanCode Cricket ", "FanCode Cricket ",
+    "FanCode Cricket ", "FanCode Golf", "FanCode Motorsport ",
+    "FanCode Motorsport ", "FanCode Tennis", "FIFA+", "LaLiga TV", "LFC TV",
     "Motorsport.tv", "MUTV", "NPO 1 HD", "NPO 2 HD", "NPO 3 HD",
     "Premier Sports 1", "Premier Sports 2", "PTV", "Racing TV", "Racing.com",
     "Real Madrid TV", "Red Bull TV", "Servus TV Motorsport", "Sky Sports Action",

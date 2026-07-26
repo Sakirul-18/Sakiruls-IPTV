@@ -9,9 +9,9 @@
 name: Update Sports IPTV
 
 on:
-  # Runs automatically every 10 minutes
+  # Runs automatically every 3 minutes
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/3 * * * *"
   # Allows on-demand runs from the Actions tab
   workflow_dispatch:
 

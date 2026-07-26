@@ -418,7 +418,7 @@ https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=TQU-FQKoM2B8d7E7UCgE4Q&e
 #EXTINF:-1 group-title="Sports", Premier Sports 2
 https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=4J2LFVb8I6dPNXKOqpvXOQ&expires=1785059421
 #EXTINF:-1 group-title="Sports", PTV
-
+http://103.89.248.26:8082/LIVE-FOOTBALL-1/index.fmp4.m3u8?token=fc79372a4a3ca18d41faadc1fedc968c563be658-0ee35d3c9bc12249863cc6e5e4cefed7-1785111605-1785100805
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
@@ -524,10 +524,10 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311901&ext
 
 
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 1
-
+http://103.89.248.30:8082/2LIVE/index.fmp4.m3u8?token=aeaa0f6e184d39d4bea08ba0b41b59b81bb424af-391b4d972f537764e7d8679bb4a6c72d-1785111307-1785100507
 
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 2
-
+http://103.89.248.50:8082/1LIVE/index.fmp4.m3u8?token=7c691ee030d30e72a7f730a46e3fe24c34416594-a5b71581d124575234f499fb5286624a-1785111223-1785100423
 
 
 #EXTINF:-1 group-title="Sports", Viaplay TV

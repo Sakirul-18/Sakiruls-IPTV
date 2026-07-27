@@ -525,11 +525,9 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311901&ext
 
 
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 1
-http://103.89.248.30:8082/2LIVE/index.fmp4.m3u8?token=aeaa0f6e184d39d4bea08ba0b41b59b81bb424af-391b4d972f537764e7d8679bb4a6c72d-1785111307-1785100507
-
+http://103.89.248.50:8082/2LIVE/index.fmp4.m3u8?token=57d3c83d14d4c72d8f96210aafcfff2caa9f63da-2ffce1a49966390e7601e18ac5855743-1785191692-1785180892
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 2
-http://103.89.248.50:8082/1LIVE/index.fmp4.m3u8?token=7c691ee030d30e72a7f730a46e3fe24c34416594-a5b71581d124575234f499fb5286624a-1785111223-1785100423
-
+http://103.89.248.50:8082/1LIVE/index.fmp4.m3u8?token=14735cdd4e49ca1277c5f010ac48c3d8622c5640-1e6b4f1665b95243ebb0a6b3a7cb0b6b-1785191623-1785180823
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8

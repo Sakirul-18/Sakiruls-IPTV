@@ -1,0 +1,69 @@
+name: Update IPTV Playlists
+
+on:
+  schedule:
+    # Every 15 min, offset from :00/:15/:30/:45 to dodge GitHub's
+    # peak-load queuing delays at round-number minutes.
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch: {}       # lets you trigger it manually too
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-playlists
+  cancel-in-progress: false
+
+jobs:
+  update-playlists:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Runs every .py file under script/, one after another.
+      # A failure in one script doesn't block the others.
+      - name: Run all update scripts
+        id: run_scripts
+        continue-on-error: true
+        run: |
+          set +e
+          overall_status=0
+          for script in script/*.py; do
+            echo "::group::Running $script"
+            python "$script"
+            status=$?
+            if [ $status -ne 0 ]; then
+              echo "::error::$script failed with exit code $status"
+              overall_status=1
+            fi
+            echo "::endgroup::"
+          done
+          exit $overall_status
+
+      - name: Commit and push if anything changed
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update playlists [skip ci]"
+            git push
+          fi
+
+      # Surface a failed run in the Actions tab even though we let
+      # the commit step run first via 'if: always()' above.
+      - name: Fail workflow if any script errored
+        if: steps.run_scripts.outcome == 'failure'
+        run: exit 1

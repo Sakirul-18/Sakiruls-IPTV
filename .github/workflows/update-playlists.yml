@@ -2,10 +2,9 @@ name: Update IPTV Playlists
 
 on:
   schedule:
-    # Every 15 min, offset from :00/:15/:30/:45 to dodge GitHub's
-    # peak-load queuing delays at round-number minutes.
-    - cron: '7,22,37,52 * * * *'
-  workflow_dispatch: {}       # lets you trigger it manually too
+    # Offset minutes to avoid peak queue times
+    - cron: '7,37 * * * *'
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -26,11 +25,25 @@ jobs:
         with:
           python-version: '3.11'
 
+      # Install FFmpeg for blackdetect & freezedetect filters
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      # Persist iptv_cache.json without committing it to Git
+      - name: Restore & Save IPTV Cache
+        uses: actions/cache@v4
+        with:
+          path: iptv_cache.json
+          key: iptv-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            iptv-cache-${{ runner.os }}-
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Runs every .py file under script/, one after another.
-      # A failure in one script doesn't block the others.
+      # Runs every .py file under script/, one after another
       - name: Run all update scripts
         id: run_scripts
         continue-on-error: true
@@ -49,21 +62,25 @@ jobs:
           done
           exit $overall_status
 
+      # Stage only generated .m3u / .m3u8 files, avoiding iptv_cache.json
       - name: Commit and push if anything changed
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
+          
+          # Explicitly exclude cache files if not in .gitignore
+          git add *.m3u *.m3u8 2>/dev/null || true
+          
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "No playlist changes to commit"
           else
+            git pull --rebase origin main || true
             git commit -m "Auto-update playlists [skip ci]"
             git push
           fi
 
-      # Surface a failed run in the Actions tab even though we let
-      # the commit step run first via 'if: always()' above.
+      # Surface a failed run in the Actions tab
       - name: Fail workflow if any script errored
         if: steps.run_scripts.outcome == 'failure'
         run: exit 1

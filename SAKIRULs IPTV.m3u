@@ -28,6 +28,9 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-vid
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/TXNCpCP/Btv-National.png", BTV WORLD
 https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
 
+#EXTINF:-1 group-title="Sports", BTV World
+https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
+
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/DP1GSwB3/Bijoy-TV.png", Bijoy TV
 https://tvsen6.aynaott.com/bijoytv/index.m3u8?e=1780662760&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=3ce64c165e70832dc446d5fe776bb64b
 
@@ -359,8 +362,6 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373196&exte
 #EXTINF:-1 group-title="Sports", beIN SPORTS 6
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242250&extension=m3u8
 
-#EXTINF:-1 group-title="Sports", BTV World
-https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
 
 #EXTINF:-1 group-title="Sports", DAZN 1
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827993&extension=m3u8

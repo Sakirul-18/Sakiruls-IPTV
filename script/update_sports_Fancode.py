@@ -1,34 +1,24 @@
 #!/usr/bin/env python3
 """
 FanCode IPTV Auto Updater
-Rules:
-- Update ONLY FanCode channels.
-- Replace ONLY the stream URL.
-- Never delete channels.
-- Never change #EXTINF metadata.
-- If the source has fewer URLs than the playlist,
-  leave the remaining channels unchanged.
+Mapping: JSON event_category -> M3U Channel Name
 """
 from pathlib import Path
 import json
 import requests
 
-# ========= SETTINGS =========
+# ========= CONFIGURATION =========
 PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
 SOURCE_URL = (
     "https://raw.githubusercontent.com/IPTVFlixBD/Fancode-BD/refs/heads/main/data.json"
 )
 
-# Maps the source's "event_category" value -> your playlist's channel name.
-# Matching is done case-insensitively, so "Fancode Cricket" and
-# "FanCode Cricket" are treated the same.
-# NOTE: verify "Motorsports" matches exactly what the source uses -- some
-# FanCode mirrors spell it "Motorsport" (singular). Check data.json if
-# the Motorsport channel stops updating.
+# 1. Maps JSON "event_category" -> Your Playlist Channel Name
 CATEGORY_TO_CHANNEL = {
     "Cricket": "Fancode Cricket",
     "Golf": "Fancode Golf",
     "Motorsports": "Fancode Motorsport",
+    "Motorsport": "Fancode Motorsport",  # Handles singular spelling in JSON source
     "Tennis": "Fancode Tennis",
 }
 
@@ -37,99 +27,109 @@ TIMEOUT = 20
 
 def download_source():
     """Download the FanCode source JSON."""
-    response = requests.get(SOURCE_URL, timeout=TIMEOUT)
-    response.raise_for_status()
-    return response.json()  # parsed dict, not raw text lines
+    try:
+        r = requests.get(SOURCE_URL, timeout=TIMEOUT)
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        print(f"Failed to download JSON source: {e}")
+        return None
 
 
 def parse_source(data):
     """
-    Read the FanCode source JSON and collect stream URLs by target
-    channel name, keyed off each match's "event_category" field.
-    Prefers "adfree_url"; falls back to "dai_url" if the ad-free
-    link isn't posted yet for that match.
+    Scans the JSON source for 'event_category', maps it to your channel name,
+    and collects all active match stream URLs.
     """
-    urls = {name: [] for name in CATEGORY_TO_CHANNEL.values()}
+    target_channels = set(CATEGORY_TO_CHANNEL.values())
+    urls = {name: [] for name in target_channels}
+
+    if not data or "matches" not in data:
+        return urls
 
     for match in data.get("matches", []):
-        category = match.get("event_category")
-        channel_name = CATEGORY_TO_CHANNEL.get(category)
-        if channel_name is None:
-            continue  # not a category we track (e.g. Football)
+        cat = match.get("event_category")
+        channel_name = CATEGORY_TO_CHANNEL.get(cat)
 
-        stream_url = match.get("adfree_url") or match.get("dai_url")
-        if stream_url:
-            urls[channel_name].append(stream_url)
+        if channel_name:
+            stream_url = match.get("adfree_url") or match.get("dai_url")
+            if stream_url:
+                urls[channel_name].append(stream_url)
 
     return urls
 
 
 def update_playlist(source_urls):
     """
-    Update the FanCode channel entries in the playlist.
-
-    Some FanCode slots in the playlist are placeholders with no URL yet
-    (an #EXTINF line followed by a blank line instead of an http line).
-    This handles both cases:
-      - If a URL line already exists after #EXTINF, replace it.
-      - If it's a blank placeholder, insert a URL line if one is
-        available; otherwise leave the blank line untouched.
+    Scans M3U for channel names matching the categories,
+    and updates/replaces stream URLs accordingly.
     """
+    if not PLAYLIST_FILE.exists():
+        print(f"Error: Master playlist '{PLAYLIST_FILE}' not found.")
+        return
+
     lines = PLAYLIST_FILE.read_text(encoding="utf-8").splitlines()
-    counters = {name: 0 for name in CATEGORY_TO_CHANNEL.values()}
+    target_channels = set(CATEGORY_TO_CHANNEL.values())
+    counters = {name: 0 for name in target_channels}
     output = []
     i = 0
+
     while i < len(lines):
         line = lines[i]
         output.append(line)
 
         if line.startswith("#EXTINF"):
             lower_line = line.lower()
-            current = None
-            for channel_name in CATEGORY_TO_CHANNEL.values():
-                if channel_name.lower() in lower_line:
-                    current = channel_name
+
+            # Find matching target channel name in this #EXTINF line
+            matched_channel = None
+            for ch_name in target_channels:
+                if ch_name.lower() in lower_line:
+                    matched_channel = ch_name
                     break
 
-            if current:
-                index = counters[current]
-                has_next = i + 1 < len(lines)
+            if matched_channel:
+                idx = counters[matched_channel]
+                has_next = (i + 1) < len(lines)
                 next_is_url = has_next and lines[i + 1].strip().startswith("http")
 
-                if next_is_url:
-                    # Existing URL line -- replace it if we have a new one
-                    if index < len(source_urls[current]):
-                        output.append(source_urls[current][index])
-                    else:
-                        output.append(lines[i + 1])
-                    i += 1  # consumed the original URL line
+                # If JSON source provided a stream for this slot
+                if idx < len(source_urls[matched_channel]):
+                    output.append(source_urls[matched_channel][idx])
+                    if next_is_url:
+                        i += 1  # Replace old URL line
+                    elif has_next and lines[i + 1].strip() == "":
+                        i += 1  # Consume blank placeholder line
                 else:
-                    # Blank placeholder -- insert a URL if one is available
-                    if index < len(source_urls[current]):
-                        output.append(source_urls[current][index])
-                        if has_next and lines[i + 1].strip() == "":
-                            i += 1  # consume the blank placeholder line
-                    # else: leave the blank placeholder exactly as it is
+                    # No new URL in JSON; keep existing URL if present
+                    if next_is_url:
+                        output.append(lines[i + 1])
+                        i += 1
 
-                counters[current] += 1
+                counters[matched_channel] += 1
 
         i += 1
 
-    PLAYLIST_FILE.write_text(
-        "\n".join(output) + "\n",
-        encoding="utf-8"
-    )
+    # Save changes back to file
+    PLAYLIST_FILE.write_text("\n".join(output) + "\n", encoding="utf-8")
 
 
 def main():
-    print("Downloading FanCode source...")
-    source_data = download_source()
-    source_urls = parse_source(source_data)
+    print("Fetching FanCode JSON data...")
+    data = download_source()
+    if not data:
+        print("Skipping update due to fetch error.")
+        return
+
+    source_urls = parse_source(data)
+
+    print("\n--- JSON Scraped Streams ---")
     for name, urls in source_urls.items():
-        print(f"  {name}: {len(urls)} URL(s) found")
-    print("Updating playlist...")
+        print(f"  {name}: {len(urls)} stream URL(s) found")
+
+    print("\nUpdating M3U playlist...")
     update_playlist(source_urls)
-    print("Done!")
+    print("Done! FanCode update complete.")
 
 
 if __name__ == "__main__":

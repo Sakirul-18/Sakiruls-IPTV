@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # --- CONFIGURATION ---
 MASTER_PLAYLIST = "SAKIRULs IPTV.m3u"
-MAX_WORKERS = 15  # Number of concurrent threads for fetching
+MAX_WORKERS = 30  # Number of concurrent threads for fetching
 
 SOURCES = [
     # IPTVFlixBD - OopsTv

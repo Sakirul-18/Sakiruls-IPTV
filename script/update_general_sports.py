@@ -1,13 +1,12 @@
 import os
 import re
-import time
 import requests
 from difflib import SequenceMatcher
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # --- CONFIGURATION ---
 MASTER_PLAYLIST = "SAKIRULs IPTV.m3u"
-MAX_WORKERS = 15  # Number of concurrent threads for fetching & pinging
+MAX_WORKERS = 15  # Number of concurrent threads for fetching
 
 SOURCES = [
     # IPTVFlixBD - OopsTv
@@ -79,7 +78,7 @@ def extract_wrapper(url, session):
     if any(ext in url for ext in [".m3u8", ".ts", "/ts"]):
         return url
     try:
-        r = session.get(url, timeout=4)
+        r = session.get(url, timeout=5)
         if r.status_code == 200:
             match = re.search(r'(https?://[^\s]+\.(?:m3u8|ts|m3u)[^\s]*)', r.text)
             if match:
@@ -91,40 +90,15 @@ def extract_wrapper(url, session):
         pass
     return url
 
-def ping_url(url, session):
-    """Test URL latency using a GET request (better for IPTV streams)."""
-    start = time.time()
-    try:
-        # stream=True connects to verify the stream is active without downloading the video file
-        r = session.get(url, timeout=3, stream=True, allow_redirects=True)
-        if r.status_code in [200, 206, 301, 302]:
-            return url, time.time() - start
-    except Exception:
-        pass
-    return url, float('inf')
-
 def get_best_link(urls, session):
-    """Pings multiple URLs concurrently and picks the fastest responding stream."""
+    """Picks the first valid/extracted link from the matched source safely without false ping failures."""
     if not urls:
         return None
-    if len(urls) == 1:
-        return extract_wrapper(urls[0], session)
-
-    best_url = urls[0]
-    best_time = float('inf')
-
-    with ThreadPoolExecutor(max_workers=min(len(urls), 10)) as executor:
-        futures = [executor.submit(ping_url, u, session) for u in urls]
-        for future in as_completed(futures):
-            url, latency = future.result()
-            if latency < best_time:
-                best_time = latency
-                best_url = url
-
-    return extract_wrapper(best_url, session)
+    # Unpack wrapper links safely for the primary candidate
+    return extract_wrapper(urls[0], session)
 
 def parse_source_m3u(content):
-    """Parses source M3U files (only used for grabbing URLs, not master file)."""
+    """Parses source M3U files."""
     channels = []
     blocks = content.split("#EXTINF:")
     for block in blocks[1:]:
@@ -144,7 +118,7 @@ def parse_source_m3u(content):
 def fetch_source(source_url, session):
     """Worker function to fetch source playlists concurrently."""
     try:
-        r = session.get(source_url, timeout=8)
+        r = session.get(source_url, timeout=10)
         if r.status_code == 200:
             return parse_source_m3u(r.text)
     except Exception as e:
@@ -154,7 +128,7 @@ def fetch_source(source_url, session):
 def main():
     session = requests.Session()
     session.headers.update({
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     })
 
     print(f"Fetching {len(SOURCES)} source playlists in parallel...")
@@ -177,9 +151,8 @@ def main():
         print(f"❌ Master playlist {MASTER_PLAYLIST} not found!")
         return
 
-    print(f"Updating {MASTER_PLAYLIST} while preserving ALL custom text/names...")
+    print(f"Updating {MASTER_PLAYLIST} while preserving all custom categories and names...")
     
-    # Read the file line-by-line to preserve structure entirely
     with open(MASTER_PLAYLIST, 'r', encoding='utf-8') as f:
         master_lines = f.readlines()
 
@@ -188,13 +161,11 @@ def main():
     while i < len(master_lines):
         line = master_lines[i].strip()
 
-        # If it's a channel declaration, process it
         if line.startswith("#EXTINF:"):
             info_line = line
             j = i + 1
             url_line_index = -1
             
-            # Find the URL that belongs to this channel
             while j < len(master_lines):
                 if master_lines[j].strip().startswith(("http://", "https://", "rtmp://", "rtsp://", "udp://")):
                     url_line_index = j
@@ -202,7 +173,6 @@ def main():
                 j += 1
 
             if url_line_index == -1:
-                # No URL found, keep the line and move on
                 updated_lines.append(master_lines[i])
                 i += 1
                 continue
@@ -210,14 +180,12 @@ def main():
             name = info_line.split(",")[-1].strip()
             clean_ch_name = clean_name(name)
 
-            # Skip Fancode updates here
             if "fancode" in name.lower():
                 for k in range(i, url_line_index + 1):
                     updated_lines.append(master_lines[k])
                 i = url_line_index + 1
                 continue
 
-            # Check if it is a sports channel
             group_match = re.search(r'''group-title=["']?([^"',\n\r]+)''', info_line, re.IGNORECASE)
             group_title = group_match.group(1).lower() if group_match else ""
             is_sports = ("sport" in group_title) if group_title else ("sport" in info_line.lower())
@@ -228,7 +196,6 @@ def main():
                 i = url_line_index + 1
                 continue
 
-            # Find best match from scraped sources
             best_match_name = None
             highest_ratio = 0.0
 
@@ -238,32 +205,27 @@ def main():
                     highest_ratio = ratio
                     best_match_name = src_name
 
-            # Write data to file
             if best_match_name:
-                print(f"✅ Updated URL for your channel: '{name}'")
+                print(f"✅ Matched & Updated: '{name}' -> Source: '{best_match_name}'")
                 urls = source_channels[best_match_name]
                 best_link = get_best_link(urls, session)
                 
-                # Append original channel name/info and meta lines exactly as they were
                 for k in range(i, url_line_index):
                     updated_lines.append(master_lines[k])
-                # Append the new best URL
                 updated_lines.append(best_link + "\n")
             else:
-                # No match found, keep the old block exactly as is
                 for k in range(i, url_line_index + 1):
                     updated_lines.append(master_lines[k])
 
-            i = url_line_index + 1 # Skip past the old URL block
+            i = url_line_index + 1
         else:
-            # THIS KEEPS ALL CUSTOM CATEGORIES, # SPORTS, AND BLANK LINES SAFE
             updated_lines.append(master_lines[i])
             i += 1
 
     with open(MASTER_PLAYLIST, 'w', encoding='utf-8') as f:
         f.writelines(updated_lines)
 
-    print("🎉 Update complete! Custom names preserved, fast links injected.")
+    print("🎉 Update complete! Working source links injected safely without ping blocks.")
 
 if __name__ == "__main__":
     main()

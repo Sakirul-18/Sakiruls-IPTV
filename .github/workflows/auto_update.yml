@@ -2,8 +2,8 @@ name: Auto Update IPTV Playlists & Trackers
 
 on:
   schedule:
-    # Runs every 6 hours
-  - cron: '*/10 * * * *'
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
   workflow_dispatch: # Allows manual run anytime
 
 jobs:
@@ -24,27 +24,19 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # Add any other libraries your tracker script needs (e.g., cloudscraper, beautifulsoup4)
-          pip install requests 
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests; fi
 
-    # --- RUN YOUR 3 PYTHON SCRIPTS IN ORDER ---
-      - name: Run IPTV Playlist Updater
-        run: python YOUR_ACTUAL_SCRIPT_1.py  # 👈 Replace with real filename (e.g., main.py)
+      # --- RUN MASTER TRACKER SCRIPT ---
+      - name: Run IPTV Playlist Tracker
+        run: python tracker.py
 
-      - name: Run Tracker Script
-        run: python YOUR_ACTUAL_SCRIPT_2.py  # 👈 Replace with real tracker filename
-
-      - name: Run Third Script
-        run: python YOUR_ACTUAL_SCRIPT_3.py  # 👈 Replace with real third script filename
-
-        
       # --- COMMIT ALL UPDATED FILES AT ONCE ---
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 'git add -A' captures all updated .m3u files, .json tokens, or tracker outputs
+          # Captures all updated .m3u files or outputs
           git add -A
           
           if git diff --staged --quiet; then

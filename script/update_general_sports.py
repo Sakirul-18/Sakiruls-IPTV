@@ -67,17 +67,11 @@ def extract_numbers(text):
     return re.findall(r'\d+', text)
 
 def similar(a, b):
-    """
-    Fuzzy matching ratio.
-    Guards against matching 'Sports 1' with 'Sports 2' by strict number comparison.
-    """
+    """Fuzzy matching ratio."""
     nums_a = extract_numbers(a)
     nums_b = extract_numbers(b)
-    
-    # If both names contain numbers and they differ (e.g. 1 vs 2), reject match
     if nums_a and nums_b and nums_a != nums_b:
         return 0.0
-        
     return SequenceMatcher(None, a.lower().replace(" ", ""), b.lower().replace(" ", "")).ratio()
 
 def extract_wrapper(url, session):
@@ -98,11 +92,12 @@ def extract_wrapper(url, session):
     return url
 
 def ping_url(url, session):
-    """Test URL latency in parallel."""
+    """Test URL latency using a GET request (better for IPTV streams)."""
     start = time.time()
     try:
-        r = session.head(url, timeout=3, allow_redirects=True)
-        if r.status_code in [200, 301, 302]:
+        # stream=True connects to verify the stream is active without downloading the video file
+        r = session.get(url, timeout=3, stream=True, allow_redirects=True)
+        if r.status_code in [200, 206, 301, 302]:
             return url, time.time() - start
     except Exception:
         pass
@@ -128,36 +123,22 @@ def get_best_link(urls, session):
 
     return extract_wrapper(best_url, session)
 
-def parse_m3u(content):
-    """Parses M3U preserving extra metadata lines (like #EXTGRP, headers, etc.)."""
+def parse_source_m3u(content):
+    """Parses source M3U files (only used for grabbing URLs, not master file)."""
     channels = []
     blocks = content.split("#EXTINF:")
     for block in blocks[1:]:
         lines = [line.strip() for line in block.split("\n") if line.strip()]
         if not lines:
             continue
-
-        info_line = lines[0]
-        name = info_line.split(",")[-1].strip()
-
-        meta_lines = []
+        name = lines[0].split(",")[-1].strip()
         url = None
-
         for line in lines[1:]:
             if line.startswith(("http://", "https://", "rtmp://", "rtsp://", "udp://")):
                 url = line
                 break
-            else:
-                meta_lines.append(line)
-
         if name and url:
-            channels.append({
-                "raw_info": "#EXTINF:" + info_line,
-                "meta_lines": meta_lines,
-                "name": name,
-                "clean_name": clean_name(name),
-                "url": url
-            })
+            channels.append({"clean_name": clean_name(name), "url": url})
     return channels
 
 def fetch_source(source_url, session):
@@ -165,7 +146,7 @@ def fetch_source(source_url, session):
     try:
         r = session.get(source_url, timeout=8)
         if r.status_code == 200:
-            return parse_m3u(r.text)
+            return parse_source_m3u(r.text)
     except Exception as e:
         print(f"⚠️ Failed to fetch {source_url}: {e}")
     return []
@@ -179,7 +160,6 @@ def main():
     print(f"Fetching {len(SOURCES)} source playlists in parallel...")
     source_channels = {}
 
-    # Concurrent Playlist Fetching
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_url = {executor.submit(fetch_source, url, session): url for url in SOURCES}
         for future in as_completed(future_to_url):
@@ -197,57 +177,93 @@ def main():
         print(f"❌ Master playlist {MASTER_PLAYLIST} not found!")
         return
 
+    print(f"Updating {MASTER_PLAYLIST} while preserving ALL custom text/names...")
+    
+    # Read the file line-by-line to preserve structure entirely
     with open(MASTER_PLAYLIST, 'r', encoding='utf-8') as f:
-        master_parsed = parse_m3u(f.read())
+        master_lines = f.readlines()
 
-    print(f"Updating {MASTER_PLAYLIST}...")
-    updated_lines = ["#EXTM3U\n"]
+    updated_lines = []
+    i = 0
+    while i < len(master_lines):
+        line = master_lines[i].strip()
 
-    for my_ch in master_parsed:
-        # Helper block generator to preserve channel tags & metadata
-        def format_channel_block(stream_url):
-            block = [my_ch['raw_info']]
-            block.extend(my_ch['meta_lines'])
-            block.append(stream_url)
-            return "\n".join(block) + "\n"
+        # If it's a channel declaration, process it
+        if line.startswith("#EXTINF:"):
+            info_line = line
+            j = i + 1
+            url_line_index = -1
+            
+            # Find the URL that belongs to this channel
+            while j < len(master_lines):
+                if master_lines[j].strip().startswith(("http://", "https://", "rtmp://", "rtsp://", "udp://")):
+                    url_line_index = j
+                    break
+                j += 1
 
-        # 1. SKIP FANCODE - Handled separately
-        if "fancode" in my_ch['name'].lower():
-            updated_lines.append(format_channel_block(my_ch['url']))
-            continue
+            if url_line_index == -1:
+                # No URL found, keep the line and move on
+                updated_lines.append(master_lines[i])
+                i += 1
+                continue
 
-        # 2. Check category rules
-        group_match = re.search(r'''group-title=["']?([^"',\n\r]+)''', my_ch['raw_info'], re.IGNORECASE)
-        group_title = group_match.group(1).lower() if group_match else ""
-        is_sports = ("sport" in group_title) if group_title else ("sport" in my_ch['raw_info'].lower())
+            name = info_line.split(",")[-1].strip()
+            clean_ch_name = clean_name(name)
 
-        # 🔒 CATEGORY GUARD: Skip non-sports channels
-        if not is_sports:
-            updated_lines.append(format_channel_block(my_ch['url']))
-            continue
+            # Skip Fancode updates here
+            if "fancode" in name.lower():
+                for k in range(i, url_line_index + 1):
+                    updated_lines.append(master_lines[k])
+                i = url_line_index + 1
+                continue
 
-        # 3. Fuzzy Matching
-        best_match_name = None
-        highest_ratio = 0.0
+            # Check if it is a sports channel
+            group_match = re.search(r'''group-title=["']?([^"',\n\r]+)''', info_line, re.IGNORECASE)
+            group_title = group_match.group(1).lower() if group_match else ""
+            is_sports = ("sport" in group_title) if group_title else ("sport" in info_line.lower())
 
-        for src_name in source_channels.keys():
-            ratio = similar(my_ch['clean_name'], src_name)
-            if ratio > 0.85 and ratio > highest_ratio:
-                highest_ratio = ratio
-                best_match_name = src_name
+            if not is_sports:
+                for k in range(i, url_line_index + 1):
+                    updated_lines.append(master_lines[k])
+                i = url_line_index + 1
+                continue
 
-        if best_match_name:
-            print(f"✅ Matched '{my_ch['name']}' -> '{best_match_name}' (Ratio: {highest_ratio:.2f})")
-            urls = source_channels[best_match_name]
-            best_link = get_best_link(urls, session)
-            updated_lines.append(format_channel_block(best_link))
+            # Find best match from scraped sources
+            best_match_name = None
+            highest_ratio = 0.0
+
+            for src_name in source_channels.keys():
+                ratio = similar(clean_ch_name, src_name)
+                if ratio > 0.85 and ratio > highest_ratio:
+                    highest_ratio = ratio
+                    best_match_name = src_name
+
+            # Write data to file
+            if best_match_name:
+                print(f"✅ Updated URL for your channel: '{name}'")
+                urls = source_channels[best_match_name]
+                best_link = get_best_link(urls, session)
+                
+                # Append original channel name/info and meta lines exactly as they were
+                for k in range(i, url_line_index):
+                    updated_lines.append(master_lines[k])
+                # Append the new best URL
+                updated_lines.append(best_link + "\n")
+            else:
+                # No match found, keep the old block exactly as is
+                for k in range(i, url_line_index + 1):
+                    updated_lines.append(master_lines[k])
+
+            i = url_line_index + 1 # Skip past the old URL block
         else:
-            updated_lines.append(format_channel_block(my_ch['url']))
+            # THIS KEEPS ALL CUSTOM CATEGORIES, # SPORTS, AND BLANK LINES SAFE
+            updated_lines.append(master_lines[i])
+            i += 1
 
     with open(MASTER_PLAYLIST, 'w', encoding='utf-8') as f:
         f.writelines(updated_lines)
 
-    print("🎉 Update complete! All sports channels optimized and metadata preserved.")
+    print("🎉 Update complete! Custom names preserved, fast links injected.")
 
 if __name__ == "__main__":
     main()

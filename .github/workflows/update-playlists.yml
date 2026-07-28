@@ -1,56 +1,56 @@
 name: Update IPTV Playlists
-
 on:
   schedule:
     # Offset minutes to avoid peak queue times
     - cron: '7,37 * * * *'
   workflow_dispatch: {}
-
 permissions:
   contents: write
-
 concurrency:
   group: update-playlists
   cancel-in-progress: false
-
 jobs:
   update-playlists:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       # Install FFmpeg for blackdetect & freezedetect filters
       - name: Install System Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-
-      # Persist iptv_cache.json without committing it to Git
-      - name: Restore & Save IPTV Cache
+      # Persist per-script state files across runs without committing them
+      # to Git. Add a line under `path:` for any new state file a future
+      # script writes (e.g. a per-script cache or health file) -- it will
+      # be restored before scripts run and saved again after, using the
+      # same key/restore-keys pair already in place.
+      - name: Restore & Save Script State
         uses: actions/cache@v4
         with:
-          path: iptv_cache.json
+          path: |
+            iptv_cache.json
+            source_health.json
           key: iptv-cache-${{ runner.os }}-${{ github.run_id }}
           restore-keys: |
             iptv-cache-${{ runner.os }}-
-
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      # Runs every .py file under script/, one after another
+      # Runs every .py file under script/, one after another, in a fixed
+      # (sorted) order so behavior never depends on filesystem/glob
+      # ordering quirks across runners -- new scripts you drop in later
+      # just get picked up automatically, in name order.
       - name: Run all update scripts
         id: run_scripts
         continue-on-error: true
         run: |
           set +e
           overall_status=0
-          for script in script/*.py; do
+          for script in $(find script -maxdepth 1 -name '*.py' | sort); do
             echo "::group::Running $script"
             python "$script"
             status=$?
@@ -61,17 +61,16 @@ jobs:
             echo "::endgroup::"
           done
           exit $overall_status
-
-      # Stage only generated .m3u / .m3u8 files, avoiding iptv_cache.json
+      # Stage only generated .m3u / .m3u8 files, avoiding cache/state files
       - name: Commit and push if anything changed
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Explicitly exclude cache files if not in .gitignore
+
+          # Explicitly exclude cache/state files if not in .gitignore
           git add *.m3u *.m3u8 2>/dev/null || true
-          
+
           if git diff --cached --quiet; then
             echo "No playlist changes to commit"
           else
@@ -79,7 +78,6 @@ jobs:
             git commit -m "Auto-update playlists [skip ci]"
             git push
           fi
-
       # Surface a failed run in the Actions tab
       - name: Fail workflow if any script errored
         if: steps.run_scripts.outcome == 'failure'

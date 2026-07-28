@@ -3,7 +3,7 @@ import sys
 import subprocess
 
 def main():
-    # Base directory where tracker.py lives
+    # Root directory of the repository
     base_dir = os.path.dirname(os.path.abspath(__file__))
     script_dir = os.path.join(base_dir, 'script')
     
@@ -22,8 +22,8 @@ def main():
             print(f" Running: {script_name}")
             print(f"==========================================")
             
-            # Execute with cwd set to script_dir so relative file paths work properly
-            result = subprocess.run([sys.executable, script_path], cwd=script_dir)
+            # Execute from root directory (base_dir) so 'SAKIRULs IPTV.m3u' can be found
+            result = subprocess.run([sys.executable, script_path], cwd=base_dir)
             
             if result.returncode == 0:
                 print(f"✓ Finished {script_name} successfully.\n")
@@ -34,7 +34,6 @@ def main():
             print(f"⚠ Warning: Could not find {script_path}\n")
             has_failed = True
 
-    # Force GitHub Actions to report a failure if any script failed
     if has_failed:
         sys.exit(1)
 

@@ -72,11 +72,9 @@ def extract_wrapper(url):
     try:
         r = requests.get(url, timeout=5)
         if r.status_code == 200:
-            # Find the first valid stream link inside the wrapper file
             match = re.search(r'(https?://[^\s]+\.(?:m3u8|ts|m3u)[^\s]*)', r.text)
             if match:
                 return match.group(1)
-            # Fallback: just grab the first http link
             match = re.search(r'(https?://[^\s]+)', r.text)
             if match:
                 return match.group(1)
@@ -98,7 +96,6 @@ def get_best_link(urls):
     for url in urls:
         start = time.time()
         try:
-            # Fast HEAD request to check latency
             r = requests.head(url, timeout=3, allow_redirects=True)
             if r.status_code in [200, 302, 301]:
                 elapsed = time.time() - start
@@ -108,23 +105,19 @@ def get_best_link(urls):
         except:
             continue
             
-    # If all timed out, just fall back to the first one
     chosen_url = best_url if best_url else urls[0]
     return extract_wrapper(chosen_url)
 
 def parse_m3u(content):
     """Parses an M3U file into a list of dictionaries."""
     channels = []
-    # Split by EXTINF, keeping the block intact
     blocks = content.split("#EXTINF:")
     for block in blocks[1:]:
         lines = block.strip().split("\n")
         if len(lines) >= 2:
-            # Extract name after the last comma on the first line
             info_line = lines[0]
             name = info_line.split(",")[-1].strip()
             
-            # Find the first URL line (ignoring comments like #EXTVLCOPT)
             url = None
             for line in lines[1:]:
                 if line.startswith("http"):
@@ -172,39 +165,51 @@ def main():
     print(f"Updating {MASTER_PLAYLIST}...")
     updated_lines = ["#EXTM3U\n"]
     
-    # 3. Match and Update
+    # 3. Match and Update (SPORTS CATEGORY ONLY)
     for my_ch in master_parsed:
-        # SKIP FANCODE - The Fancode script handles this.
+        # SKIP FANCODE - Handled separately
         if "fancode" in my_ch['name'].lower():
             updated_lines.append(f"{my_ch['raw_info']}\n{my_ch['url']}\n")
             continue
-            
+
+        # Extract group-title attribute (Category) from #EXTINF header
+        group_match = re.search(r'group-title=["\']?([^"',\n\r]+)', my_ch['raw_info'], re.IGNORECASE)
+        group_title = group_match.group(1).lower() if group_match else ""
+
+        # Check if category contains "sport" (e.g., Sports, BD Sports, Sports HD)
+        is_sports = ("sport" in group_title) if group_title else ("sport" in my_ch['raw_info'].lower())
+
+        # 🔒 CATEGORY GUARD: Skip non-sports channels and keep original links untouched!
+        if not is_sports:
+            updated_lines.append(f"{my_ch['raw_info']}\n{my_ch['url']}\n")
+            continue
+
+        # Fuzzy Matching (Runs ONLY for Sports channels)
         best_match_name = None
         highest_ratio = 0
         
-        # Fuzzy Matching
         for src_name in source_channels.keys():
             ratio = similar(my_ch['clean_name'], src_name)
-            if ratio > 0.85 and ratio > highest_ratio: # 85% similarity threshold
+            if ratio > 0.85 and ratio > highest_ratio:
                 highest_ratio = ratio
                 best_match_name = src_name
                 
         if best_match_name:
-            print(f"Matched '{my_ch['name']}' with source '{best_match_name}' (Ratio: {highest_ratio:.2f})")
+            print(f"Matched Sports Channel '{my_ch['name']}' with source '{best_match_name}' (Ratio: {highest_ratio:.2f})")
             urls = source_channels[best_match_name]
             best_link = get_best_link(urls)
             
-            # Write updated channel
+            # Write updated sports channel
             updated_lines.append(f"{my_ch['raw_info']}\n{best_link}\n")
         else:
-            # NO DELETIONS: If no match found, keep the original exactly as it was
+            # If no match found in sources, keep original link
             updated_lines.append(f"{my_ch['raw_info']}\n{my_ch['url']}\n")
 
     # 4. Save the updated master playlist
     with open(MASTER_PLAYLIST, 'w', encoding='utf-8') as f:
         f.writelines(updated_lines)
     
-    print("Update complete!")
+    print("Update complete! Only Sports category links were updated.")
 
 if __name__ == "__main__":
     main()

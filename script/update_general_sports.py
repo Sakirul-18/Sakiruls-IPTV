@@ -217,7 +217,7 @@ def main():
             continue
 
         # 2. Check category rules
-        group_match = re.search(r'group-title=["\']?([^"',\n\r]+)', my_ch['raw_info'], re.IGNORECASE)
+        group_match = re.search(r'''group-title=["']?([^"',\n\r]+)''', my_ch['raw_info'], re.IGNORECASE)
         group_title = group_match.group(1).lower() if group_match else ""
         is_sports = ("sport" in group_title) if group_title else ("sport" in my_ch['raw_info'].lower())
 

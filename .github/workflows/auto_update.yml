@@ -27,16 +27,17 @@ jobs:
           # Add any other libraries your tracker script needs (e.g., cloudscraper, beautifulsoup4)
           pip install requests 
 
-      # --- RUN YOUR 3 PYTHON SCRIPTS IN ORDER ---
+    # --- RUN YOUR 3 PYTHON SCRIPTS IN ORDER ---
       - name: Run IPTV Playlist Updater
-        run: python update_script.py  # ⚠️ Replace with script 1 filename
+        run: python YOUR_ACTUAL_SCRIPT_1.py  # 👈 Replace with real filename (e.g., main.py)
 
       - name: Run Tracker Script
-        run: python tracker.py        # ⚠️ Replace with tracker script filename
+        run: python YOUR_ACTUAL_SCRIPT_2.py  # 👈 Replace with real tracker filename
 
       - name: Run Third Script
-        run: python script3.py        # ⚠️ Replace with script 3 filename
+        run: python YOUR_ACTUAL_SCRIPT_3.py  # 👈 Replace with real third script filename
 
+        
       # --- COMMIT ALL UPDATED FILES AT ONCE ---
       - name: Commit and push changes
         run: |

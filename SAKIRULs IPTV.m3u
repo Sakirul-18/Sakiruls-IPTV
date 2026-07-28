@@ -400,7 +400,7 @@ https://livecf.fancode.com/143641_english_hls_172b098b4923302_1ta-di_h264/index.
 
 
 #EXTINF:-1 group-title="Sports", LaLiga TV
-https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-66628d4a8dfc36b8c8a399c4.m3u8?X-Plex-Token=FwkvCmx3uzFc7eYkDe2m
+https://jmp2.uk/stvp-ATBA3300007PT
 
 #EXTINF:-1 group-title="Sports", LFC TV
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=814498&extension=m3u8
@@ -419,9 +419,9 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=392163&extens
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=392162&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Premier Sports 1
-http://fastshare1.com:80/live/25711345/late8airline/5029.ts
+https://cdn2.zohanayaan.com:1686/hls/premieruk.m3u8?md5=A0Clsi6y25V_N3ll92ohcg&expires=1785266424
 #EXTINF:-1 group-title="Sports", Premier Sports 2
-http://fastshare1.com:80/live/25711345/late8airline/5030.ts
+https://cdn8.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=8mv34ZUSfyh5Uj6JJptxqQ&expires=1785266424
 #EXTINF:-1 group-title="Sports", PTV
 
 
@@ -441,25 +441,25 @@ https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_3360.m3u8
 https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sp-s2/1149502.m3u8
 
 #EXTINF:-1 group-title="Sports", Sky Sports Action
-http://213.109.154.154/iptv/HEGN4VXXQQSYCA/9155/1785262329000.ts?md5=NSR3-VmPSUnMLawVx2dQSQ
+https://cdn4.zohanayaan.com:1686/hls/skysact.m3u8?md5=CV_aDf8K7X5ydfRI6YW8_w&expires=1785266423
 #EXTINF:-1 group-title="Sports", Sky Sports Cricket
-http://6zirt9yx.otttv.pw/iptv/HEGN4VXXQQSYCA/9258/index.m3u8
+https://crichdplaylist.extratvteam.workers.dev/master.m3u8?cid=skyscric&e=.m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports F1
 
 #EXTINF:-1 group-title="Sports", Sky Sports Football
 https://cdn2.zohanayaan.com:1686/hls/skysfor1.m3u8?md5=bFMVHVlEXG_QMhHCcNmKtw&expires=1785266424
 #EXTINF:-1 group-title="Sports", Sky Sports Golf
-http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/19132/index.m3u8
+https://cdn7.zohanayaan.com:1686/hls/skysgol.m3u8?md5=s1sF_hJiABfG6wto96x9bA&expires=1785266423
 #EXTINF:-1 group-title="Sports", Sky Sports Main Event
-http://ytoxw6un.ottclub.xyz/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/9308/index.m3u8
+https://cdn8.zohanayaan.com:1686/hls/skysme.m3u8?md5=lO0leI63yPcEaDNq-BME6w&expires=1785266421
 #EXTINF:-1 group-title="Sports", Sky Sports Mix
-http://6zirt9yx.otttv.pw/iptv/HEGN4VXXQQSYCA/9310/index.m3u8
+https://tiger-hub.vercel.app/SkySports-mix/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports News
-https://a1xs.vip/2000004
+https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/callection/alfa-wc1/alfa-wc1/79474.m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Plus
 https://cdn2.zohanayaan.com:1686/hls/skysare.m3u8?md5=GSWgp3AzpLn6a5bOteMMOw&expires=1785266423
 #EXTINF:-1 group-title="Sports", Sky Sports Premier League
-http://fastshare1.com:80/live/25711345/late8airline/23342.ts
+https://tiger-hub.vercel.app/SkySports-premire_League/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Racing
 
 #EXTINF:-1 group-title="Sports", Sky Sports Tennis
@@ -484,7 +484,7 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507397&ext
 #EXTINF:-1 group-title="Sports", Star Sports 1
 http://stvlive.net:8080/starsports1/index.m3u8
 #EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
-http://41.205.93.154/STARSPORTS1/index.m3u8
+https://cdn1.zohanayaan.com:1686/hls/starhindi.m3u8?md5=JUxWx0IAl5QPhJldxsahDQ&expires=1785266419
 #EXTINF:-1 group-title="Sports", Star Sports Select 1
 https://tiger-hub.vercel.app/Starsports_Select-1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Sports", Star Sports Select 2

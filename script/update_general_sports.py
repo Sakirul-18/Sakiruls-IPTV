@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-SAKIRULs IPTV Sports Auto Updater (Production Release - No FanCode)
+SAKIRULs IPTV Sports Auto Updater (Production Release - Integrated Sources)
 
 Features:
 - Master list (CHANNELS) integrity verification.
 - Advanced normalization (accents, camelCase, letter-number splits).
 - 4-Tier Matching System (Exact, Token, Token Quality-Stripped, Merged-Token).
-- Configurable Source Priority Engine (Lock & Prefer routing).
+- Configurable Source Priority Engine (Dedicated Sky Sports/T-Sports routing & general fallbacks).
 - Raw Wrapper URL Resolution (Regex extraction, prefers .m3u8, preserves tokens).
 - Deep Stream Validation & Weighted Scoring.
 """
@@ -61,23 +61,60 @@ TSPORTS_SOURCES = [
     "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/universal_player.m3u",
 ]
 
-SPORTS_S1 = "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/refs/heads/main/sports-s1.m3u"
-
 SOURCE_URLS = [
-    SPORTS_S1,
-    *SKY_SPORTS_PREFERRED_SOURCE,
+    # IPTVFlixBD - OopsTv
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/2.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/Sports-s7.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/alfa-wc.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/all-sports.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/asia.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/bd-spo.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/bd-test.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/bear.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/chspo.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/new-sp-s4.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/new-sports-fast.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s1.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s2.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/wc5.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/wc8.m3u",
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/world-1.m3u",
-    "https://raw.githubusercontent.com/abusaeeidx/Toffee-playlist/main/ott_navigator.m3u",
+    # IPTVFlixBD - BDIX
+    "https://raw.githubusercontent.com/IPTVFlixBD/BDIX-IPTV-playlist/main/A1x.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/BDIX-IPTV-playlist/main/BDIX.m3u",
+    "https://raw.githubusercontent.com/IPTVFlixBD/BDIX-IPTV-playlist/main/IPTV-mix.m3u",
+    # IPTVFlixBD
+    "https://raw.githubusercontent.com/IPTVFlixBD/iptv-playlist/main/PlexTV.m3u8",
+    # CricHD
+    "https://raw.githubusercontent.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent/main/ALL.m3u",
+    # IPTV Scraper Zilla
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/CricHD.m3u",
-] + TSPORTS_SOURCES 
+    "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/BD.m3u",
+    "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/SamsungTVPlus-All.m3u",
+    # Toffee
+    "https://raw.githubusercontent.com/abusaeeidx/Toffee-playlist/main/ott_navigator.m3u",
+    # T Sports
+    "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/combine_playlist.m3u",
+    "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/ns_player.m3u",
+    "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/ott_navigator.m3u",
+    "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/universal_player.m3u",
+    # KB TV
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/FIFA%20Live%20Playlist%20Server%20v1.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/FIFA%20Special%20KB%20Live%20Tv%20Playlist%20v1.4.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/Github%20Auto%20Update%20Channel.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/KB%20Live%20Tv%20121%20Channel%20v1.2.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/KB%20Live%20Tv%20Playlist%20v1.3.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/KB%20Live%20Tv%20Playlist%20v1.6.m3u",
+    "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/KB%20TV%20Playlist%2047%20Channel%20v1.0.m3u"
+]
 
 # Source Priority Engine
 SOURCE_PRIORITIES = {
     "sky sports": {"lock": SKY_SPORTS_PREFERRED_SOURCE},
     "t sports": {"prefer": TSPORTS_SOURCES},
-    "sony sports": {"prefer": [SPORTS_S1, *SKY_SPORTS_PREFERRED_SOURCE]},
-    "star sports": {"prefer": [SPORTS_S1, *SKY_SPORTS_PREFERRED_SOURCE]},
-    "bein sports": {"prefer": [SPORTS_S1, *SKY_SPORTS_PREFERRED_SOURCE]}
+    "sony sports": {"prefer": SKY_SPORTS_PREFERRED_SOURCE},
+    "star sports": {"prefer": SKY_SPORTS_PREFERRED_SOURCE},
+    "bein sports": {"prefer": SKY_SPORTS_PREFERRED_SOURCE}
 }
 
 HEADERS = {
@@ -468,6 +505,9 @@ def main():
             STATS["matched"] += 1
         else:
             print(f" -> [FAILED] No valid streams found for {ch_name.strip()}")
+            
+    PLAYLIST_FILE.write_text("\n".join(updated_playlist_lines), encoding="utf-8")
+    print(f"Playlist updated successfully: {PLAYLIST_FILE}")
 
 if __name__ == "__main__":
     main()

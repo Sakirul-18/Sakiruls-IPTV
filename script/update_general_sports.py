@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-SAKIRULs IPTV Sports Auto Updater (Production Release - Integrated Sources)
+SAKIRULs IPTV Sports Auto Updater (Production Release - Category Preserving)
 
 Features:
+- Preserves existing non-sports categories/channels from your current playlist.
 - Master list (CHANNELS) integrity verification.
 - Advanced normalization (accents, camelCase, letter-number splits).
 - 4-Tier Matching System (Exact, Token, Token Quality-Stripped, Merged-Token).
@@ -330,6 +331,35 @@ def load_sources() -> List[ChannelData]:
                 print(f"Loaded {len(channels)} channels from {url}")
     return all_channels
 
+def load_existing_non_sports_channels() -> List[str]:
+    """Reads the existing playlist file and preserves any channel lines that are NOT in our tracked sports CHANNELS list."""
+    preserved_lines = []
+    if not PLAYLIST_FILE.exists():
+        return preserved_lines
+    
+    content = PLAYLIST_FILE.read_text(encoding="utf-8", errors="ignore")
+    tracked_normalized = {normalize(c) for c in CHANNELS}
+    
+    lines = content.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        if line.startswith("#EXTINF"):
+            extinf_line = line
+            ch_name = line.rsplit(",", 1)[-1].strip() if "," in line else ""
+            
+            if i + 1 < len(lines) and not lines[i+1].startswith("#"):
+                url_line = lines[i+1].strip()
+                i += 2
+                
+                # If the channel is not part of our tracked sports list, keep it safe!
+                if normalize(ch_name) not in tracked_normalized:
+                    preserved_lines.append(extinf_line)
+                    preserved_lines.append(url_line)
+                continue
+        i += 1
+    return preserved_lines
+
 # ---------------------------------------------------------------------------
 # Smarter Matching & Priority Engine
 # ---------------------------------------------------------------------------
@@ -485,10 +515,16 @@ def main():
     print("Starting SAKIRULs IPTV Sports Auto Updater...")
     session = get_http_session()
     
+    # 1. Preserve other non-sports categories from the existing playlist file
+    preserved_channels = load_existing_non_sports_channels()
+    print(f"Preserved {len(preserved_channels) // 2} non-sports/other channels from existing playlist.")
+    
+    # 2. Load online source lists
     all_channels = load_sources()
     
     updated_playlist_lines = ["#EXTM3U"]
     
+    # 3. Process tracked sports channels
     for ch_name in CHANNELS:
         print(f"Processing: {ch_name.strip()}")
         rules = get_source_rules(ch_name)
@@ -506,8 +542,12 @@ def main():
         else:
             print(f" -> [FAILED] No valid streams found for {ch_name.strip()}")
             
+    # 4. Append back the preserved non-sports categories
+    updated_playlist_lines.extend(preserved_channels)
+    
+    # 5. Save the final integrated playlist
     PLAYLIST_FILE.write_text("\n".join(updated_playlist_lines), encoding="utf-8")
-    print(f"Playlist updated successfully: {PLAYLIST_FILE}")
+    print(f"Playlist updated successfully with sports + preserved categories: {PLAYLIST_FILE}")
 
 if __name__ == "__main__":
     main()

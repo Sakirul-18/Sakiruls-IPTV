@@ -2,9 +2,13 @@ name: Auto Update IPTV Playlists
 
 on:
   schedule:
-    # Runs automatically every 12 hours (adjust the cron schedule if needed)
-    - cron: '0 */12 * * *'
-  workflow_dispatch: # Allows you to run it manually from the GitHub Actions tab
+    # Runs automatically every 10 minutes
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+# Explicitly grant write access to commit & push playlist updates
+permissions:
+  contents: write
 
 jobs:
   update-playlists:
@@ -12,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -27,6 +31,8 @@ jobs:
       - name: Run all Python scripts in the script directory
         run: |
           for script in script/*.py; do
+            # Ensure file exists before running
+            [ -f "$script" ] || continue
             echo "----------------------------------------"
             echo "Running $script..."
             python "$script"
@@ -41,4 +47,4 @@ jobs:
           git add "SAKIRULs IPTV.m3u"
           
           # Only commit if there are actual changes made to the file
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Playlist Update: Pulled latest low-latency streams" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Playlist Update: Pulled latest streams" && git push)

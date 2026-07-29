@@ -376,7 +376,7 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 # ─────────── Sports ───────────
 #EXTINF:-1 group-title="Sports", beIN SPORTS 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174236&extension=m3u8
+http://103.89.248.26:8082/Bein-hd/index.fmp4.m3u8?token=0fb86721d4e2102fa8de75b6b7e31cf2754e50dc-5b1686eeef86da13482bf9a731a61a55-1785328804-1785318004
 #EXTINF:-1 group-title="Sports", beIN SPORTS 2
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174237&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 3
@@ -445,7 +445,7 @@ https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=TQU-FQKoM2B8d7E7UCgE4Q&e
 #EXTINF:-1 group-title="Sports", Premier Sports 2
 https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=4J2LFVb8I6dPNXKOqpvXOQ&expires=1785059421
 #EXTINF:-1 group-title="Sports", PTV
-http://103.89.248.26:8082/LIVE-FOOTBALL-1/index.fmp4.m3u8?token=fc79372a4a3ca18d41faadc1fedc968c563be658-0ee35d3c9bc12249863cc6e5e4cefed7-1785111605-1785100805
+http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170ab377c8feca36-56bfdb50b3d862afb44a471605384a0f-1785328684-1785317884
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
@@ -551,9 +551,9 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311901&ext
 
 
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 1
-http://103.89.248.50:8082/2LIVE/index.fmp4.m3u8?token=57d3c83d14d4c72d8f96210aafcfff2caa9f63da-2ffce1a49966390e7601e18ac5855743-1785191692-1785180892
+http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f98756309334d7a-757886a7025c0511c980136a30e94250-1785328597-1785317797
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 2
-http://103.89.248.50:8082/1LIVE/index.fmp4.m3u8?token=14735cdd4e49ca1277c5f010ac48c3d8622c5640-1e6b4f1665b95243ebb0a6b3a7cb0b6b-1785191623-1785180823
+http://103.89.248.30:8082/1LIVE/index.fmp4.m3u8?token=8525f481621c0d97ba1eaff83fd0cb930cbf7079-84a75dfdbce4dec771ed2c33746ac378-1785328299-1785317499
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8

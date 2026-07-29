@@ -196,30 +196,56 @@ https://live20.bozztv.com/giatvplayout7/giatv-208314/tracks-v1a1/mono.ts.m3u8
 https://www.youtube.com/watch?v=RXoDbwZmXV8
 
 # ─────────── Entertainment ───────────
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/3TXPVSGzx5.png", Star Jalsha
+http://103.191.99.248:5550/302/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/3TXPVSGzx5.png", Star Jalsha B
+http://tvsen7.aynascope.net/sjhdbd/index.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/3TXPVSGzx5.png", Star Jalsha C
+http://mag.king-4k.cc/C1645263A1D245C/1sFTVBSVCP/63525
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/qonZADSZua.png", Zee Bangla
+https://stream.ottplus.bd/live/zee_bangla_abr/live/zee_bangla_720/chunks.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/qonZADSZua.png", Zee Bangla B
+http://mag.king-4k.cc/C1645263A1D245C/1sFTVBSVCP/112571
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/qonZADSZua.png", Zee Bangla C
+https://stream.ottplus.live/live/zee_bangla_abr/live/zee_bangla_720/chunks.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/oDQ4LN8zlN.png", Colors Bangla
-http://main.epgmaker.com/live/y49sz6KMQs/6115263489/532.ts
+http://mag.king-4k.cc/C1645263A1D245C/1sFTVBSVCP/108781
 
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/1_dUKmt1Oe.png", G Series Drama
-https://vods2.aynaott.com/gseriesDrama/tracks-v1a1/mono.ts.m3u8
-
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/54/Mr._Bean_%28animated_series%29.svg/revision/latest?cb=20260201140730", Mr Bean – 24/7
-https://www.youtube.com/watch?v=aYco1VpAoWc
-
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/5tDvvUEpWx.png", Sony Aath
-https://edge2.roarzone.net:8447/roarzone/edge3/sonyaath/index.m3u8?token=c1bbca22ab088b19c0bba490f6f74c67dcff3a88-61933a142add01f3550129205ce90895-1781061323-1781050523
-
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/uZtiXpPz29.png", SRK Tv
-https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
-
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/3TXPVSGzx5.png", Star Jalsha
-https://yupptvcatchupire.yuppcdn.net/preview/starjalsha/1800.m3u8
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/oDQ4LN8zlN.png", Colors Bangla B
+http://103.151.61.12/COLORS_BANHLA/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/vyWRYIqnfy.png", Sun Bangla
 http://27.124.71.27/Sun_Bangla/index.m3u8
 
-#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/qonZADSZua.png", Zee Bangla HD
-http://main.epgmaker.com/live/y49sz6KMQs/6115263489/536.ts
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/vyWRYIqnfy.png", Sun Bangla B
+http://103.151.61.12/SUN_BANGLA/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="", Enter10 Bangla
+https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/5tDvvUEpWx.png", Sony Aath
+https://stream.ottplus.live/live/sony_aath_abr/index.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/5tDvvUEpWx.png", Sony Aath
+https://stream.ottplus.bd/live/sony_aath_abr/live/sony_aath_720/chunks.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/hEzUhoTW3x.jpg", Jalsha Movies
+http://mag.king-4k.cc/C1645263A1D245C/1sFTVBSVCP/63524
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/hEzUhoTW3x.jpg", Jalsha Movies B
+http://103.151.61.12/Jalsha_Movie/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/1_dUKmt1Oe.png", G Series Drama
+https://vods2.aynaott.com/gseriesDrama/tracks-v1a1/mono.ts.m3u8
+
+#EXTINF:-1 group-title="Entertainment" tvg-logo="https://imglink.cc/cdn/uZtiXpPz29.png", SRK Tv
+https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
 
 # ─────────── Movies ───────────
 

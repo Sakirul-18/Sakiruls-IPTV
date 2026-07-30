@@ -562,6 +562,8 @@ http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&exten
 http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=809386&extension=m3u8
 
 
+#EXTINF:-1 group-title="Sports", WWE Network
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8
 
 
 #_________________Tv series_______________________
@@ -596,5 +598,3 @@ http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%
 #EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP10
 http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E10.Revelations.Chapter.Two.REPACK.1080p.AMZN.WEB-DL.DDP5.1.H.264.mkv
 
-#EXTINF:-1 group-title="Sports", WWE Network
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8

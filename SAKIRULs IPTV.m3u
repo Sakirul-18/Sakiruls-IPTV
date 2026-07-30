@@ -422,7 +422,7 @@ http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%
 #EXTINF:-1 group-title="Sports", beIN SPORTS 1
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827990&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 2
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827989&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174237&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 3
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174238&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 4
@@ -430,7 +430,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174239&extensio
 #EXTINF:-1 group-title="Sports", beIN SPORTS 5
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622659&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 6
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622658&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=117329&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", DAZN 1
@@ -441,9 +441,9 @@ http://194.59.59.87/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1785317016000.ts?md5=erj9N
 
 
 #EXTINF:-1 group-title="Sports", Eurosport 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8
+http://151.80.18.177:86/Eurosport_HD/index.m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://livecf.fancode.com/4248200_english_hls_9780c44d6569459_1ta-di_h264/index.m3u8
@@ -452,7 +452,7 @@ https://livecf.fancode.com/4246718_english_hls_abcdc67d1179494_1ta-di_h264/index
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://livecf.fancode.com/4247436_english_hls_ca300c4f0781842_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
-https://livecf.fancode.com/4246805_english_hls_302416363781824_1ta-di_h264/index.m3u8
+https://livecf.fancode.com/4248044_english_hls_579a8a938f65205_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://livecf.fancode.com/4246806_english_hls_ff055b058229766_1ta-di_h264/index.m3u8
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
@@ -493,18 +493,18 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&extension=m3u8
+http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1870429&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1796581&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
-https://jmp2.uk/stvp-DEBC2300001EU
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944676&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Servus TV Motorsport
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=761092&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=761092&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sky Sports Action
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79482&extension=m3u8
@@ -600,7 +600,7 @@ http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f
 http://103.89.248.30:8082/1LIVE/index.fmp4.m3u8?token=8525f481621c0d97ba1eaff83fd0cb930cbf7079-84a75dfdbce4dec771ed2c33746ac378-1785328299-1785317499
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1152827&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8

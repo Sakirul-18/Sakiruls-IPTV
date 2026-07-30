@@ -376,9 +376,9 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 # ─────────── Sports ───────────
 #EXTINF:-1 group-title="Sports", beIN SPORTS 1
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827990&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174236&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 2
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174237&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827989&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 3
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174238&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 4
@@ -386,7 +386,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174239&extensio
 #EXTINF:-1 group-title="Sports", beIN SPORTS 5
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622659&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 6
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622658&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=117329&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", DAZN 1
@@ -397,9 +397,9 @@ http://194.59.59.87/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1785317016000.ts?md5=erj9N
 
 
 #EXTINF:-1 group-title="Sports", Eurosport 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&extension=m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941601&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://livecf.fancode.com/4246720_english_hls_e5254c82f165480_1ta-di_h264/index.m3u8
@@ -410,7 +410,7 @@ https://livecf.fancode.com/4247436_english_hls_ca300c4f0781842_1ta-di_h264/index
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://livecf.fancode.com/4248044_english_hls_579a8a938f65205_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
-https://livecf.fancode.com/4246806_english_hls_ff055b058229766_1ta-di_h264/index.m3u8
+https://livecf.fancode.com/4248043_english_hls_5cbf26f21e19135_1ta-di_h264/index.m3u8
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
 
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
@@ -454,7 +454,7 @@ http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=1312829&
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1796581&extension=m3u8
+http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1870429&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944676&extension=m3u8
@@ -498,7 +498,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=282672&extens
 http://212.102.38.45/live/test_sport1_25p/playlist.m3u8
 
 #EXTINF:-1 group-title="Sports", Sportdigital Fußball
-http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=411539&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=411539&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sports18 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=507397&extension=m3u8
@@ -559,7 +559,7 @@ http://103.89.248.30:8082/1LIVE/index.fmp4.m3u8?token=8525f481621c0d97ba1eaff83f
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=809386&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network

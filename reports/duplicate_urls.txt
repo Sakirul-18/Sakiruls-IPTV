@@ -601,3 +601,5 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
+https://cdn6.zohanayaan.com:1686/hls/premieruk.m3u8?md5=a4m0d1JdQSnBWpjZgP4Ayg&expires=1785455419
+https://cdn7.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=qRreJS_FUnVMN5EbPk1Lqw&expires=1785455419

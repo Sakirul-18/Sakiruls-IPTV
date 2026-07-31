@@ -7,6 +7,9 @@ NPO 1 HD
 Premier Sports 1
 Premier Sports 2
 PTV
+Sky Sports F1
+SuperSport Cricket
+SuperSport Football
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League

@@ -29,7 +29,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/1715-audio_113452_eng=113200-vid
 https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
 
 #EXTINF:-1 group-title="Sports", BTV World
-https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
+https://tvsen6.aynaott.com/AQLYTPfXtjm5x7zj7AsM/tracks-v1a1/mono.ts.m3u8
 
 #EXTINF:-1 group-title="Bangladesh" tvg-logo="https://i.ibb.co.com/DP1GSwB3/Bijoy-TV.png", Bijoy TV
 https://tvsen6.aynaott.com/bijoytv/index.m3u8?e=1780662760&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=3ce64c165e70832dc446d5fe776bb64b
@@ -376,7 +376,7 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 # ─────────── Sports ───────────
 #EXTINF:-1 group-title="Sports", beIN SPORTS 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174236&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827990&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 2
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174237&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 3
@@ -386,7 +386,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174239&extensio
 #EXTINF:-1 group-title="Sports", beIN SPORTS 5
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622659&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 6
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=117329&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622658&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", DAZN 1
@@ -399,16 +399,16 @@ http://194.59.59.87/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1785317016000.ts?md5=erj9N
 #EXTINF:-1 group-title="Sports", Eurosport 1
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941601&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
-#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-ak-pdlive.akamaized.net/mumbai/4248191_english_hls_200397cf8d1079_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://livecf.fancode.com/4246706_english_hls_0477c0fff848776_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
+https://bd-ak-pdlive.akamaized.net/mumbai/4248192_english_hls_4f347bd4c216779_1ta-di_h264/index.m3u8
+#EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://livecf.fancode.com/4247436_english_hls_ca300c4f0781842_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
-https://livecf.fancode.com/4248044_english_hls_579a8a938f65205_1ta-di_h264/index.m3u8
+https://bd-ak-pdlive.akamaized.net/mumbai/4248046_english_hls_51fcc84f2978352_1ta-di_h264/index.m3u8
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://livecf.fancode.com/4248043_english_hls_5cbf26f21e19135_1ta-di_h264/index.m3u8
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
@@ -431,7 +431,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=45268&extensi
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=132601&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", MUTV
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=827988&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1282729&extension=m3u8
@@ -449,12 +449,12 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=899881&extension=m3u8
+http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1796581&extension=m3u8
+http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1870429&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944676&extension=m3u8
@@ -501,7 +501,7 @@ http://212.102.38.45/live/test_sport1_25p/playlist.m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=411539&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sports18 1 HD
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=507397&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507397&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373206&extension=m3u8
@@ -553,17 +553,17 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311901&ext
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 1
 http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f98756309334d7a-757886a7025c0511c980136a30e94250-1785328597-1785317797
 #EXTINF:-1 group-title="Sports", UNITE8 SPORTS 2
-http://103.89.248.30:8082/1LIVE/index.fmp4.m3u8?token=8525f481621c0d97ba1eaff83fd0cb930cbf7079-84a75dfdbce4dec771ed2c33746ac378-1785328299-1785317499
+https://tvsen7.aynascope.net/Sports1/tracks-v1a1/mono.ts.m3u8
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1152827&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8
+http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=809386&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=571184&extension=m3u8
 
 
 #_________________Tv series_______________________

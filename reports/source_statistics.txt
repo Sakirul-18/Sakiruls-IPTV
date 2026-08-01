@@ -19,7 +19,7 @@ https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/wc8.m3u	25969 channels
 https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/world-1.m3u	7006 channels
 https://raw.githubusercontent.com/IPTVFlixBD/iptv-playlist/main/PlexTV.m3u8	625 channels
 https://raw.githubusercontent.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent/main/ALL.m3u	43 channels
-https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/BD.m3u	450 channels
+https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/BD.m3u	448 channels
 https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/CricHD.m3u	43 channels
 https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/main/SamsungTVPlus-All.m3u	2572 channels
 https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/combine_playlist.m3u	11 channels

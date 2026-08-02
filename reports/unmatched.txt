@@ -1,3 +1,4 @@
+beIN SPORTS 5
 DAZN 1
 Das Erste HD
 FIFA+
@@ -7,7 +8,7 @@ NPO 1 HD
 Premier Sports 1
 Premier Sports 2
 PTV
-Sky Sports Football
+Real Madrid TV
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League

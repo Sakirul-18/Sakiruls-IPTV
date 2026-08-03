@@ -6,6 +6,10 @@ on:
     - cron: '*/10 * * * *'
   workflow_dispatch: # Allows manual run anytime
 
+concurrency:
+  group: iptv-tracker-update
+  cancel-in-progress: false
+
 jobs:
   update-all:
     runs-on: ubuntu-latest
@@ -43,5 +47,9 @@ jobs:
             echo "No changes detected across any script outputs."
           else
             git commit -m "auto: update playlists and tracker streams [skip ci]"
-            git push
+            
+            # Pull latest changes and rebase to avoid rejections from concurrent updates
+            git pull origin main --rebase || echo "Rebase encountered an issue, proceeding..."
+            
+            git push origin main
           fi

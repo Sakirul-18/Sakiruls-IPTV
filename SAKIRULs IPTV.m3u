@@ -576,35 +576,3 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8
 
 
-#_________________Tv series_______________________
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP1
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/From.S03E01.Shatter.1080p.AMZN.WEB-DL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP2
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E02.When.We.Go.1080p.AMZN.WEB-DL.DUAL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP3
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E03.Mouse.Trap.1080p.AMZN.WEB-DL.DUAL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP4
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/From.S03E04.There.and.Back.Again.1080p.AMZN.WEB-DL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP5
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/From.S03E05.The.Light.of.Day.1080p.AMZN.WEB-DL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP6
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E06.Scar.Tissue.1080p.AMZN.WEB-DL.DUAL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP7
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E07.These.Fragile.Lives.1080p.AMZN.WEB-DL.DUAL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP8
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E08.Thresholds.1080p.AMZN.WEB-DL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP9
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E09.Revelations.Chapter.One.1080p.AMZN.WEB-DL.DUAL.DDP5.1.H.264.mkv
-
-#EXTINF:-1 group-title="Tv Series" tvg-logo="http://new.circleftp.net:5000/uploads/42e56d56-ced8-44f0-95c3-5d21e9938344.jpeg", FROM S3 EP10
-http://ftp16.circleftp.net/FILE/Dubbed%20TV%20Series%20%26%20Shows/From%20%28TV%20Series%202022-%29%20%5BDual%20Audio%5D%20%5BHin%2BEng%5D/Season%203%201080p/FROM.TV.S03E10.Revelations.Chapter.Two.REPACK.1080p.AMZN.WEB-DL.DDP5.1.H.264.mkv
-

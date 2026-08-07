@@ -3,5 +3,5 @@ downloaded=37
 failed=0
 parsed_channels=74728
 validated_urls=162
-duplicate_urls_removed=601
-runtime_seconds=315.36
+duplicate_urls_removed=598
+runtime_seconds=318.22

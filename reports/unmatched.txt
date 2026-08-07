@@ -1,3 +1,4 @@
+beIN SPORTS 6
 BTV World
 DAZN 1
 Das Erste HD
@@ -8,7 +9,6 @@ NPO 1 HD
 Premier Sports 1
 Premier Sports 2
 PTV
-Sky Sports News
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League

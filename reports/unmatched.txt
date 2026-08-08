@@ -8,7 +8,9 @@ NPO 1 HD
 Premier Sports 1
 Premier Sports 2
 PTV
-Sony Sports Ten 3
+Sony Sports Ten 1
+SuperSport Cricket
+SuperSport Football
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League

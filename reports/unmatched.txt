@@ -4,11 +4,9 @@ Das Erste HD
 FIFA+
 LaLiga TV
 Motorsport.tv
-NPO 1 HD
 Premier Sports 1
 Premier Sports 2
 PTV
-Sony Sports Ten 1
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -23,4 +21,3 @@ TNT Sports 2
 TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
-UNITE8 SPORTS 2

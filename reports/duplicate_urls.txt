@@ -592,7 +592,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
+https://cdn1.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=pn-BXXa0KTv1UdypEMULRQ&expires=1786171593
 https://cdn1.zohanayaan.com:1686/hls/premieruk.m3u8?md5=-ioY6V3WFj04xIXRK1K3KA&expires=1786026038
-https://cdn10.zohanayaan.com:1686/hls/premieruk.m3u8?md5=cUqkXcSyT-qkp09tZiTYZA&expires=1786168737
+https://cdn3.zohanayaan.com:1686/hls/premieruk.m3u8?md5=FQrnE_CvJHG-YqKSRwH5WQ&expires=1786171593
 https://cdn4.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=W_2aykpVbbDdjww03QsbIA&expires=1786026038
-https://cdn8.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=ny4kcCMlITjcbjNIXVWtWQ&expires=1786168737

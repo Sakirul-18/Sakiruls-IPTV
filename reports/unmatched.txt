@@ -7,6 +7,8 @@ Motorsport.tv
 Premier Sports 1
 Premier Sports 2
 PTV
+SuperSport Cricket
+SuperSport Football
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League

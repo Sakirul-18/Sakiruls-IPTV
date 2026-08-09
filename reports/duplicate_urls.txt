@@ -56,6 +56,7 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242251&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242253&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242254&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242255&extension=m3u8
+http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373197&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373198&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373199&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373200&extension=m3u8
@@ -255,6 +256,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=798833&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=798834&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809383&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809384&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809403&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809406&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901321&extension=m3u8
@@ -594,7 +596,6 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
 https://cdn1.zohanayaan.com:1686/hls/premieruk.m3u8?md5=-ioY6V3WFj04xIXRK1K3KA&expires=1786026038
-https://cdn10.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=UH-5Zw6vipma26Vp4uCQyg&expires=1786296258
-https://cdn10.zohanayaan.com:1686/hls/premieruk.m3u8?md5=VFiJRKHEIQU06nT5-7PpCw&expires=1786296258
 https://cdn4.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=W_2aykpVbbDdjww03QsbIA&expires=1786026038
-https://djjsix9fk6mz7.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-z014d9ir7a14l/playlist.m3u8?ads.device_did=%7BPSID%7D&ads.device_dnt=%7BTARGETOPT%7D&ads.app_domain=%7BAPP_DOMAIN%7D&ads.app_name=%7BAPP_NAME%7D&ads.consent=%7BTC_STRING%7D&ads.ssai_vendor=SSSLIVE&ads.service_id=DEBC2300001EU
+https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=lnvCx81j8e2j_znuwtkZLg&expires=1786299618
+https://cdn9.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=hq6xdMVXSIMCGuGnn7Q1Pg&expires=1786299618

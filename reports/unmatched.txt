@@ -7,6 +7,7 @@ Motorsport.tv
 Premier Sports 1
 Premier Sports 2
 PTV
+Sony Sports Ten 3
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -16,7 +17,6 @@ SuperSport Variety 1
 SuperSport Variety 2
 SuperSport Variety 3
 SuperSport Variety 4
-T Sports HD
 TNT Sports 1
 TNT Sports 2
 TNT Sports 3

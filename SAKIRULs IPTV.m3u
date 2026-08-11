@@ -403,14 +403,14 @@ http://194.59.59.87/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1786062872000.ts?md5=erj9N
 #EXTINF:-1 group-title="Sports", Eurosport 1
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941601&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4248216_english_hls_54a1ef6c3f88514_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786528316~_GO=Generated~acl=/mumbai/4248216_english_hls_54a1ef6c3f88514_1ta-di_h264/*~Signature=AVMBkTXTPwKlKUYyDpowvUWDh57wIpiPSP-_IUgW-B0_tFOG5MiLoe4CzWPS_lJU2qXTKoLfr9F6iGIoJvTYzl8f5K0N
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4247989_english_hls_a2f503972976614_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786540484~_GO=Generated~acl=/mumbai/4247989_english_hls_a2f503972976614_1ta-di_h264/*~Signature=AVMBkTWkTJ7yLVRmK-kbXg0FjGA3fpECxIu3Zt5t0ncTMQqgtwgLmfAvJxcT0RWcIZEd513pBAdn7zAHuVW7rrLV4MsI
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4248254_english_hls_b9c49fe8cd34044_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786513729~_GO=Generated~acl=/mumbai/4248254_english_hls_b9c49fe8cd34044_1ta-di_h264/*~Signature=AVMBkTXYxk1HNZfUsjdKe_AyAmEIG3BMKGiuiT5k_lDImMB_A8qZ80K5k5d-aFJXG32Bg-CXf-OPdVmgOXJ3cjoH6wgP
+https://bd-mc-flive.fancode.com/mumbai/4248363_english_hls_e671a2914c24884_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786544771~_GO=Generated~acl=/mumbai/4248363_english_hls_e671a2914c24884_1ta-di_h264/*~Signature=AVMBkTW7DeCOXiwDM0qQ2gFLkV3P8Ka3eRVCVfQouxloyDdrJyfmwmGlb-ZAvM9reIl16DcyRFUeen_1aI7PFrmNmrEA
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://bd-mc-flive.fancode.com/mumbai/4248184_english_hls_9246c4892f45001_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786380211~_GO=Generated~acl=/mumbai/4248184_english_hls_9246c4892f45001_1ta-di_h264/*~Signature=AYCJ36TYftSrQsLASiQfpPQvR0IyVSg4ngI_uRXQEfbl0i5QMy7_b7AHoAXsyN_RzBp2qc5CJCvh_ZJ6H6iPjRPNBQYD
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
@@ -435,7 +435,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=45268&extensi
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=132601&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", MUTV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312835&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1282729&extension=m3u8
@@ -453,12 +453,12 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=899881&extension=m3u8
+http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-660d7232635c75000828c95a.m3u8
+https://jmp2.uk/plu-67a3b45a21af380008133aa4.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944676&extension=m3u8
@@ -505,7 +505,7 @@ http://212.102.38.45/live/test_sport1_25p/playlist.m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=411539&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sports18 1 HD
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=507397&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507397&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373206&extension=m3u8
@@ -563,10 +563,10 @@ http://sm-monirul.top/@monirul_Islam_SM/proxy.php?ts=GmS6jJEoXsU3neYtzjQqBER0ZDR
 http://vod.supremetv.live/play/live.php?mac=00:1A:79:83:3D:5C&stream=2069731&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=809386&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373197&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=571184&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8
 
 

@@ -1,7 +1,7 @@
 total_sources=37
 downloaded=37
 failed=0
-parsed_channels=74361
-validated_urls=161
-duplicate_urls_removed=594
-runtime_seconds=289.89
+parsed_channels=74360
+validated_urls=162
+duplicate_urls_removed=593
+runtime_seconds=277.12

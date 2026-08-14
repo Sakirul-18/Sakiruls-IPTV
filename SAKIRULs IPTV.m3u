@@ -414,7 +414,7 @@ https://bd-mc-flive.fancode.com/mumbai/4248377_english_hls_ad133436e933531_1ta-d
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://bd-mc-flive.fancode.com/mumbai/4248407_english_hls_19c2e970ef23640_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786794558~_GO=Generated~acl=/mumbai/4248407_english_hls_19c2e970ef23640_1ta-di_h264/*~Signature=AVMBkTUdIpLJgysVoz1pVLdCMDn8UrAPFQn4JaOICM8KkXiIHptTFAuIHHCjI3axmG-URYhHYfkSrgS4_or7sZfjTCUM
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
-https://bd-mc-flive.fancode.com/mumbai/4248321_english_hls_5d3e67be2c48356_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786800048~_GO=Generated~acl=/mumbai/4248321_english_hls_5d3e67be2c48356_1ta-di_h264/*~Signature=AVMBkTVFSRnfLcdhcwZCcMTXh_TFU7B0QEk5EHw_AHAHmEE-stYu05MLkbo66dntpmm8QG2I3BnnZAgsiYxpsiiT6JYD
+https://bd-mc-flive.fancode.com/mumbai/4248403_english_hls_22417aac3e26080_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786816000~_GO=Generated~acl=/mumbai/4248403_english_hls_22417aac3e26080_1ta-di_h264/*~Signature=AVMBkTVBdKpy28fUPY0JeNr-faXJccUKuyBAGPzASTfKc2asfQrHMTqkbXpI5myBPS2b9fjp1t-PmKJcNRuALLrEve4M
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
 https://bd-mc-flive.fancode.com/mumbai/143813_english_hls_e42934484397663_1ta-di_h264/1080p5.m3u8?hdntl=Expires=1786801876~_GO=Generated~acl=/mumbai/143813_english_hls_e42934484397663_1ta-di_h264/*~Signature=AVMBkTW1wAKXycBwY-TkOanZUDuPhywtZEADIClSDrHVu9IaleBCWk2-bfFAjRHZf9KIeNj-_D8ErSWc7HqVrh91R1MH
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
@@ -453,15 +453,15 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312818&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-63dac28760bc8f0008a7654b.m3u8
+https://jmp2.uk/plu-660d714719ca71000849cc1f.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
-https://jmp2.uk/stvp-DEBC2300001EU
+https://jmp2.uk/stvp-ATBD1500003ES
 
 #EXTINF:-1 group-title="Sports", Servus TV Motorsport
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=761092&extension=m3u8
@@ -563,7 +563,7 @@ http://sm-monirul.top/@monirul_Islam_SM/proxy.php?ts=GmS6jJEoXsU3neYtzjQqBER0ZDR
 http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=2069731&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1104677&extension=m3u8
+http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1104677&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network

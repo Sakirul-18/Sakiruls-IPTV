@@ -380,15 +380,15 @@ http://ftp5.circleftp.net/FILE/Animation%20Dubbed%20Movies/2026/Toy%20Story%205%
 
 # ─────────── Sports ───────────
 #EXTINF:-1 group-title="Sports", beIN SPORTS 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174236&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827990&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 2
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827989&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 3
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174238&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155976&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 4
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1459665&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 5
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622659&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=117328&extension=m3u8
 #EXTINF:-1 group-title="Sports", beIN SPORTS 6
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=117329&extension=m3u8
 
@@ -401,7 +401,7 @@ http://194.59.59.87/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1786062872000.ts?md5=erj9N
 
 
 #EXTINF:-1 group-title="Sports", Eurosport 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8
+http://151.80.18.177:86/Eurosport_HD/index.m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
@@ -416,7 +416,7 @@ https://bd-mc-flive.fancode.com/mumbai/4248406_english_hls_a6335d58d554820_1ta-d
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://bd-mc-flive.fancode.com/mumbai/4248402_english_hls_27594fa33899617_1ta-di_h264/1080p.m3u8?hdntl=Expires=1786729482~_GO=Generated~acl=/mumbai/4248402_english_hls_27594fa33899617_1ta-di_h264/*~Signature=AVMBkTWygQ__A4N00FWs3v91NJNAcFpGWEbeYlures2nvVgDPsmsmqbgquGjv3KEXsS10vVutpd2Takld-5vXfd4TrYN
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
-
+https://bd-mc-flive.fancode.com/mumbai/143812_english_hls_e6aef2c92332322_1ta-di_h264/1080p5.m3u8?hdntl=Expires=1786785459~_GO=Generated~acl=/mumbai/143812_english_hls_e6aef2c92332322_1ta-di_h264/*~Signature=AVMBkTWb6fZbNmwoCtqDPaBxOGQazyRjs20CESrA1CdwW4O1NVBS1zMpBRLPKPuXbry1ddZLQ8Il70FkxxQxSU5NX6YJ
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Tennis 
@@ -435,7 +435,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=45268&extensi
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=132601&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", MUTV
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312835&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1282729&extension=m3u8
@@ -464,7 +464,7 @@ https://jmp2.uk/plu-65f96cd34e01740008ef1c97.m3u8
 https://jmp2.uk/stvp-ATBD1500003ES
 
 #EXTINF:-1 group-title="Sports", Servus TV Motorsport
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=761092&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=761092&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sky Sports Action
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79482&extension=m3u8
@@ -485,7 +485,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79474&extensi
 #EXTINF:-1 group-title="Sports", Sky Sports Plus
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79481&extension=m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Premier League
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312177&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79473&extension=m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Racing
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79472&extension=m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Tennis
@@ -508,13 +508,13 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=411539&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=507397&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373206&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155968&extension=m3u8
 #EXTINF:-1 group-title="Sports", Star Sports 1 Hindi
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155967&extension=m3u8
 #EXTINF:-1 group-title="Sports", Star Sports Select 1
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373202&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1114583&extension=m3u8
 #EXTINF:-1 group-title="Sports", Star Sports Select 2
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373201&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1114584&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", SuperSport Cricket
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=691198&extension=m3u8
@@ -560,10 +560,10 @@ http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f
 http://sm-monirul.top/@monirul_Islam_SM/proxy.php?ts=GmS6jJEoXsU3neYtzjQqBER0ZDR3ak5uOHEyaXQvUXBOSmNRUmR1blJXcWpsbXFPSHo2L2pBQ3RJLytVbVRTeERiZEhFTXJuQ0djYjlhbU9hd2V6M0RSQmRxbS82STdCQkhDV0RBPT0
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://vod.supremetv.live/play/live.php?mac=00:1A:79:83:3D:5C&stream=2069731&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=2069731&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1104677&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network

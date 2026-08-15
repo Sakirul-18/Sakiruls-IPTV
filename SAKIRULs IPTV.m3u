@@ -461,7 +461,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension
 https://jmp2.uk/plu-65f96cd34e01740008ef1c97.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
-https://jmp2.uk/stvp-ATBD1500003ES
+https://jmp2.uk/stvp-DEBC2300001EU
 
 #EXTINF:-1 group-title="Sports", Servus TV Motorsport
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=761092&extension=m3u8
@@ -505,7 +505,7 @@ http://212.102.38.45/live/test_sport1_25p/playlist.m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=411539&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sports18 1 HD
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=507397&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=507397&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Star Sports 1
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155968&extension=m3u8

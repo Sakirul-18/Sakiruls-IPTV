@@ -56,7 +56,6 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242251&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242253&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242254&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242255&extension=m3u8
-http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373197&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373198&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373199&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373200&extension=m3u8
@@ -256,6 +255,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=798833&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=798834&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809383&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809384&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809403&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809406&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901321&extension=m3u8
@@ -594,8 +594,6 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://cdn1.zohanayaan.com:1686/hls/premieruk.m3u8?md5=pea5DwZ3B2Ko6AyGJdNZkQ&expires=1786836019
-https://cdn10.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=a8DzHht2k13iAM1MBYHgkw&expires=1786839622
-https://cdn2.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=uwMvg7WbPhjZvZquS3Vwmw&expires=1786836019
-https://cdn4.zohanayaan.com:1686/hls/premieruk.m3u8?md5=YzKAKqXdrUm0ZP0JrWkwjw&expires=1786839621
+https://cdn5.zohanayaan.com:1686/hls/premieruk.m3u8?md5=vbB7rnK0rblldGVYRAZnew&expires=1786841417
+https://cdn8.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=eXY9ZlSe42lpGoaMm2dhoA&expires=1786841417
 https://edge2.roarzone.net:8447/roarzone/edge1/1/index.m3u8?token=596b59a47156723120620a13ce202b8ce8b924a5-0e111c99c13de299be4efab0c5f5cd23-1781283307-1781272507

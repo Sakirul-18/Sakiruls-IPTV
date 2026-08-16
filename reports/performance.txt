@@ -4,4 +4,4 @@ failed=0
 parsed_channels=74416
 validated_urls=162
 duplicate_urls_removed=600
-runtime_seconds=292.39
+runtime_seconds=248.87

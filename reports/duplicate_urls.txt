@@ -257,7 +257,6 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809384&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809403&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809406&extension=m3u8
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=827988&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901321&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901322&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901323&extension=m3u8
@@ -593,6 +592,8 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://cdn5.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=9gyc9fTKym9koyhNKbsstg&expires=1786850417
-https://cdn6.zohanayaan.com:1686/hls/premieruk.m3u8?md5=YvTp-h2DCXL28kSwOWVM5g&expires=1786850417
+https://cdn10.zohanayaan.com:1686/hls/premieruk.m3u8?md5=3ksPhkqao9Gkwnrh2ru7WA&expires=1786857620
+https://cdn5.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=0ffK-TfGeB1quGeHDt7s4Q&expires=1786857620
+https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=ps2c_2T3F04_EUqh1WRy1w&expires=1786861220
+https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=VYfvJG6YDk190Bqz86hyeg&expires=1786861220
 https://edge2.roarzone.net:8447/roarzone/edge1/1/index.m3u8?token=596b59a47156723120620a13ce202b8ce8b924a5-0e111c99c13de299be4efab0c5f5cd23-1781283307-1781272507

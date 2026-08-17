@@ -1,38 +1,21 @@
-beIN SPORTS 1
-beIN SPORTS 2
-beIN SPORTS 3
-beIN SPORTS 4
-beIN SPORTS 5
-beIN SPORTS 6
 BTV World
-DAZN 1
 Das Erste HD
-Eurosport 2
 FIFA+
 Motorsport.tv
-MUTV
 Premier Sports 1
 Premier Sports 2
 PTV
 Racing.com
 Servus TV Motorsport
-Sky Sports Action
-Sky Sports F1
-Sky Sports Football
-Sky Sports Golf
-Sky Sports Main Event
-Sky Sports Mix
-Sky Sports News
-Sky Sports Plus
-Sky Sports Premier League
-Sky Sports Tennis
-Sports18 1 HD
-Star Sports 1
-Star Sports 1 Hindi
-Star Sports Select 1
-Star Sports Select 2
+SuperSport La Liga
+SuperSport Motorsport
 SuperSport Premier League
+SuperSport Rugby
 SuperSport Tennis
+SuperSport Variety 1
+SuperSport Variety 2
+SuperSport Variety 3
+SuperSport Variety 4
 T Sports HD
 TNT Sports 1
 TNT Sports 2

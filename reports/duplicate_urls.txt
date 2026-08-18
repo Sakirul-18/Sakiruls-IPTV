@@ -56,7 +56,6 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242251&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242253&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242254&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242255&extension=m3u8
-http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373197&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373198&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373199&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373200&extension=m3u8
@@ -71,6 +70,8 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985163&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985164&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985165&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985166&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030225&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030226&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030227&extension=m3u8
@@ -178,6 +179,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=242281&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=242282&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=242283&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373196&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373197&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373198&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373199&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373200&extension=m3u8
@@ -253,9 +255,9 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=798833&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=798834&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809383&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809384&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809403&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809406&extension=m3u8
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=827988&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901321&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901322&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901323&extension=m3u8
@@ -590,8 +592,10 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
+https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=qZe-S0ATQMR7KKkOQ37HKg&expires=1787095221
 https://cdn6.zohanayaan.com:1686/hls/premieruk.m3u8?md5=01jh2A3zkXtCBonKwz0emA&expires=1787091641
+https://cdn7.zohanayaan.com:1686/hls/premieruk.m3u8?md5=SuF5eEsalK7DrHl8k2KkkQ&expires=1787095221
 https://cdn9.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=EZVmZhGkl2HVXbdJ8GOM_Q&expires=1787091642
+https://jmp2.uk/plu-67813f893886aa863497733d.m3u8
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
-https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8?|Origin=https://live.tsports.com&referer=https://live.tsports.com/&cookie=&user-agent=Abu-Saeeidx/5.0.6 (Linux;Android 11) AndroidXMedia
 https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8

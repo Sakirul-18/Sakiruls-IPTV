@@ -56,6 +56,7 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242251&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242253&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242254&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242255&extension=m3u8
+http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373197&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373198&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373199&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373200&extension=m3u8
@@ -178,7 +179,6 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=242281&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=242282&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=242283&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373196&extension=m3u8
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373197&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373198&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373199&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373200&extension=m3u8
@@ -596,7 +596,8 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://cdn7.zohanayaan.com:1686/hls/premieruk.m3u8?md5=IgyhG42ZSnmB1-Y4NhJstQ&expires=1787068247
+https://cdn4.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=5XuOSt6lowrc54Bma0zCQw&expires=1787070022
+https://cdn7.zohanayaan.com:1686/hls/premieruk.m3u8?md5=DDjk7hMe-x0qRtswxVQ3dg&expires=1787070022
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8?|Origin=https://live.tsports.com&referer=https://live.tsports.com/&cookie=&user-agent=Abu-Saeeidx/5.0.6 (Linux;Android 11) AndroidXMedia
 https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8

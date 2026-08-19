@@ -1,4 +1,3 @@
-beIN SPORTS 6
 BTV World
 DAZN 1
 Das Erste HD
@@ -9,9 +8,6 @@ Premier Sports 1
 Premier Sports 2
 PTV
 Racing.com
-Sky Sports Golf
-Sony Sports Ten 2
-Sony Sports Ten 3
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League

@@ -406,9 +406,9 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&ex
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4247997_english_hls_7b2d59539698113_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787211742~_GO=Generated~acl=/mumbai/4247997_english_hls_7b2d59539698113_1ta-di_h264/*~Signature=ARceAWP8gUcT6bDPkYBzbIt9jGaM68DBz47FtS67CToXj2BsoGZ054F7mZhdFWt11QQg6uj8HhyjLIJBRcwq2z-i06kN
+https://bd-mc-flive.fancode.com/mumbai/4247991_english_hls_fba5142be369803_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787231805~_GO=Generated~acl=/mumbai/4247991_english_hls_fba5142be369803_1ta-di_h264/*~Signature=ARceAWOScGxEeqPj0nUwO9AuYiIaGA_BwU1wmP3nK9RWqi7EzdCPo6IEzKEaxLMal93ApmcahJF7TfiXm1Tf0qpo_6UD
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4248338_hindi_hls_7093ab85ef47657_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787146624~_GO=Generated~acl=/mumbai/4248338_hindi_hls_7093ab85ef47657_1ta-di_h264/*~Signature=ARceAWPWQRdqcwDvJzRysyPpTvtrjoi_l19Bf3x7oLIfBZU7Rc8wKXUthGlLkhhQAHg3A6et8WwTKQgT1InmhsX_n3oN
+https://bd-mc-flive.fancode.com/mumbai/4248329_hindi_hls_ff8a5f5e3335536_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787233021~_GO=Generated~acl=/mumbai/4248329_hindi_hls_ff8a5f5e3335536_1ta-di_h264/*~Signature=ARceAWP9Uetsw294j6FuUvqL-ZKHkb-6FNkwsM9R61GXj8i-6V4weCbuKoKhCmJ3yIe-bTGRvsGGpenfnQlX9cF4x8kF
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4248374_english_hls_0ec061421911467_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787144189~_GO=Generated~acl=/mumbai/4248374_english_hls_0ec061421911467_1ta-di_h264/*~Signature=ARceAWOa6I93QSaHuHtHvVOrsTzQdQEshYx0WuVqx2Tr4zdhmmXevF8sXFzbuayPjTEe265815O5hD_rGylB-DKwJ8gF
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
@@ -453,12 +453,12 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-https://jmp2.uk/stvp-GB4200009EC
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-65f96cd34e01740008ef1c97.m3u8
+https://jmp2.uk/plu-63dac28760bc8f0008a7654b.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 https://jmp2.uk/stvp-ATBD1500003ES
@@ -542,7 +542,7 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144419&ext
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112857&extension=m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/64/1/t-sports-logo-png_seeklogo-640172.png", T Sports HD
-https://tvsen5.aynaott.com/TnMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
+https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
 
 #EXTINF:-1 group-title="Sports", TNT Sports 1
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311899&extension=m3u8
@@ -560,13 +560,13 @@ http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f
 http://sm-monirul.top/@monirul_Islam_SM/proxy.php?ts=GmS6jJEoXsU3neYtzjQqBER0ZDR3ak5uOHEyaXQvUXBOSmNRUmR1blJXcWpsbXFPSHo2L2pBQ3RJLytVbVRTeERiZEhFTXJuQ0djYjlhbU9hd2V6M0RSQmRxbS82STdCQkhDV0RBPT0
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=2069731&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
 http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=1104677&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=571184&extension=m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8
 
 

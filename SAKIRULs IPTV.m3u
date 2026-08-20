@@ -458,7 +458,7 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&e
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-65f96cd34e01740008ef1c97.m3u8
+https://jmp2.uk/plu-63dac28760bc8f0008a7654b.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 https://jmp2.uk/stvp-ATBD1500003ES
@@ -542,7 +542,7 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144419&ext
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112857&extension=m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/64/1/t-sports-logo-png_seeklogo-640172.png", T Sports HD
-https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
+https://tvsen5.aynaott.com/TnMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 
 #EXTINF:-1 group-title="Sports", TNT Sports 1
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311899&extension=m3u8

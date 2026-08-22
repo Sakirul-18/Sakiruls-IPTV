@@ -1,13 +1,13 @@
 ┃WC┃ STAR SPORTS 1 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=809383&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=809383&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
 ┃UK┃ TNT SPORTS 1 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174236&extension=m3u8	Rejected: HTTP 456
-┃UK┃ TNT SPORTS 2 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174237&extension=m3u8	Rejected: HTTP 456
 ┃WC┃ STAR SPORTS 2 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=809384&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=809384&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
+┃UK┃ TNT SPORTS 2 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174237&extension=m3u8	Rejected: HTTP 456
 ┃WC┃ HUB SPORTS 3 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=809403&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=809403&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
 ┃UK┃ TNT SPORTS 3 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174238&extension=m3u8	Rejected: HTTP 456
-┃UK┃ TNT SPORTS 4 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174239&extension=m3u8	Rejected: HTTP 456
 ┃AR┃ BEIN SPORTS 4 HD S1	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242252&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=242252&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
-┃CH┃ MY SPORTS 5 HD (DE)	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622659&extension=m3u8	Rejected: HTTP 456
+┃UK┃ TNT SPORTS 4 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1174239&extension=m3u8	Rejected: HTTP 456
 ┃SPORTS┃ SONY TEN SPORTS 5 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373196&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=373196&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
+┃CH┃ MY SPORTS 5 HD (DE)	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622659&extension=m3u8	Rejected: HTTP 456
 ┃CH┃ MY SPORTS 6 HD (DE)	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=622658&extension=m3u8	Rejected: HTTP 456
 ┃AR┃ BEIN SPORTS 6 HD S1	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=242250&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=242250&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
 BTV World	https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8	Rejected: Exception (HTTPSConnectionPool(host='owrcovcrpy.gpcdn.net', port=443): Max retries exceeded with url: /bpk-tv/1709/output/index.m3u8 (Caused by NameResolutionError("HTTPSConnection(host='owrcovcrpy.gpcdn.net', port=443): Failed to resolve 'owrcovcrpy.gpcdn.net' ([Errno -5] No address associated with hostname)")))
@@ -15,32 +15,36 @@ DAZN 1	http://194.59.59.87/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1786062872000.ts?md
 ┃FR┃ EUROSPORT 1	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8	Rejected: HTTP 456
 Eurosport 1	https://ott.udptv.xyz/stream/udptv/eurosport1/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: Exception (HTTPSConnectionPool(host='ott.udptv.xyz', port=443): Max retries exceeded with url: /stream/udptv/eurosport1/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664 (Caused by NameResolutionError("HTTPSConnection(host='ott.udptv.xyz', port=443): Failed to resolve 'ott.udptv.xyz' ([Errno -2] Name or service not known)")))
 Eurosport_2	http://178.23.88.55/Eurosport_2/index.m3u8	Rejected: HTTP 403
-┃FR┃ EUROSPORT 2	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941601&extension=m3u8	Rejected: HTTP 456
 Eurosport 2	https://ott.udptv.xyz/stream/udptv/eurosport2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: Exception (HTTPSConnectionPool(host='ott.udptv.xyz', port=443): Max retries exceeded with url: /stream/udptv/eurosport2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664 (Caused by NameResolutionError("HTTPSConnection(host='ott.udptv.xyz', port=443): Failed to resolve 'ott.udptv.xyz' ([Errno -2] Name or service not known)")))
-FIFA+	https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-66628d4a8dfc36b8c8a399c4.m3u8?X-Plex-Token=FwkvCmx3uzFc7eYkDe2m	Rejected: HTTP 401
+┃FR┃ EUROSPORT 2	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941601&extension=m3u8	Rejected: HTTP 456
 LaLiga TV	https://tiger-hub.vercel.app/LaLiga_TV/tracks-v1a1/mono.m3u8	Rejected: HTTP 451
 Motorsport.tv	https://epg.provider.plex.tv/library/parts/5e20b730f2f8d5003d739db7-6408c82eebb23ab878e8ddbb.m3u8?X-Plex-Token=FwkvCmx3uzFc7eYkDe2m	Rejected: HTTP 401
+UK| MUTV FHD	http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=45324&extension=m3u8	Rejected: HTTP 429
 MUTV HD	http://fastshare1.com:80/live/25711345/late8airline/29.ts	Rejected: HTML page
 ┃UK┃ MUTV HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312835&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312835&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
-┃UK┃ MUTV FHD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8	Rejected: HTTP 511
 ┃UK┃ MUTV 8K	http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=827988&extension=m3u8	Rejected: HTTP 452
-Premier Sports 1	http://fastshare1.com:80/live/25711345/late8airline/5029.ts	Rejected: HTTP 404
-Premier Sports 1	https://cdn5.zohanayaan.com:1686/hls/premieruk.m3u8?md5=5gfqqmdtWaq_BchSZQOgrw&expires=1787403021	Rejected: HTTP 403
-Premier Sports 1	https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=QHLIHAS_iqakQAONdu2ALg&expires=1787401219	Rejected: HTTP 403
+┃UK┃ MUTV FHD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8	Rejected: HTTP 511
+Premier Sports 1	http://fastshare1.com:80/live/25711345/late8airline/5029.ts	Rejected: HTML page
 Premier Sports 1 UK	https://ott.udptv.xyz/stream/skyie/premiersports1/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: Exception (HTTPSConnectionPool(host='ott.udptv.xyz', port=443): Max retries exceeded with url: /stream/skyie/premiersports1/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664 (Caused by NameResolutionError("HTTPSConnection(host='ott.udptv.xyz', port=443): Failed to resolve 'ott.udptv.xyz' ([Errno -2] Name or service not known)")))
+Premier Sports 1	https://cdn2.zohanayaan.com:1686/hls/premieruk.m3u8?md5=DV8AaHol9S4D_mp_agteVw&expires=1787404819	Rejected: HTTP 403
+Premier Sports 1	https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=QHLIHAS_iqakQAONdu2ALg&expires=1787401219	Rejected: HTTP 403
+Premier Sports 1	https://cdn10.zohanayaan.com:1686/hls/premieruk.m3u8?md5=QUvUfLmex6zn8pehVYvhwQ&expires=1787404173	Rejected: HTTP 403
+Premier Sports 1	https://cdn5.zohanayaan.com:1686/hls/premieruk.m3u8?md5=YkB4-suLEOho8RcN-GeJUw&expires=1787401023	Rejected: HTTP 403
 Premier Sports 2	http://fastshare1.com:80/live/25711345/late8airline/5030.ts	Rejected: HTML page
-Premier Sports 2	https://cdn9.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=per7xHBVKeOQ_Q63Xplv0g&expires=1787397617	Rejected: HTTP 403
-Premier Sports 2	https://cdn10.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=CuCbADBHwG35hv7sO2i44g&expires=1787401219	Rejected: HTTP 403
+Premier Sports 2	https://cdn8.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=opwp9cMQPmuu31Jexw9HJA&expires=1787404173	Rejected: HTTP 403
 Premier Sports 2	https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=XeLuFjhemI5-1fflfVdP6g&expires=1787401024	Rejected: HTTP 403
-Premier Sports 2	https://cdn5.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=ojK5_32lksdPuCkFRBZNAQ&expires=1787403021	Rejected: HTTP 403
+Premier Sports 2	https://cdn10.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=CuCbADBHwG35hv7sO2i44g&expires=1787401219	Rejected: HTTP 403
+Premier Sports 2	https://cdn2.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=DObDZPY8VweoWBWBUoLT7g&expires=1787404819	Rejected: HTTP 403
+Premier Sports 2	https://cdn9.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=per7xHBVKeOQ_Q63Xplv0g&expires=1787397617	Rejected: HTTP 403
 Premier Sports 2 UK	https://ott.udptv.xyz/stream/skyie/premiersports2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: Exception (HTTPSConnectionPool(host='ott.udptv.xyz', port=443): Max retries exceeded with url: /stream/skyie/premiersports2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664 (Caused by NameResolutionError("HTTPSConnection(host='ott.udptv.xyz', port=443): Failed to resolve 'ott.udptv.xyz' ([Errno -2] Name or service not known)")))
 Premier Sports 2	https://ott.udptv.net/stream/iptv/premiersports2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: HTTP 404
 PTV	http://ott.udptv.net/stream/iptv/ptv/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: HTTP 404
 UK| RACING UK ◉	http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1069214&extension=m3u8	Rejected: HTTP 429
+┃UK┃ RACING TV UK HD	http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=1312829&extension=m3u8	Rejected: HTTP 452
 ┃UK┃ RACING TV UK HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312829&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312829&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
 ┃UK┃ RACING TV UK FHD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312818&extension=m3u8	Rejected: HTTP 511
-┃UK┃ RACING TV UK HD	http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=1312829&extension=m3u8	Rejected: HTTP 452
 ┃AU┃ RACING.COM	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8	Rejected: HTTP 456
+DE| RED BULL TV	http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1644894&extension=m3u8	Rejected: HTTP 407
 Redbull TV	https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/20260612T125211/master_3360/00266/master_3360_01009.ts	Rejected: HTTP 404
 ┃DE┃ SERVUS TV MOTORSPORT FHD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=761092&extension=m3u8	Rejected: HTTP 456
 ┃UK┃ SKY SPORTS PREMIER LEAGUE HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312177&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=1312177&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
@@ -50,8 +54,8 @@ Sport 1	https://ott.udptv.xyz/stream/udptv/sport1/master.m3u8?u=cocked&p=dd0abb5
 DE: Sportdigital Fussball FHD	https://a1xs.vip/120001	Rejected: Exception (HTTPSConnectionPool(host='a1xs.vip', port=443): Max retries exceeded with url: /120001 (Caused by NameResolutionError("HTTPSConnection(host='a1xs.vip', port=443): Failed to resolve 'a1xs.vip' ([Errno -5] No address associated with hostname)")))
 ┃WC┃ STAR SPORTS 1 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=809383&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=809383&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
 ┃SPORTS┃ STAR SPORTS 1 HD ENGLISH	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373206&extension=m3u8	Rejected: HTTP 456
-┃SPORTS┃ STAR SPORTS SELECT 1 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373202&extension=m3u8	Rejected: HTTP 456
 ┃SPORTS┃ STAR SPORTS SELECT 1 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373202&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=373202&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
+┃SPORTS┃ STAR SPORTS SELECT 1 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373202&extension=m3u8	Rejected: HTTP 456
 ┃SPORTS┃ STAR SPORTS SELECT 2 HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=373201&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=373201&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
 ┃SPORTS┃ STAR SPORTS SELECT 2 HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=373201&extension=m3u8	Rejected: HTTP 456
 Premier League	https://ott.udptv.net/stream/iptv/premierleague/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: HTTP 404
@@ -60,20 +64,19 @@ TNT Sports 1	https://ott.udptv.xyz/stream/skyie/tntsports1/master.m3u8?u=cocked&
 TNT Sports 2	https://ott.udptv.xyz/stream/skyie/tntsports2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: Exception (HTTPSConnectionPool(host='ott.udptv.xyz', port=443): Max retries exceeded with url: /stream/skyie/tntsports2/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664 (Caused by NameResolutionError("HTTPSConnection(host='ott.udptv.xyz', port=443): Failed to resolve 'ott.udptv.xyz' ([Errno -2] Name or service not known)")))
 TNT Sports 3	https://ott.udptv.xyz/stream/skyie/tntsports3/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664	Rejected: Exception (HTTPSConnectionPool(host='ott.udptv.xyz', port=443): Max retries exceeded with url: /stream/skyie/tntsports3/master.m3u8?u=cocked&p=dd0abb52723d22acc0f97fe0336480feaa88a37ecda55a138a8d5e0ee14b0664 (Caused by NameResolutionError("HTTPSConnection(host='ott.udptv.xyz', port=443): Failed to resolve 'ott.udptv.xyz' ([Errno -2] Name or service not known)")))
 UK| UFC TV (Events2)	http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1014267&extension=m3u8	Rejected: HTTP 429
-Unite8 Sports 1 HD	http://fastshare1.com:80/live/25711345/late8airline/741567.ts	Rejected: HTTP 404
+Unite8 Sports 1 HD	http://fastshare1.com:80/live/25711345/late8airline/741567.ts	Rejected: HTML page
 Unite 8 Sports 1 HD 🇮🇳 Hindi	http://starhub.pro/live/farhat-3379/67897-913379/741567.ts	Rejected: HTTP 401
 Unite8 Sports 1 FHD	https://xfireflix.my.id/mac.php	Rejected: HTTP 404
 Unite8 Sports 2 HD	http://fastshare1.com:80/live/25711345/late8airline/745202.ts	Rejected: HTML page
 Unite 8 Sports 2 HD	http://202.70.146.135:8000/play/a06s/index.m3u8	Rejected: HTTP 404
-NL-ZG| VIAPLAY TV ᴿᴬᵂ	http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=2069731&extension=m3u8	Rejected: HTTP 429
-NL| VIAPLAY TV 24/7 ᴿᴬᵂ	http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1838322&extension=m3u8	Rejected: HTTP 429
 NL| VIAPLAY TV HD	http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1917549&extension=m3u8	Rejected: HTTP 429
 ┃NL┃ VIAPLAY TV 8K+ UHD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1152827&extension=m3u8	Rejected: HTTP 456
-US| WILLOW CRICKET	http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=1104677&extension=m3u8	Rejected: HTTP 429
-US| WILLOW CRICKET	http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1104677&extension=m3u8	Rejected: HTTP 429
+NL-ZG| VIAPLAY TV ᴿᴬᵂ	http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=2069731&extension=m3u8	Rejected: HTTP 429
 Willow	https://tiger-hub.vercel.app/WillowHD/tracks-v1a1/mono.m3u8	Rejected: HTTP 451
-┃WC┃ WILLOW CRICKET HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8	Rejected: HTTP 511
-┃WC┃ WILLOW CRICKET HD	http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=809386&extension=m3u8	Rejected: HTTP 452
-WILLOW_CRICKET	https://fl25.moveonjoy.com/WILLOW_CRICKET/index.m3u8	Rejected: Exception (HTTPSConnectionPool(host='fl25.moveonjoy.com', port=443): Max retries exceeded with url: /WILLOW_CRICKET/index.m3u8 (Caused by NameResolutionError("HTTPSConnection(host='fl25.moveonjoy.com', port=443): Failed to resolve 'fl25.moveonjoy.com' ([Errno -2] Name or service not known)")))
+US| WILLOW CRICKET	http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=1104677&extension=m3u8	Rejected: HTTP 429
+US| WILLOW CRICKET	http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1104677&extension=m3u8	Rejected: HTTP 429
 ┃WC┃ WILLOW CRICKET HD	http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=809386&extension=m3u8	Rejected: Exception (HTTPConnectionPool(host='line.smootvone.vip', port=80): Max retries exceeded with url: /play/live.php?mac=A0:BB:3E:00:03:3d&stream=809386&extension=m3u8 (Caused by NameResolutionError("HTTPConnection(host='line.smootvone.vip', port=80): Failed to resolve 'line.smootvone.vip' ([Errno -2] Name or service not known)")))
+┃WC┃ WILLOW CRICKET HD	http://main.light-ott.net:80/play/live.php?mac=00:1A:79:0E:14:DE&stream=809386&extension=m3u8	Rejected: HTTP 452
+┃WC┃ WILLOW CRICKET HD	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8	Rejected: HTTP 511
+WILLOW_CRICKET	https://fl25.moveonjoy.com/WILLOW_CRICKET/index.m3u8	Rejected: Exception (HTTPSConnectionPool(host='fl25.moveonjoy.com', port=443): Max retries exceeded with url: /WILLOW_CRICKET/index.m3u8 (Caused by NameResolutionError("HTTPSConnection(host='fl25.moveonjoy.com', port=443): Failed to resolve 'fl25.moveonjoy.com' ([Errno -2] Name or service not known)")))
 ┃MY┃ WWE NETWORK	http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=383046&extension=m3u8	Rejected: HTTP 456

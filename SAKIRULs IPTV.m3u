@@ -414,13 +414,13 @@ https://bd-mc-flive.fancode.com/mumbai/4248432_english_hls_6dff0812ea23371_1ta-d
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://bd-mc-flive.fancode.com/mumbai/4248416_english_hls_13176bef4a37012_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787489455~_GO=Generated~acl=/mumbai/4248416_english_hls_13176bef4a37012_1ta-di_h264/*~Signature=ARceAWNE1GWLXGlBbEcuQkZ5Kaa6bsf1MJ768lPZ5fI9mSMMSR8i5sSqGX7la2Q7FUsXtskZBBIQ0VDYSm13yEHFx3YM
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
-https://bd-mc-flive.fancode.com/mumbai/4248411_english_hls_1da0d5a196542_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787424490~_GO=Generated~acl=/mumbai/4248411_english_hls_1da0d5a196542_1ta-di_h264/*~Signature=ARceAWMKFnWlPt6QW-98BFvBtnuPxWl1Z1ewxtpnoG3LxjUE6i4hf458u82u6X9WMuX33QDVK7hf53dD1Lvf6s8xpagK
+https://bd-mc-flive.fancode.com/mumbai/4248527_english_hls_57543c10451186_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787496774~_GO=Generated~acl=/mumbai/4248527_english_hls_57543c10451186_1ta-di_h264/*~Signature=ARceAWMqoDTn0m2DZhpLoUpwvwwg3H4fezhORGhT0fE6nqXaFAt_N1FYJF2JGdtK-kLp4V_SvIWrj8q69gkyMcy02FQJ
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
 https://bd-mc-flive.fancode.com/mumbai/4248533_english_hls_47367870e289159_1ta-di_h264/1080p5.m3u8?hdntl=Expires=1787479135~_GO=Generated~acl=/mumbai/4248533_english_hls_47367870e289159_1ta-di_h264/*~Signature=ARceAWNxm1IavMaJQHR6VOPXOFBqLHBkHe50WqBVxUtlJiSdvAtdX8fL7LqYS0cudd0O6k1BW2KzsZYh5Uh-h7-Nj9YE
 #EXTINF:-1 group-title="Sports", Fancode Motorsport
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Tennis 
-https://bd-mc-flive.fancode.com/mumbai/4248141_english_hls_bbbb829c2882287_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787424489~_GO=Generated~acl=/mumbai/4248141_english_hls_bbbb829c2882287_1ta-di_h264/*~Signature=ARceAWPIjE1riX4d3cgTpiQhq1_bwZYc2L4ecd0ax4gvVT8YzAj3N3Cczuuc-c0lZrCei7rC8IoNrYYeeCxrANtF5c8N
+https://bd-mc-flive.fancode.com/mumbai/4248144_english_hls_f50434757396555_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787496773~_GO=Generated~acl=/mumbai/4248144_english_hls_f50434757396555_1ta-di_h264/*~Signature=ARceAWMG_akCQI3nHCO-uaNlyYL8rnbaK1gfNsxyKLYdzv5JYzosfQfDPw7GOmgdgk8uBglCfLz78Az-LSZ8ihBxu7YF
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Tennis 
 https://bd-mc-flive.fancode.com/mumbai/4248141_english_hls_bbbb829c2882287_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787424489~_GO=Generated~acl=/mumbai/4248141_english_hls_bbbb829c2882287_1ta-di_h264/*~Signature=ARceAWPIjE1riX4d3cgTpiQhq1_bwZYc2L4ecd0ax4gvVT8YzAj3N3Cczuuc-c0lZrCei7rC8IoNrYYeeCxrANtF5c8N
 #EXTINF:-1 group-title="Sports", FIFA+
@@ -435,7 +435,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=45268&extensi
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=132601&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", MUTV
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827988&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312835&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1282729&extension=m3u8
@@ -453,12 +453,12 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312829&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-660d714719ca71000849cc1f.m3u8
+https://jmp2.uk/plu-63dac28760bc8f0008a7654b.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 https://jmp2.uk/stvp-DEBC2300001EU
@@ -485,7 +485,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79474&extensi
 #EXTINF:-1 group-title="Sports", Sky Sports Plus
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79481&extension=m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Premier League
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79473&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312177&extension=m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Racing
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=79472&extension=m3u8
 #EXTINF:-1 group-title="Sports", Sky Sports Tennis
@@ -542,7 +542,7 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144419&ext
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112857&extension=m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/64/1/t-sports-logo-png_seeklogo-640172.png", T Sports HD
-https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
+https://tvsen5.aynaott.com/TnMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 
 #EXTINF:-1 group-title="Sports", TNT Sports 1
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311899&extension=m3u8
@@ -560,13 +560,13 @@ http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f
 http://sm-monirul.top/@monirul_Islam_SM/proxy.php?ts=GmS6jJEoXsU3neYtzjQqBER0ZDR3ak5uOHEyaXQvUXBOSmNRUmR1blJXcWpsbXFPSHo2L2pBQ3RJLytVbVRTeERiZEhFTXJuQ0djYjlhbU9hd2V6M0RSQmRxbS82STdCQkhDV0RBPT0
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://vod.supremetv.live/play/live.php?mac=00:1A:79:83:3D:5C&stream=2069731&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1104677&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1104677&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network
-http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=571184&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=571184&extension=m3u8
 
 

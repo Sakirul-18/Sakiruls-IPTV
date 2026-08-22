@@ -68,8 +68,6 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985163&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985164&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985165&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985166&extension=m3u8
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030225&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030226&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030227&extension=m3u8
@@ -256,6 +254,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809384&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809403&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809406&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=827988&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901321&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901322&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901323&extension=m3u8
@@ -594,11 +593,9 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://cdn3.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=ZlzkWK09LoI44-hCHwOjIw&expires=1787426421
-https://cdn6.zohanayaan.com:1686/hls/premieruk.m3u8?md5=KHloFXs45MsveMDllfEG5w&expires=1787428641
+https://cdn3.zohanayaan.com:1686/hls/premieruk.m3u8?md5=yUZ4VPmXKt1znhr6hNEEEg&expires=1787430204
 https://cdn6.zohanayaan.com:1686/hls/premieruk.m3u8?md5=kJG5jtYb2AgB4Ff5f98l9w&expires=1787428221
-https://cdn7.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=C5j0HlbEsXLXVE_fp8Os8Q&expires=1787428641
-https://cdn7.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=oO__pQymlwK8ZaT5fh5DmQ&expires=1787423016
+https://cdn8.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=1X7ihF_NCfPBP7RvLNpjIQ&expires=1787430204
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8?|Origin=https://live.tsports.com&referer=https://live.tsports.com/&cookie=&user-agent=Abu-Saeeidx/5.0.6 (Linux;Android 11) AndroidXMedia
 https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8

@@ -592,8 +592,9 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://cdn10.zohanayaan.com:1686/hls/premieruk.m3u8?md5=DRFl-0N37HFtesjMkuKoSA&expires=1787529347
-https://cdn2.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=kKtZliw-LYJRXcPkLcLzUw&expires=1787529347
+https://cdn4.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=tnbUwb6ZNhSQE9bNKBjLCg&expires=1787530817
+https://jmp2.uk/plu-660c29b5aec9680008f5b4a4.m3u8
+https://jmp2.uk/plu-67813f893886aa863497733d.m3u8
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8?|Origin=https://live.tsports.com&referer=https://live.tsports.com/&cookie=&user-agent=Abu-Saeeidx/5.0.6 (Linux;Android 11) AndroidXMedia
 https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8

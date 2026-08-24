@@ -1,10 +1,8 @@
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1149502&extension=m3u8
 http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1312835&extension=m3u8
 http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1014267&extension=m3u8
-http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1069214&extension=m3u8
-http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1104677&extension=m3u8
 http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=45268&extension=m3u8
-http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=45324&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1174236&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1174237&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1174238&extension=m3u8
@@ -70,7 +68,6 @@ http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985163&exte
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985164&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985165&extension=m3u8
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=985166&extension=m3u8
-http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=1312824&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:77:2A:09&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030225&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1030226&extension=m3u8
@@ -258,6 +255,7 @@ http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809384&extension
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809386&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809403&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=809406&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=827988&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901321&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901322&extension=m3u8
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=901323&extension=m3u8
@@ -593,9 +591,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://cdn3.zohanayaan.com:1686/hls/premieruk.m3u8?md5=MaIshJ4umAz7emJwtC_Uzw&expires=1787549439
 https://cdn5.zohanayaan.com:1686/hls/premieruk.m3u8?md5=WhLRJrr7-5OgTZglNUK3uQ&expires=1787555445
-https://cdn7.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=Q02TkEkl9YPC4gSpNt8aBw&expires=1787549439
 https://cdn9.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=rxoRuEgMi5IGUQkPXi7A0Q&expires=1787555446
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8?|Origin=https://live.tsports.com&referer=https://live.tsports.com/&cookie=&user-agent=Abu-Saeeidx/5.0.6 (Linux;Android 11) AndroidXMedia

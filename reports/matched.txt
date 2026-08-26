@@ -1,6 +1,5 @@
 beIN SPORTS 1 <- ┃UK┃ PREMIER SPORTS 1 8K (tier: token)
 beIN SPORTS 2 <- ┃UK┃ PREMIER SPORTS 2 8K (tier: token)
-beIN SPORTS 3 <- SPORTS| STAR SPORTS 3 (tier: token)
 beIN SPORTS 4 <- BE| PLAY SPORTS 4 HD (tier: token)
 beIN SPORTS 5 <- SW| MY SPORTS 5 HD [MULTI-AUDIO] (tier: token)
 beIN SPORTS 6 <- SW| MY SPORTS 6 HD [MULTI-AUDIO] (tier: token)

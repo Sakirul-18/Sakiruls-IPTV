@@ -403,7 +403,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1796636&exten
 #EXTINF:-1 group-title="Sports", Eurosport 1
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&extension=m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
-http://151.80.18.177:86/Eurosport_2_HD/index.m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4248005_english_hls_2c1a696f8558185_1ta-di_h264/1080p.m3u8?hdntl=Expires=1787836399~_GO=Generated~acl=/mumbai/4248005_english_hls_2c1a696f8558185_1ta-di_h264/*~Signature=ARB3KG2jD2PHzsFvmo231P7CECWdHUXYZLmVMHRPvfE_tiiyO9T6G9EpgAMIAcco623CB_J6VuzzgV_bGStKFugB03UF
@@ -502,7 +502,7 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=282672&extens
 http://212.102.38.45/live/test_sport1_25p/playlist.m3u8
 
 #EXTINF:-1 group-title="Sports", Sportdigital Fußball
-http://line.umetop.pro:80/play/live.php?mac=00:1A:79:8F:BA:8A&stream=411539&extension=m3u8
+http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=411539&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Sports18 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=507397&extension=m3u8

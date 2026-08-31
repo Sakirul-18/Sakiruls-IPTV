@@ -6,7 +6,6 @@ BTV World
 Das Erste HD
 FIFA+
 LaLiga TV
-LFC TV
 Motorsport.tv
 NPO 1 HD
 NPO 2 HD
@@ -15,7 +14,6 @@ Premier Sports 1
 Premier Sports 2
 PTV
 Racing.com
-Servus TV Motorsport
 Sky Sports Action
 Sky Sports Cricket
 Sky Sports F1
@@ -37,6 +35,7 @@ Star Sports Select 1
 Star Sports Select 2
 SuperSport Cricket
 SuperSport Football
+SuperSport Golf
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -52,4 +51,4 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
-Willow Cricket HD
+WWE Network

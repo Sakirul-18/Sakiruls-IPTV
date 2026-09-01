@@ -362,7 +362,6 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155966&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155967&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155972&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=155973&extension=m3u8
-http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=156848&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1608068&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1608069&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1697000&extension=m3u8
@@ -593,15 +592,10 @@ http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984951&extens
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=984952&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993130&extension=m3u8
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=993131&extension=m3u8
-https://4397879b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWRlX0ZJRkFQbHVzR2VybWFuX0hMUw/playlist.m3u8
-https://cdn1.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=Uk26FL7MEuKSMT_i4ATlWw&expires=1788286787
 https://cdn3.zohanayaan.com:1686/hls/premieruk.m3u8?md5=C_MMit587_Z4Y3QMxkMNDw&expires=1788297174
+https://cdn3.zohanayaan.com:1686/hls/premieruk.m3u8?md5=IBLSAzdAJqsl7734c_2oXQ&expires=1788306519
+https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=X34wgLyBkqhL68QErcH5hQ&expires=1788306519
 https://cdn6.zohanayaan.com:1686/hls/hdchnl2.m3u8?md5=ut1z_PKFTlmLazf3X-Zsyg&expires=1788297174
-https://cdn8.zohanayaan.com:1686/hls/premieruk.m3u8?md5=Eirk-2gGng2pEYj1Qjishg&expires=1788286787
-https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
-https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8?|Origin=https://live.tsports.com&referer=https://live.tsports.com/&cookie=&user-agent=Abu-Saeeidx/5.0.6 (Linux;Android 11) AndroidXMedia
-https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
-https://tvsen5.aynaott.com/TnMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 https://tvsen6.aynaott.com/opREbXLqJ2HFYPCXTJBa/index.m3u8?e=1784102575&u=ee5437a7-c16b-4700-b317-a41b77d5cba9&token=c85b53f4cee30af4a19d4b9ad0cd60c7
 https://tvsen6.aynaott.com/superlaliga/index.m3u8?e=1784102509&u=ee5437a7-c16b-4700-b317-a41b77d5cba9&token=b6e220b27addbd7e852fe6671bff5738
 https://tvsen6.aynaott.com/superlaliga/index.m3u8?e=1784102646&u=ee5437a7-c16b-4700-b317-a41b77d5cba9&token=ca6007374eda23b74a8328c74fb0adf0

@@ -7,6 +7,7 @@ DAZN 1
 Das Erste HD
 FIFA+
 LaLiga TV
+LFC TV
 Motorsport.tv
 NPO 1 HD
 NPO 2 HD
@@ -24,7 +25,6 @@ Sky Sports Main Event
 Sky Sports Mix
 Sky Sports News
 Sky Sports Plus
-Sky Sports Premier League
 Sky Sports Racing
 Sony Sports Ten 1
 Sony Sports Ten 2

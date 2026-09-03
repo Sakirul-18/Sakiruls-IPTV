@@ -7,12 +7,12 @@ DAZN 1
 Das Erste HD
 FIFA+
 LaLiga TV
+LFC TV
 Motorsport.tv
 Premier Sports 1
 Premier Sports 2
 PTV
 Racing.com
-Servus TV Motorsport
 Star Sports 1
 SuperSport La Liga
 SuperSport Motorsport
@@ -29,4 +29,4 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
-Willow Cricket HD
+WWE Network

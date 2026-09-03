@@ -1,3 +1,7 @@
+beIN SPORTS 3
+beIN SPORTS 4
+beIN SPORTS 5
+beIN SPORTS 6
 BTV World
 DAZN 1
 Das Erste HD
@@ -9,6 +13,7 @@ Premier Sports 2
 PTV
 Racing.com
 Servus TV Motorsport
+Star Sports 1
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -24,3 +29,4 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
+Willow Cricket HD

@@ -1,44 +1,14 @@
-beIN SPORTS 3
-beIN SPORTS 4
-beIN SPORTS 5
-beIN SPORTS 6
 BTV World
 DAZN 1
 Das Erste HD
 FIFA+
 LaLiga TV
-LFC TV
 Motorsport.tv
-NPO 1 HD
-NPO 2 HD
-NPO 3 HD
 Premier Sports 1
 Premier Sports 2
 PTV
 Racing.com
 Servus TV Motorsport
-Sky Sports Action
-Sky Sports Cricket
-Sky Sports F1
-Sky Sports Football
-Sky Sports Golf
-Sky Sports Main Event
-Sky Sports Mix
-Sky Sports News
-Sky Sports Plus
-Sky Sports Racing
-Sony Sports Ten 1
-Sony Sports Ten 2
-Sony Sports Ten 3
-Sportdigital Fußball
-Sports18 1 HD
-Star Sports 1
-Star Sports 1 Hindi
-Star Sports Select 1
-Star Sports Select 2
-SuperSport Cricket
-SuperSport Football
-SuperSport Golf
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -54,4 +24,3 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
-WWE Network

@@ -38,7 +38,6 @@ Star Sports Select 1
 Star Sports Select 2
 SuperSport Cricket
 SuperSport Football
-SuperSport Golf
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -54,5 +53,3 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
-Viaplay TV
-WWE Network

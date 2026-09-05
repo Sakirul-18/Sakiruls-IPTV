@@ -7,7 +7,6 @@ DAZN 1
 Das Erste HD
 FIFA+
 LaLiga TV
-LFC TV
 Motorsport.tv
 NPO 1 HD
 NPO 2 HD
@@ -30,15 +29,7 @@ Sky Sports Racing
 Sony Sports Ten 1
 Sony Sports Ten 2
 Sony Sports Ten 3
-Sportdigital Fußball
-Sports18 1 HD
 Star Sports 1
-Star Sports 1 Hindi
-Star Sports Select 1
-Star Sports Select 2
-SuperSport Cricket
-SuperSport Football
-SuperSport Golf
 SuperSport La Liga
 SuperSport Motorsport
 SuperSport Premier League
@@ -54,5 +45,3 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
-Willow Cricket HD
-WWE Network

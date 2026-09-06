@@ -1,5 +1,6 @@
 beIN SPORTS 3
 beIN SPORTS 4
+beIN SPORTS 5
 beIN SPORTS 6
 BTV World
 DAZN 1
@@ -14,6 +15,7 @@ NPO 3 HD
 Premier Sports 1
 Premier Sports 2
 PTV
+Racing.com
 Servus TV Motorsport
 Sky Sports Action
 Sky Sports Cricket
@@ -24,16 +26,14 @@ Sky Sports Main Event
 Sky Sports Mix
 Sky Sports News
 Sky Sports Plus
-Sky Sports Premier League
 Sky Sports Racing
-Sky Sports Tennis
 Sony Sports Ten 1
 Sony Sports Ten 2
 Sony Sports Ten 3
 Sportdigital Fußball
 Sports18 1 HD
+Star Sports 1
 Star Sports 1 Hindi
-Star Sports Select 1
 Star Sports Select 2
 SuperSport Cricket
 SuperSport Football

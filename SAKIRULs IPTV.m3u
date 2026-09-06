@@ -401,16 +401,16 @@ http://77.72.19.180/iptv/KCUHA6DGYYVA8ZZFUPQV3KZH/404/1788197833000.ts?md5=AJdcp
 
 
 #EXTINF:-1 group-title="Sports", Eurosport 1
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&extension=m3u8
+http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=941600&extension=m3u8
 #EXTINF:-1 group-title="Sports", Eurosport 2
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4249074_english_hls_fd5290a55442730_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788770563~_GO=Generated~acl=/mumbai/4249074_english_hls_fd5290a55442730_1ta-di_h264/*~Signature=AfPHOv12vJeFQ6h5lPVpnEoVx3lkdhcJMl-0YJCeSJiO_8MSBRzT7EpAZcASzG3aqHXhzdTt8vIjTE5YAdux9oin_dEP
+https://bd-mc-flive.fancode.com/mumbai/4249109_hindi_hls_774a3c0f1324498_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788787027~_GO=Generated~acl=/mumbai/4249109_hindi_hls_774a3c0f1324498_1ta-di_h264/*~Signature=AfPHOv2tKJt4DDzTf0opo3M4tQzVisdIkCnK_SIQb4l5kj1sKft57Iks3jO91TaODP1KPsFJ_CQvbduAgvIj7hI9lMIL
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4248462_english_hls_3323cc3e7d95656_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788780917~_GO=Generated~acl=/mumbai/4248462_english_hls_3323cc3e7d95656_1ta-di_h264/*~Signature=AfPHOv3IV7QakIfGdB9G1VExiYhMiizndM7Nq9_ZM19rfGrO251xLNOiD3zCs05aMIS7MBBL8IuIhyS3ZCm9BASvnyYJ
+https://bd-mc-flive.fancode.com/mumbai/4249109_punjabi_hls_03dd417e7598443_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788787027~_GO=Generated~acl=/mumbai/4249109_punjabi_hls_03dd417e7598443_1ta-di_h264/*~Signature=AfPHOv2ocqL9NdbZgwaIz964z9DA5XtPxcpIU1SKdV2bIhINslmV7bz1cXmg55foSL8JvcH_Z3CZLX30RZLUXBolUkUN
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4249073_english_hls_a7d568bd9b25675_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788751093~_GO=Generated~acl=/mumbai/4249073_english_hls_a7d568bd9b25675_1ta-di_h264/*~Signature=AfPHOv2XHQbvh16UehuYbeuwv9PBL8GvyZaXgf90WKE0xqeKb4Gc79pt5gMG-Ly_DAdk7ZEvm6t0hCB9eX-USwXSkZQD
+https://bd-mc-flive.fancode.com/mumbai/4248361_hindi_hls_e68afebc9b47834_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788788248~_GO=Generated~acl=/mumbai/4248361_hindi_hls_e68afebc9b47834_1ta-di_h264/*~Signature=AfPHOv0NcBnh1Ni3ZC46YU2a3eu5VbmzTh6VYwD414fWjSEFSdTZnUBOdEngKIo6h94k8I9rc_6UyRoJxGyKiAXqYlUO
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
 https://bd-mc-flive.fancode.com/mumbai/4248421_english_hls_3fd242534a26669_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788191746~_GO=Generated~acl=/mumbai/4248421_english_hls_3fd242534a26669_1ta-di_h264/*~Signature=ARB3KG2oEbagqLsm2aqT75Dl90zi7tK9kXHvDZQgmGoql3fdG0_7bkRjlt25dW52BsV2Z5APBBK9dV3wJfkDRnHCcpMI
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
@@ -453,12 +453,12 @@ http://103.89.248.22:8082/PTV/index.fmp4.m3u8?token=dfd8c2dd3a0d4588d6913007170a
 
 
 #EXTINF:-1 group-title="Sports", Racing TV
-https://jmp2.uk/stvp-GB4200009EC
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&extension=m3u8
 #EXTINF:-1 group-title="Sports", Racing.com
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-65f96cd34e01740008ef1c97.m3u8
+https://jmp2.uk/plu-63dac28760bc8f0008a7654b.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 https://jmp2.uk/stvp-DEBC2300001EU

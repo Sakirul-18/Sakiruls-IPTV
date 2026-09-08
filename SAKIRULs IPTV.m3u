@@ -406,9 +406,9 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&ex
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4249116_hindi_hls_5e213b60ce7285_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788872821~_GO=Generated~acl=/mumbai/4249116_hindi_hls_5e213b60ce7285_1ta-di_h264/*~Signature=AWDec-HAOwjnTVsIN0yTs23CE4-nTREvUVkqJKKRFGnfZ-R6gMU4Km4vzaPwG-bqrvfbKrXpbf0GQ_mvu20CNJrAiDMO
+https://bd-mc-flive.fancode.com/mumbai/4248627_english_hls_b956cf9a2c2456_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788916622~_GO=Generated~acl=/mumbai/4248627_english_hls_b956cf9a2c2456_1ta-di_h264/*~Signature=AWDec-HynkVwv6EMMgQO9kyuz6O6CJ0LszbfQP9v7pHL8Qq_RDPtVUOpOKPeurqNGt-GnIUmQb-1mzQ6RwkmZ_SjhUgH
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4249116_punjabi_hls_b38d710ded59128_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788872821~_GO=Generated~acl=/mumbai/4249116_punjabi_hls_b38d710ded59128_1ta-di_h264/*~Signature=AWDec-HlRAVSdmNetU_Ot-wvGrIL89xC01K2YlYU3CcqfGQpIB2dgcQEeWO3rkJo6YRHarI9UK6cctljLCO7Pt8u_wcD
+https://bd-mc-flive.fancode.com/mumbai/4248628_english_hls_a8a59adb7a21615_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788916623~_GO=Generated~acl=/mumbai/4248628_english_hls_a8a59adb7a21615_1ta-di_h264/*~Signature=AWDec-GufsG3xtyVX1fGiFMzKYvB-Lrby2D0Aeu_pD38hlhF2PF2XrvN5yiu1Q884noNb0zVO8px6uyRMBmvNnugKxsB
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4248673_english_hls_446d93f74c72622_1ta-di_h264/1080p.m3u8?hdntl=Expires=1788862493~_GO=Generated~acl=/mumbai/4248673_english_hls_446d93f74c72622_1ta-di_h264/*~Signature=AWDec-FgGiyTM9kE_HHxI_QylwhCVgGJPy6VBQSEfuAflOwbAdQX_EfmwaBEvZUcJAaRmueDEP5ry-8rh7zQCpYHk5sO
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Golf
@@ -435,7 +435,7 @@ http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=45268&extension=
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=132601&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", MUTV
-http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=827988&extension=m3u8
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312835&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", NPO 1 HD
 http://weaseltv.live:80/play/live.php?mac=A0:BB:3E:BC:25:43&stream=1282729&extension=m3u8
@@ -458,7 +458,7 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&e
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-660d714719ca71000849cc1f.m3u8
+https://jmp2.uk/plu-67a3b45a21af380008133aa4.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 https://jmp2.uk/stvp-DEBC2300001EU
@@ -542,7 +542,7 @@ http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=144419&ext
 http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1112857&extension=m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-logo="https://images.seeklogo.com/logo-png/64/1/t-sports-logo-png_seeklogo-640172.png", T Sports HD
-https://tvsen5.aynaott.com/TnMn5kZz8aLm/index.m3u8
+https://tvsen5.aynaott.com/TnMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 
 #EXTINF:-1 group-title="Sports", TNT Sports 1
 http://line.smootvone.vip/play/live.php?mac=A0:BB:3E:00:03:3d&stream=1311899&extension=m3u8
@@ -560,10 +560,10 @@ http://103.89.248.22:8082/2LIVE/index.fmp4.m3u8?token=00a59c3dc507be1ccee671169f
 http://sm-monirul.top/@monirul_Islam_SM/proxy.php?ts=GmS6jJEoXsU3neYtzjQqBER0ZDR3ak5uOHEyaXQvUXBOSmNRUmR1blJXcWpsbXFPSHo2L2pBQ3RJLytVbVRTeERiZEhFTXJuQ0djYjlhbU9hd2V6M0RSQmRxbS82STdCQkhDV0RBPT0
 
 #EXTINF:-1 group-title="Sports", Viaplay TV
-http://alpha-ott1.me/play/live.php?mac=00:1A:79:E8:AD:9D&stream=1917549&extension=m3u8
+http://91.208.115.26:80/play/live.php?mac=00:1B:79:44:18:49&stream=1152827&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Willow Cricket HD
-https://tvsen5.aynaott.com/willowhd/tracks-v1a1/mono.ts.m3u8
+http://mag.gofast-tv.me:80/play/live.php?mac=00:1A:79:84:75:57&stream=1104677&extension=m3u8
 
 
 #EXTINF:-1 group-title="Sports", WWE Network

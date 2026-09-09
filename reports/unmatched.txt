@@ -7,6 +7,7 @@ DAZN 1
 Das Erste HD
 FIFA+
 LaLiga TV
+LFC TV
 Motorsport.tv
 NPO 1 HD
 NPO 2 HD
@@ -53,5 +54,4 @@ TNT Sports 3
 UFC TV
 UNITE8 SPORTS 1
 UNITE8 SPORTS 2
-Willow Cricket HD
 WWE Network

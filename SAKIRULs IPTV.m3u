@@ -406,7 +406,7 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&ex
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4249112_hindi_hls_62108bb9ed55271_1ta-di_h264/1080p.m3u8?hdntl=Expires=1789132069~_GO=Generated~acl=/mumbai/4249112_hindi_hls_62108bb9ed55271_1ta-di_h264/*~Signature=AWDec-EGpk7Uze3YeXZk_K5hvMtJatinI7ctRI0QVTngZFxenwW0TLHiiZzIyPiDk3k90wGVK0ab_VzBdU0_EryXU7UI
+https://bd-mc-flive.fancode.com/mumbai/4248306_english_hls_a30736baea88025_1ta-di_h264/1080p.m3u8?hdntl=Expires=1789166012~_GO=Generated~acl=/mumbai/4248306_english_hls_a30736baea88025_1ta-di_h264/*~Signature=AWDec-GaFRmD6UxebyVLXXwPCWcKQDf0HT5IwdfTJRLayrcb31NqTuaaW6k1hs5aLJD4wYGaYn__YJgsbPCIj2fU8fUP
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4249112_punjabi_hls_b44a6dbc4745186_1ta-di_h264/1080p.m3u8?hdntl=Expires=1789132069~_GO=Generated~acl=/mumbai/4249112_punjabi_hls_b44a6dbc4745186_1ta-di_h264/*~Signature=AWDec-FWT340aB2KzB15kWC5szGtekpSlBpNLqjCIqGQd2-9KFzZ01Bscey7I2Zodn0kMGtqO7Yv537JqAREKU8P9jsH
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
@@ -458,7 +458,7 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=1312829&e
 http://line.tvdsz.cc/play/live.php?mac=00:1A:79:B5:AD:FB&stream=944675&extension=m3u8
 
 #EXTINF:-1 group-title="Sports", Real Madrid TV
-https://jmp2.uk/plu-63dac28760bc8f0008a7654b.m3u8
+https://jmp2.uk/plu-67a3b45a21af380008133aa4.m3u8
 
 #EXTINF:-1 group-title="Sports", Red Bull TV
 https://jmp2.uk/stvp-DEBC2300001EU

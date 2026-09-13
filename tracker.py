@@ -3,16 +3,14 @@ import sys
 import subprocess
 
 def main():
-    # Root directory of the repository
     base_dir = os.path.dirname(os.path.abspath(__file__))
     script_dir = os.path.join(base_dir, 'script')
     
+    # List all target update scripts
     scripts = [
         "update_general_sports.py",
         "update_sports_Fancode.py"
     ]
-    
-    has_failed = False
     
     for script_name in scripts:
         script_path = os.path.join(script_dir, script_name)
@@ -22,20 +20,24 @@ def main():
             print(f" Running: {script_name}")
             print(f"==========================================")
             
-            # Execute from root directory (base_dir) so 'SAKIRULs IPTV.m3u' can be found
-            result = subprocess.run([sys.executable, script_path], cwd=base_dir)
-            
-            if result.returncode == 0:
-                print(f"✓ Finished {script_name} successfully.\n")
-            else:
-                print(f"✗ Failed {script_name} (Exit Code: {result.returncode})\n")
-                has_failed = True
+            # Run script with a timeout to prevent workflow hanging
+            try:
+                result = subprocess.run(
+                    [sys.executable, script_path], 
+                    cwd=base_dir, 
+                    timeout=300
+                )
+                if result.returncode == 0:
+                    print(f"✓ Finished {script_name} successfully.\n")
+                else:
+                    print(f"✗ Warning: {script_name} returned exit code {result.returncode}\n")
+            except subprocess.TimeoutExpired:
+                print(f"⌛ Timeout: {script_name} took longer than 5 minutes.\n")
         else:
-            print(f"⚠ Warning: Could not find {script_path}\n")
-            has_failed = True
+            print(f"⚠ Warning: File not found at {script_path}\n")
 
-    if has_failed:
-        sys.exit(1)
+    # Always exit 0 so GitHub Actions proceeds to commit any updated streams
+    sys.exit(0)
 
 if __name__ == "__main__":
     main()

@@ -723,7 +723,7 @@ def main():
 
     updates_made = 0
 
-    def process_channel(target_name: str) -> Optional[Tuple[str, int, str, ScoredCandidate]]:
+    def process_channel(target_name: str) -> Optional[Tuple[str, int, str, Optional[ScoredCandidate]]]:
         target_norm = normalize(target_name)
         line_idx = sports_map.get(target_norm)
         if line_idx is None:
@@ -757,10 +757,8 @@ def main():
         with GLOBAL_ASSIGNED_LOCK:
             for sc in scored_candidates:
                 c_url = sc.channel.url
-                base_u = get_base_url(c_url)
-                if c_url not in GLOBAL_ASSIGNED_URLS and base_u not in GLOBAL_ASSIGNED_URLS:
+                if c_url not in GLOBAL_ASSIGNED_URLS:
                     GLOBAL_ASSIGNED_URLS.add(c_url)
-                    GLOBAL_ASSIGNED_URLS.add(base_u)
                     best = sc
                     break
                 else:
@@ -787,53 +785,27 @@ def main():
                     updates_made += 1
 
                 stats.matched.append((target_name, new_url, best_scored.channel.source_url))
-                stats.source_channel_counts[best_scored.channel.source_url] = (
-                    stats.source_channel_counts.get(best_scored.channel.source_url, 0) + 1
-                )
-                print(f"[MATCH] {target_name} -> {new_url} (Score: {best_scored.score:.1f})")
             else:
                 stats.unmatched.append(target_name)
-                print(f"[UNMATCHED] {target_name} ({status})")
 
-    if updates_made > 0:
-        print(f"Saving {updates_made} stream updates in-place to {PLAYLIST_FILE}...")
-        output_text = newline.join(lines) + newline
-        PLAYLIST_FILE.write_bytes(output_text.encode(encoding))
-    else:
-        print("No stream URL changes required.")
+    # Save playlist in-place
+    print(f"Saving updated playlist ({updates_made} URLs changed)...")
+    PLAYLIST_FILE.write_text(newline.join(lines) + newline, encoding=encoding)
 
+    # Save resolved stream URL cache
     save_resolved_url_cache(RESOLVED_URL_CACHE)
 
-    # -----------------------------------------------------------------------
-    # Write Reports
-    # -----------------------------------------------------------------------
-    REPORTS_DIR.mkdir(exist_ok=True)
-
-    (REPORTS_DIR / "matched.txt").write_text(
-        "\n".join([f"{name} | {url} | Source: {src}" for name, url, src in stats.matched]), encoding="utf-8"
-    )
-    (REPORTS_DIR / "unmatched.txt").write_text("\n".join(stats.unmatched), encoding="utf-8")
-    (REPORTS_DIR / "duplicate_urls.txt").write_text("\n".join(stats.duplicate_urls), encoding="utf-8")
-    (REPORTS_DIR / "invalid_streams.txt").write_text(
-        "\n".join([f"{name} | {url} | {reason}" for name, url, reason in stats.invalid_streams]), encoding="utf-8"
-    )
-
-    src_stats = [f"{src}: {cnt} channels" for src, cnt in stats.source_channel_counts.items()]
-    (REPORTS_DIR / "source_statistics.txt").write_text("\n".join(src_stats), encoding="utf-8")
-
+    # Output Run Summary
     elapsed = time.monotonic() - stats.start_time
-    perf_summary = (
-        f"Total Runtime: {elapsed:.2f}s\n"
-        f"Sources Total/Downloaded/Failed: {stats.total_sources}/{stats.downloaded_sources}/{stats.failed_sources}\n"
-        f"Parsed Channels: {stats.parsed_channels}\n"
-        f"Channels Matched: {len(stats.matched)}\n"
-        f"Channels Unmatched: {len(stats.unmatched)}\n"
-        f"Updates Applied: {updates_made}\n"
-    )
-    (REPORTS_DIR / "performance.txt").write_text(perf_summary, encoding="utf-8")
-
-    print("\nRun Complete!")
-    print(perf_summary)
+    print("\n" + "=" * 50)
+    print(f" Execution Completed in {elapsed:.2f}s")
+    print("=" * 50)
+    print(f" Sources Processed : {stats.downloaded_sources}/{stats.total_sources}")
+    print(f" Parsed Channels   : {stats.parsed_channels}")
+    print(f" Matched Streams   : {len(stats.matched)}")
+    print(f" Unmatched/Failed  : {len(stats.unmatched)}")
+    print(f" In-Place Updates  : {updates_made}")
+    print("=" * 50)
 
 
 if __name__ == "__main__":

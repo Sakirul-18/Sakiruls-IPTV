@@ -2,13 +2,13 @@ name: Auto Update IPTV Playlists & Trackers
 
 on:
   schedule:
-    # Runs every 10 minutes
-    - cron: '*/10 * * * *'
-  workflow_dispatch: # Allows manual run anytime
+    # Runs every hour at minute 0 (prevents GitHub rate-limiting/delays)
+    - cron: '0 * * * *'
+  workflow_dispatch: # Allows manual triggering from Actions tab
 
 concurrency:
   group: iptv-tracker-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update-all:
@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,24 +34,23 @@ jobs:
 
       # --- RUN MASTER TRACKER SCRIPT ---
       - name: Run IPTV Playlist Tracker
-        run: python tracker.py
+        run: |
+          python tracker.py
+          # If you have scripts inside the script folder, run them here:
+          # python script/your_script_name.py
 
-      # --- COMMIT ALL UPDATED FILES AT ONCE ---
+      # --- COMMIT AND PUSH UPDATES ---
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # Captures all updated .m3u files or outputs
           git add -A
           
           if git diff --staged --quiet; then
             echo "No changes detected across any script outputs."
           else
             git commit -m "auto: update playlists and tracker streams [skip ci]"
-            
-            # Pull latest changes and rebase to avoid rejections from concurrent updates
-            git pull origin main --rebase || echo "Rebase encountered an issue, proceeding..."
-            
+            git pull --rebase origin main
             git push origin main
           fi

@@ -1,76 +1,11 @@
 #!/usr/bin/env python3
 """
 SAKIRULs IPTV Sports Auto Updater (In-Place Edition, hardened)
-
-This script treats "SAKIRULs IPTV.m3u" as a database, not a document to
-regenerate. It NEVER rebuilds the playlist. It loads the file exactly as it
-is, locates the existing Sports entries, and swaps only the stream URL for
-each channel in the CHANNELS master list. Everything else in the file -
-comments, separators, blank lines, category order, alphabetical order,
-non-sports categories, EXTINF lines themselves - is left byte-for-byte
-untouched. Channels are never inserted, deleted, or reordered.
-
-Matching engine (normalization, exact/token/quality-stripped/merged-token
-matching, source-priority routing) is carried over UNCHANGED from the
-previous version, per the "preserve architecture" requirements. What changed
-in this revision is entirely about *how* the surrounding work is done:
-
-  1. Sports-section detection no longer depends on the "# SPORTS #" comment
-     separators. It reads group-title="Sports" directly off each EXTINF
-     line, so editing/removing comments can never break it. A legacy
-     comment-based fallback only kicks in if the file has zero group-title
-     attributes at all.
-  2. URL replacement is O(1) per channel via a normalized-name -> line-index
-     map built once, instead of rescanning the section for every channel.
-  3. Every unique stream URL is HTTP-validated at most once per run
-     (STREAM_CACHE), no matter how many channels happen to share it.
-  4. Every unique "wrapper" playlist URL is resolved to its real stream URL
-     at most once per run (RESOLVED_URL_CACHE).
-  5. Duplicate/mirror streams are detected by resolved URL, final redirect
-     URL, AND base URL (query stripped), not just resolved URL.
-  6. Source-priority scoring is explicit and additive (validation, preferred
-     source, latency, content-type stability, redirect success) and the
-     highest-scoring candidate wins - not just the first preferred one.
-  7. Stream validation now rejects HTML/login/Cloudflare-challenge pages,
-     JSON/XML bodies, empty responses, and playlists with no channel
-     entries, in addition to the previous checks.
-  8. The final (post-redirect) response URL is tracked and used instead of
-     the original URL wherever a wrapper redirects straight to the stream.
-  9. All sources are downloaded concurrently (ThreadPoolExecutor) instead of
-     one-by-one.
-  10. Each unique source URL is downloaded once and parsed once, guaranteed
-      by construction (dict keyed by URL).
-  11. Ties in scoring are broken deterministically (preferred source ->
-      lowest latency -> alphabetically first source URL), independent of
-      thread completion order.
-  12. A best-effort persistent cache under .cache/ stores source ETags /
-      Last-Modified headers (for conditional GETs) and resolved wrapper
-      URLs (with a TTL) between runs. NOTE: live stream-validation results
-      are deliberately NOT persisted across runs - a stream's aliveness is
-      exactly the thing this script exists to re-check, so caching that
-      across runs would risk re-publishing dead links as "already
-      validated." Only the two safe-to-reuse caches above are persisted.
-  13. reports/ now gets matched.txt, unmatched.txt, duplicate_urls.txt,
-      invalid_streams.txt, source_statistics.txt and performance.txt.
-  14. Every source download, parse, wrapper-resolution, and per-channel
-      match is individually isolated in try/except - one failure never
-      aborts the run. Only a missing/unreadable master playlist file does.
-  15. Candidate objects are cloned via dataclasses.replace() instead of
-      manual field-by-field reconstruction when only the URL changes.
-  16. Saving reproduces the file's original encoding, line-ending style, and
-      trailing-newline exactly. Only URL lines are ever modified.
-  17. Everything the previous version already did well (normalization,
-      token/quality/merged-token matching, source priority definitions,
-      parallel validation, in-place editing, CHANNELS as the master list,
-      FanCode staying in its own separate script) is unchanged.
-
-FanCode is intentionally out of scope. It is not in CHANNELS, so it is never
-searched for, matched, or overwritten by this script. It is updated
-separately by update_sports_Fancode.py.
 """
 
 import json
 import re
+import sys
 import threading
 import time
 import unicodedata
@@ -90,21 +25,14 @@ from urllib3.util.retry import Retry
 # ---------------------------------------------------------------------------
 PLAYLIST_FILE = Path("SAKIRULs IPTV.m3u")
 
-# Primary Sports-section detection key (item 1): the group-title attribute
-# value we look for on each EXTINF line, matched case-insensitively.
 SPORTS_GROUP_TITLE = "sports"
-
-# Legacy fallback only - used solely if the playlist has NO group-title
-# attributes anywhere in it. Not relied on as the primary mechanism.
 SPORTS_SECTION_TITLE = "SPORTS"
 SEPARATOR_PATTERN = re.compile(r'^#\s*=+\s*$')
 
-# Persistent cache (item 12) - see module docstring point 12 for what is and
-# isn't cached across runs, and why.
 CACHE_DIR = Path(".cache")
 SOURCE_CACHE_FILE = CACHE_DIR / "source_cache.json"
 RESOLVED_URL_CACHE_FILE = CACHE_DIR / "resolved_urls.json"
-RESOLVED_URL_TTL_SECONDS = 6 * 3600  # wrapper->stream mappings are re-checked every 6h at most
+RESOLVED_URL_TTL_SECONDS = 6 * 3600  # 6 hours
 
 REPORTS_DIR = Path("reports")
 
@@ -117,7 +45,7 @@ MAX_DOWNLOAD_WORKERS = 16
 VALIDATION_READ_BYTES = 8192
 
 # ---------------------------------------------------------------------------
-# Source Definitions & Priorities (UNCHANGED - item 17)
+# Source Definitions & Priorities
 # ---------------------------------------------------------------------------
 SKY_SPORTS_PREFERRED_SOURCE = [
     "https://raw.githubusercontent.com/IPTVFlixBD/OopsTv/main/sports-s1.m3u",
@@ -130,7 +58,7 @@ TSPORTS_SOURCES = [
     "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/ns_player.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/ott_navigator.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/T-Sports-Playlist-Auto-Update/main/universal_player.m3u",
-      'https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u',
+    "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u",
 ]
 _SOURCE_URLS_RAW = [
     # IPTVFlixBD - OopsTv
@@ -179,11 +107,8 @@ _SOURCE_URLS_RAW = [
     "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/KB%20Live%20Tv%20Playlist%20v1.6.m3u",
     "https://raw.githubusercontent.com/sanjoykb/-KB-TV-Playlist/main/KB%20TV%20Playlist%2047%20Channel%20v1.0.m3u"
 ]
-# item 10 guard: guarantee no accidental duplicate entries so nothing is ever
-# downloaded/parsed twice even if this list is edited carelessly in future.
 SOURCE_URLS = list(dict.fromkeys(_SOURCE_URLS_RAW))
 
-# Source Priority Engine (UNCHANGED - item 17)
 SOURCE_PRIORITIES = {
     "sky sports": {"lock": SKY_SPORTS_PREFERRED_SOURCE},
     "t sports": {"prefer": TSPORTS_SOURCES},
@@ -236,10 +161,6 @@ class ChannelData:
 
 @dataclass
 class StreamCheckResult:
-    """Raw technical validation result for a URL - independent of which
-    channel asked for it. This is what STREAM_CACHE stores (item 3), so the
-    same URL is validated over HTTP at most once per run no matter how many
-    channels share it."""
     is_valid: bool
     latency: float
     content_type: str
@@ -257,7 +178,6 @@ class ScoredCandidate:
 
 @dataclass
 class RunStats:
-    """Everything needed to write reports/ at the end of the run (item 13)."""
     total_sources: int = 0
     downloaded_sources: int = 0
     failed_sources: int = 0
@@ -280,11 +200,7 @@ RESOLVED_URL_CACHE: Dict[str, str] = {}
 RESOLVED_URL_CACHE_LOCK = threading.Lock()
 
 # ---------------------------------------------------------------------------
-# Name Normalization & Matching Engine
-# UNCHANGED (item 17) - normalization, tokenizing, quality stripping, token/
-# merged-token containment matching, and source-priority routing are exactly
-# as before. Only the code around this engine (I/O, caching, scoring,
-# validation, concurrency) has been redesigned.
+# Normalization & Matching Logic
 # ---------------------------------------------------------------------------
 QUALITY_WORDS = {"hd", "fhd", "uhd", "shd", "sd", "4k", "8k", "2k", "hq", "sq", "lq", "fullhd"}
 REGION_WORDS = {"uk", "usa", "us", "fr", "de", "es", "it", "ca", "au", "eu", "in", "bd", "nl", "be"}
@@ -445,7 +361,7 @@ def get_all_matches(
 
 
 # ---------------------------------------------------------------------------
-# Persistent cache helpers (item 12)
+# Persistent Cache Helpers
 # ---------------------------------------------------------------------------
 def load_json_cache(path: Path) -> dict:
     try:
@@ -484,7 +400,7 @@ def save_resolved_url_cache(cache: Dict[str, str]) -> None:
 
 
 # ---------------------------------------------------------------------------
-# HTTP helpers
+# HTTP Helpers
 # ---------------------------------------------------------------------------
 def get_http_session() -> requests.Session:
     session = requests.Session()
@@ -496,18 +412,11 @@ def get_http_session() -> requests.Session:
 
 
 def get_base_url(url: str) -> str:
-    """Strips query string and fragment (item 5) so mirrors that differ only
-    by a token/query param are still recognized as the same underlying
-    stream for duplicate detection."""
     parts = urlsplit(url)
     return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
 
 
 def _download_one_source(url: str, session: requests.Session, http_cache: dict) -> Tuple[str, str]:
-    """Downloads a single source using conditional GET against the
-    persistent ETag/Last-Modified cache (item 12), so unchanged playlists
-    aren't re-transferred. Isolated in its own try/except (item 14) - one
-    bad source never aborts the run."""
     cached_entry = http_cache.get(url, {})
     headers = dict(HEADERS)
     if cached_entry.get("etag"):
@@ -535,10 +444,6 @@ def _download_one_source(url: str, session: requests.Session, http_cache: dict) 
 
 
 def download_sources(session: requests.Session, http_cache: dict) -> Dict[str, str]:
-    """Downloads every candidate source in SOURCE_URLS *simultaneously*
-    (item 9). Each unique URL is fetched exactly once (item 10, guaranteed by
-    the dict key). A single source failing never blocks the others
-    (item 14)."""
     raw_sources: Dict[str, str] = {}
     with ThreadPoolExecutor(max_workers=MAX_DOWNLOAD_WORKERS) as executor:
         futures = {executor.submit(_download_one_source, url, session, http_cache): url for url in SOURCE_URLS}
@@ -555,7 +460,6 @@ def download_sources(session: requests.Session, http_cache: dict) -> Dict[str, s
 
 
 def _parse_m3u_text(content: str, source_url: str = "") -> List[ChannelData]:
-    """Parses a downloaded m3u blob into ChannelData records. (unchanged)"""
     channels = []
     current_name, current_group = None, ""
 
@@ -586,8 +490,6 @@ def _parse_m3u_text(content: str, source_url: str = "") -> List[ChannelData]:
 
 
 def parse_sources(raw_sources: Dict[str, str]) -> List[ChannelData]:
-    """Parses every downloaded source exactly once (item 10). A malformed
-    source is isolated and skipped rather than aborting the run (item 14)."""
     all_channels: List[ChannelData] = []
     for source_url, content in raw_sources.items():
         try:
@@ -604,8 +506,6 @@ def _resolve_stream_url_uncached(url: str, session: requests.Session) -> str:
         try:
             resp = session.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
             if resp.status_code == 200:
-                # A wrapper can redirect straight to the real stream instead
-                # of just linking to it in its body (item 8).
                 if resp.url and resp.url != url and resp.url.lower().endswith((".m3u8", ".ts")):
                     return resp.url
                 urls = re.findall(r'(https?://[^\s"\'<>]+)', resp.text)
@@ -618,9 +518,6 @@ def _resolve_stream_url_uncached(url: str, session: requests.Session) -> str:
 
 
 def resolve_stream_url(url: str, session: requests.Session) -> str:
-    """Resolves 'wrapper' playlists down to the real stream URL. Cached
-    globally (item 4) so the same wrapper is never downloaded twice in a
-    run, however many channels reference it."""
     with RESOLVED_URL_CACHE_LOCK:
         cached = RESOLVED_URL_CACHE.get(url)
     if cached is not None:
@@ -632,7 +529,7 @@ def resolve_stream_url(url: str, session: requests.Session) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Stream validation (item 7) & scoring (item 6)
+# Stream Validation & Scoring
 # ---------------------------------------------------------------------------
 CHALLENGE_MARKERS = (
     "checking your browser", "cf-browser-verification", "just a moment",
@@ -640,11 +537,10 @@ CHALLENGE_MARKERS = (
     "captcha",
 )
 LOGIN_MARKERS = (
-    'type="password"', "name=\"password\"", "id=\"password\"",
+    'type="password"', 'name="password"', 'id="password"',
     "sign in to continue", "please log in", "please login", "session expired",
 )
 EXPIRY_MARKERS = ("token expired", "link expired", "expired token", "url expired", "access denied")
-STABLE_CONTENT_TYPES = ("application/vnd.apple.mpegurl", "application/x-mpegurl", "video/", "mpeg")
 
 
 def _rejection_reason(text_lower: str) -> Optional[str]:
@@ -661,11 +557,6 @@ def _rejection_reason(text_lower: str) -> Optional[str]:
 
 
 def validate_stream(url: str, session: requests.Session) -> StreamCheckResult:
-    """Performs a single live HTTP check on a candidate stream URL. Returns
-    only the raw technical result (validity/latency/content-type/final
-    redirect URL) - scoring against a channel's preferences happens
-    separately in score_candidate(), so this result can be safely shared
-    across every channel pointing at the same URL (item 3)."""
     try:
         start = time.monotonic()
         resp = session.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT, stream=True, allow_redirects=True)
@@ -706,385 +597,243 @@ def validate_stream(url: str, session: requests.Session) -> StreamCheckResult:
 
         has_extinf = "#EXTINF" in text_content
         has_stream_inf = "#EXT-X-STREAM-INF" in text_content
-        # Note: deliberately NOT treating a ".m3u8" URL extension alone as
-        # "media" - a .m3u8 URL can still resolve to an empty/comment-only
-        # playlist, which must be caught by the has_extinf/has_stream_inf
-        # checks above rather than waved through on extension alone.
-        is_media = "video/" in c_type or "mpeg" in c_type or url.lower().endswith((".ts", ".mp4", ".mkv"))
+        has_ts_or_m3u8 = ".m3u8" in text_content or ".ts" in text_content or "#EXTM3U" in text_content
 
-        if not (has_extinf or has_stream_inf or is_media):
-            non_comment_lines = [ln for ln in text_content.splitlines() if ln.strip() and not ln.strip().startswith("#")]
-            if not non_comment_lines:
-                return StreamCheckResult(False, latency, c_type, final_url, "Rejected: Playlist with no channel entries")
-            return StreamCheckResult(False, latency, c_type, final_url, "Rejected: Unrecognized stream signature")
+        if any(kw in c_type for kw in ("mpegurl", "video", "mpeg")) or has_extinf or has_stream_inf or has_ts_or_m3u8:
+            return StreamCheckResult(True, latency, c_type, final_url, "Valid stream")
 
-        return StreamCheckResult(True, latency, c_type, final_url, "Valid stream")
+        return StreamCheckResult(False, latency, c_type, final_url, f"Rejected: Unsupported Content-Type '{c_type}'")
     except Exception as e:
-        return StreamCheckResult(False, 0.0, "", url, f"Rejected: Exception ({e})")
+        return StreamCheckResult(False, 99.0, "", url, f"Rejected: Exception {type(e).__name__}: {e}")
 
 
-def validate_stream_cached(url: str, session: requests.Session) -> StreamCheckResult:
-    """Wraps validate_stream() with the global STREAM_CACHE (item 3) so
-    every unique URL is only ever hit over HTTP once per run."""
+def get_cached_validation(url: str, session: requests.Session) -> StreamCheckResult:
     with STREAM_CACHE_LOCK:
-        cached = STREAM_CACHE.get(url)
-    if cached is not None:
-        return cached
-    result = validate_stream(url, session)
+        if url in STREAM_CACHE:
+            return STREAM_CACHE[url]
+
+    res = validate_stream(url, session)
+
     with STREAM_CACHE_LOCK:
-        STREAM_CACHE.setdefault(url, result)
-    return result
+        STREAM_CACHE[url] = res
+    return res
 
 
-def score_candidate(check: StreamCheckResult, is_preferred: bool, had_redirect: bool) -> float:
-    """Additive scoring (item 6): successful validation, preferred source,
-    latency, content-type stability, and redirect success all contribute.
-    The highest total wins - not just the first preferred source seen."""
-    if not check.is_valid:
-        return -1.0
-    score = 1000.0  # successful validation
-    if is_preferred:
-        score += 500.0
-    speed_bonus = max(0.0, 200.0 - check.latency * 40.0)
-    score += speed_bonus
-    if any(marker in check.content_type for marker in STABLE_CONTENT_TYPES):
+def score_candidate(candidate: ChannelData, check: StreamCheckResult, target_name: str) -> ScoredCandidate:
+    rules = get_source_rules(target_name)
+    pref_sources = rules.get("prefer") or rules.get("lock") or []
+    is_pref = candidate.source_url in pref_sources
+
+    score = 0.0
+    if check.is_valid:
         score += 100.0
-    if had_redirect:
+    if is_pref:
         score += 50.0
-    return round(score, 2)
+
+    score += max(0.0, 20.0 - (check.latency * 5.0))
+
+    if any(st in check.content_type for st in ("mpegurl", "video/")):
+        score += 10.0
+
+    return ScoredCandidate(candidate=candidate, check=check, is_preferred=is_pref, score=score)
 
 
-def _pick_best_stream(
-    candidates: List[ChannelData], preferred_sources: List[str], session: requests.Session, stats: RunStats
-) -> Optional[ChannelData]:
-    """Resolves, deduplicates, validates (in parallel, each URL at most
-    once), scores, and deterministically picks the best live stream for one
-    channel's candidate pool."""
-    if not candidates:
-        return None
+# ---------------------------------------------------------------------------
+# In-Place File Operations
+# ---------------------------------------------------------------------------
+def read_master_playlist(path: Path) -> Tuple[List[str], str, str]:
+    if not path.exists():
+        print(f"[FATAL] Master playlist {path} not found.")
+        sys.exit(1)
 
-    # --- Resolve wrappers + dedupe by resolved URL and base URL (item 5) ---
-    seen_resolved: Set[str] = set()
-    seen_base: Set[str] = set()
-    unique_candidates: List[ChannelData] = []
-    for cand in candidates:
-        with GLOBAL_ASSIGNED_LOCK:
-            already_assigned = cand.url in GLOBAL_ASSIGNED_URLS
-        resolved_url = resolve_stream_url(cand.url, session)
-        with GLOBAL_ASSIGNED_LOCK:
-            already_assigned = already_assigned or resolved_url in GLOBAL_ASSIGNED_URLS
-        base = get_base_url(resolved_url)
+    raw_bytes = path.read_bytes()
+    newline = "\r\n" if b"\r\n" in raw_bytes else "\n"
 
-        if already_assigned:
-            continue
-        if resolved_url in seen_resolved or base in seen_base:
-            stats.duplicate_urls.append(resolved_url)
+    for enc in ("utf-8", "utf-8-sig", "latin-1"):
+        try:
+            text = raw_bytes.decode(enc)
+            lines = text.splitlines()
+            return lines, newline, enc
+        except UnicodeDecodeError:
             continue
 
-        seen_resolved.add(resolved_url)
-        seen_base.add(base)
-        # item 15: clone via dataclasses.replace instead of manual field copy
-        unique_candidates.append(replace(cand, url=resolved_url))
-        if len(unique_candidates) >= MAX_CANDIDATES_TO_TEST:
-            break
+    print(f"[FATAL] Failed to decode {path}")
+    sys.exit(1)
 
-    if not unique_candidates:
-        return None
 
-    # --- Validate every unique URL exactly once, in parallel (item 3) ---
-    scored: List[ScoredCandidate] = []
-    with ThreadPoolExecutor(max_workers=MAX_TEST_WORKERS) as executor:
-        future_to_cand = {executor.submit(validate_stream_cached, c.url, session): c for c in unique_candidates}
-        for future in as_completed(future_to_cand):
-            c = future_to_cand[future]
-            try:
-                check = future.result()
-            except Exception as e:
-                check = StreamCheckResult(False, 0.0, "", c.url, f"Rejected: Exception ({e})")
+def build_sports_channel_map(lines: List[str]) -> Dict[str, int]:
+    mapping = {}
 
-            if not check.is_valid:
-                stats.invalid_streams.append((c.name, c.url, check.details))
+    has_group_title = any("group-title=" in line.lower() for line in lines if line.startswith("#EXTINF"))
+
+    if has_group_title:
+        for idx, line in enumerate(lines):
+            if line.startswith("#EXTINF"):
+                gt_match = GROUP_TITLE_RE.search(line)
+                if gt_match and gt_match.group(1).lower() == SPORTS_GROUP_TITLE:
+                    c_name = line.rsplit(",", 1)[-1].strip() if "," in line else ""
+                    if c_name and (idx + 1) < len(lines):
+                        mapping[normalize(c_name)] = idx + 1
+    else:
+        in_sports_section = False
+        for idx, line in enumerate(lines):
+            line_str = line.strip()
+            if line_str.startswith("#") and SPORTS_SECTION_TITLE in line_str.upper():
+                in_sports_section = True
+                continue
+            if in_sports_section and SEPARATOR_PATTERN.match(line_str):
+                in_sports_section = False
                 continue
 
-            # dedupe again by final redirect URL's base, in case two
-            # different wrapper/base URLs land on the identical CDN stream
-            final_base = get_base_url(check.final_url)
-            if final_base in seen_base and check.final_url != c.url:
-                stats.duplicate_urls.append(check.final_url)
-            seen_base.add(final_base)
+            if in_sports_section and line_str.startswith("#EXTINF"):
+                c_name = line_str.rsplit(",", 1)[-1].strip() if "," in line_str else ""
+                if c_name and (idx + 1) < len(lines):
+                    mapping[normalize(c_name)] = idx + 1
 
-            is_preferred = c.source_url in preferred_sources
-            had_redirect = check.final_url != c.url
-            score = score_candidate(check, is_preferred, had_redirect)
-            scored.append(ScoredCandidate(c, check, is_preferred, score))
-
-    if not scored:
-        return None
-
-    # item 11: deterministic tie-break, independent of thread completion order
-    scored.sort(key=lambda s: (-s.score, s.check.latency, s.channel.source_url))
-    best = scored[0]
-
-    with GLOBAL_ASSIGNED_LOCK:
-        GLOBAL_ASSIGNED_URLS.add(best.channel.url)
-    return best.channel
-
-
-def find_best_match(
-    channel_name: str, all_channels: List[ChannelData], session: requests.Session, stats: RunStats
-) -> Tuple[Optional[ChannelData], Optional[str]]:
-    """Runs the (unchanged) matching engine for one CHANNELS entry and
-    validates the surviving candidates, returning the best live stream
-    found (or None) plus which match tier it came from."""
-    rules = get_source_rules(channel_name)
-    preferred_sources = rules.get("lock") or rules.get("prefer") or []
-
-    candidates, tier, _closest, _pool = get_all_matches(channel_name, all_channels)
-    best_stream = _pick_best_stream(candidates, preferred_sources, session, stats)
-
-    if best_stream:
-        print(f" -> [MATCH] {channel_name} <- {best_stream.name} (tier: {tier})")
-    else:
-        print(f" -> [FAILED] No valid stream found for {channel_name}")
-    return best_stream, tier
+    return mapping
 
 
 # ---------------------------------------------------------------------------
-# load_playlist()
-# ---------------------------------------------------------------------------
-def load_playlist() -> Tuple[List[str], str, bool]:
-    """Reads the master playlist file exactly as it is on disk. This is the
-    only step in the whole run allowed to abort it (item 14) - everything
-    downstream is isolated and failure-tolerant."""
-    if not PLAYLIST_FILE.exists():
-        raise FileNotFoundError(f"Master playlist not found: {PLAYLIST_FILE}")
-
-    raw = PLAYLIST_FILE.read_bytes()
-    line_ending = "\r\n" if b"\r\n" in raw else "\n"
-    text = raw.decode("utf-8")
-    trailing_newline = text.endswith("\n")
-    lines = text.splitlines()
-    return lines, line_ending, trailing_newline
-
-
-# ---------------------------------------------------------------------------
-# Sports-section detection (item 1) & O(1) index (item 2)
-# ---------------------------------------------------------------------------
-def find_sports_entries(lines: List[str]) -> List[int]:
-    """Returns the line indices of every #EXTINF entry belonging to the
-    Sports section.
-
-    Primary method: read group-title="..." straight off each EXTINF line.
-    This does not care where entries live in the file and keeps working no
-    matter how surrounding comments/separators are edited or removed.
-
-    Fallback: only used if the file has zero group-title attributes
-    anywhere. In that case entries are located via the legacy "# SPORTS #"
-    comment block, purely for backward compatibility with older playlists.
-    """
-    primary: List[int] = []
-    for i, line in enumerate(lines):
-        stripped = line.strip()
-        if not stripped.startswith("#EXTINF"):
-            continue
-        gt_match = GROUP_TITLE_RE.search(stripped)
-        if gt_match and gt_match.group(1).strip().lower() == SPORTS_GROUP_TITLE:
-            primary.append(i)
-
-    if primary:
-        return primary
-
-    print("[WARN] No group-title=\"Sports\" entries found; "
-          "falling back to legacy comment-header detection.")
-    return _find_sports_entries_legacy(lines)
-
-
-def _find_sports_entries_legacy(lines: List[str]) -> List[int]:
-    """Old comment-separator-based detection, kept only as a fallback for
-    playlists with no group-title attributes at all."""
-    n = len(lines)
-    content_start = None
-    i = 0
-    while i < n:
-        if SEPARATOR_PATTERN.match(lines[i].strip()):
-            if i + 1 < n:
-                header_text = lines[i + 1].strip().lstrip("#").strip()
-                if header_text.upper() == SPORTS_SECTION_TITLE:
-                    if i + 2 < n and SEPARATOR_PATTERN.match(lines[i + 2].strip()):
-                        content_start = i + 3
-                        break
-        i += 1
-
-    if content_start is None:
-        raise ValueError(
-            "Could not find the Sports section (neither group-title=\"Sports\" "
-            f"entries nor a '# SPORTS #' comment header) in {PLAYLIST_FILE}. "
-            "Aborting without touching the file."
-        )
-
-    content_end = content_start
-    while content_end < n and not SEPARATOR_PATTERN.match(lines[content_end].strip()):
-        content_end += 1
-
-    return [i for i in range(content_start, content_end) if lines[i].strip().startswith("#EXTINF")]
-
-
-def build_sports_index(lines: List[str], sports_entries: List[int]) -> Dict[str, int]:
-    """Maps normalized channel display name -> its #EXTINF line index,
-    built once. Turns every one of the CHANNELS lookups into an O(1) dict
-    access instead of an O(n) rescan of the section (item 2)."""
-    index: Dict[str, int] = {}
-    for i in sports_entries:
-        stripped = lines[i].strip()
-        display_name = stripped.rsplit(",", 1)[-1].strip() if "," in stripped else ""
-        norm = normalize(display_name)
-        if norm and norm not in index:
-            index[norm] = i
-    return index
-
-
-def replace_channel_url(lines: List[str], sports_index: Dict[str, int], channel_name: str, new_url: str) -> bool:
-    """O(1) lookup + in-place URL swap (item 2). Only the URL line is ever
-    touched - the EXTINF line, its formatting, and everything else in the
-    file is left completely alone (item 16)."""
-    idx = sports_index.get(normalize(channel_name))
-    if idx is None:
-        return False
-    url_idx = idx + 1
-    if url_idx < len(lines) and lines[url_idx].strip() and not lines[url_idx].strip().startswith("#"):
-        lines[url_idx] = new_url
-        return True
-    return False
-
-
-def save_playlist(lines: List[str], line_ending: str, trailing_newline: bool) -> None:
-    """Writes the (in-place modified) lines list back to PLAYLIST_FILE,
-    reproducing the original line-ending style and trailing newline exactly
-    (item 16)."""
-    content = line_ending.join(lines)
-    if trailing_newline:
-        content += line_ending
-    PLAYLIST_FILE.write_bytes(content.encode("utf-8"))
-
-
-# ---------------------------------------------------------------------------
-# Reports (item 13)
-# ---------------------------------------------------------------------------
-def write_reports(stats: RunStats) -> None:
-    REPORTS_DIR.mkdir(exist_ok=True)
-    runtime = time.monotonic() - stats.start_time
-
-    (REPORTS_DIR / "matched.txt").write_text(
-        "\n".join(f"{ch} <- {name} (tier: {tier})" for ch, name, tier in stats.matched) + "\n",
-        encoding="utf-8",
-    )
-    (REPORTS_DIR / "unmatched.txt").write_text(
-        "\n".join(stats.unmatched) + "\n", encoding="utf-8",
-    )
-    (REPORTS_DIR / "duplicate_urls.txt").write_text(
-        "\n".join(sorted(set(stats.duplicate_urls))) + "\n", encoding="utf-8",
-    )
-    (REPORTS_DIR / "invalid_streams.txt").write_text(
-        "\n".join(f"{ch}\t{url}\t{reason}" for ch, url, reason in stats.invalid_streams) + "\n",
-        encoding="utf-8",
-    )
-    (REPORTS_DIR / "source_statistics.txt").write_text(
-        "\n".join(f"{src}\t{count} channels" for src, count in sorted(stats.source_channel_counts.items())) + "\n",
-        encoding="utf-8",
-    )
-    (REPORTS_DIR / "performance.txt").write_text(
-        "\n".join([
-            f"total_sources={stats.total_sources}",
-            f"downloaded={stats.downloaded_sources}",
-            f"failed={stats.failed_sources}",
-            f"parsed_channels={stats.parsed_channels}",
-            f"validated_urls={len(STREAM_CACHE)}",
-            f"duplicate_urls_removed={len(set(stats.duplicate_urls))}",
-            f"runtime_seconds={runtime:.2f}",
-        ]) + "\n",
-        encoding="utf-8",
-    )
-
-
-# ---------------------------------------------------------------------------
-# Main Execution
+# Main Execution Pipeline
 # ---------------------------------------------------------------------------
 def main():
-    print("Starting SAKIRULs IPTV Sports Auto Updater (in-place)...")
-    stats = RunStats(total_sources=len(SOURCE_URLS))
+    stats = RunStats()
+    session = get_http_session()
 
-    # 1. Load the master playlist exactly as-is. Nothing is rebuilt. This is
-    #    the only step allowed to abort the whole run (item 14).
-    lines, line_ending, trailing_newline = load_playlist()
+    print("Loading master playlist...")
+    lines, newline, encoding = read_master_playlist(PLAYLIST_FILE)
+    sports_map = build_sports_channel_map(lines)
+    print(f"Located {len(sports_map)} Sports target entries in playlist.")
 
-    # 2. Locate every Sports entry (item 1) and index it once (item 2).
-    sports_entries = find_sports_entries(lines)
-    sports_index = build_sports_index(lines, sports_entries)
-    print(f"Found {len(sports_entries)} Sports entries in {PLAYLIST_FILE}.")
-
-    # 3. Load persistent caches from previous runs (item 12).
-    CACHE_DIR.mkdir(exist_ok=True)
     http_cache = load_json_cache(SOURCE_CACHE_FILE)
     global RESOLVED_URL_CACHE
     RESOLVED_URL_CACHE = load_resolved_url_cache()
 
-    # 4. Pull fresh candidate streams from every online source in parallel
-    #    (item 9), each isolated from the others' failures (item 14).
-    session = get_http_session()
+    print("Downloading candidate sources concurrently...")
     raw_sources = download_sources(session, http_cache)
-    stats.downloaded_sources = len(raw_sources)
-    stats.failed_sources = stats.total_sources - len(raw_sources)
-    all_channels = parse_sources(raw_sources)
-    stats.parsed_channels = len(all_channels)
-    for ch in all_channels:
-        stats.source_channel_counts[ch.source_url] = stats.source_channel_counts.get(ch.source_url, 0) + 1
-
-    # 5. For every tracked sports channel, find + validate the best live
-    #    stream, then swap only its URL via the O(1) index from step 2.
-    updated, skipped, failed = 0, 0, 0
-    for channel_name in CHANNELS:
-        print(f"Processing: {channel_name}")
-        try:
-            best_stream, tier = find_best_match(channel_name, all_channels, session, stats)
-        except Exception as e:
-            # item 14: one channel's failure never aborts the run
-            print(f" -> [ERROR] Unexpected failure matching '{channel_name}': {e}")
-            best_stream, tier = None, None
-
-        if not best_stream:
-            failed += 1
-            stats.unmatched.append(channel_name)
-            continue
-
-        try:
-            replaced = replace_channel_url(lines, sports_index, channel_name, best_stream.url)
-        except Exception as e:
-            print(f" -> [ERROR] Unexpected failure updating '{channel_name}': {e}")
-            replaced = False
-
-        if replaced:
-            updated += 1
-            stats.matched.append((channel_name, best_stream.name, tier or ""))
-        else:
-            skipped += 1
-            stats.unmatched.append(channel_name)
-            print(f" -> [SKIPPED] '{channel_name}' has no existing entry in the "
-                  f"Sports section of {PLAYLIST_FILE}; not inserting a new one.")
-
-    # 6. Write the same list back. Only the touched URL lines differ.
-    save_playlist(lines, line_ending, trailing_newline)
-
-    # 7. Persist caches for the next run and write reports.
     save_json_cache(SOURCE_CACHE_FILE, http_cache)
-    save_resolved_url_cache(RESOLVED_URL_CACHE)
-    write_reports(stats)
 
-    print("\nDone.")
-    print(f"  URLs updated:                   {updated}")
-    print(f"  Matched online but not in file: {skipped}")
-    print(f"  No valid stream found:          {failed}")
-    print(f"Playlist saved in place: {PLAYLIST_FILE}")
-    print(f"Reports written to: {REPORTS_DIR}/")
+    stats.total_sources = len(SOURCE_URLS)
+    stats.downloaded_sources = len(raw_sources)
+    stats.failed_sources = stats.total_sources - stats.downloaded_sources
+
+    print("Parsing sources...")
+    all_parsed_channels = parse_sources(raw_sources)
+    stats.parsed_channels = len(all_parsed_channels)
+
+    updates_made = 0
+
+    def process_channel(target_name: str) -> Optional[Tuple[str, int, str, ScoredCandidate]]:
+        target_norm = normalize(target_name)
+        line_idx = sports_map.get(target_norm)
+        if line_idx is None:
+            return None
+
+        candidates, tier, closest, searched_pool = get_all_matches(target_name, all_parsed_channels)
+        if not candidates:
+            return (target_name, line_idx, "unmatched", None)
+
+        candidates_to_check = candidates[:MAX_CANDIDATES_TO_TEST]
+        scored_candidates: List[ScoredCandidate] = []
+
+        for cand in candidates_to_check:
+            res_url = resolve_stream_url(cand.url, session)
+            check = get_cached_validation(res_url, session)
+
+            if not check.is_valid:
+                stats.invalid_streams.append((target_name, cand.url, check.details))
+                continue
+
+            final_cand = replace(cand, url=check.final_url)
+            scored = score_candidate(final_cand, check, target_name)
+            scored_candidates.append(scored)
+
+        if not scored_candidates:
+            return (target_name, line_idx, "no_valid_candidates", None)
+
+        scored_candidates.sort(key=lambda sc: (-sc.score, -int(sc.is_preferred), sc.check.latency, sc.channel.url))
+
+        best = None
+        with GLOBAL_ASSIGNED_LOCK:
+            for sc in scored_candidates:
+                c_url = sc.channel.url
+                base_u = get_base_url(c_url)
+                if c_url not in GLOBAL_ASSIGNED_URLS and base_u not in GLOBAL_ASSIGNED_URLS:
+                    GLOBAL_ASSIGNED_URLS.add(c_url)
+                    GLOBAL_ASSIGNED_URLS.add(base_u)
+                    best = sc
+                    break
+                else:
+                    stats.duplicate_urls.append(c_url)
+
+        if best:
+            return (target_name, line_idx, "matched", best)
+        return (target_name, line_idx, "all_duplicates", None)
+
+    print("Matching and validating streams...")
+    with ThreadPoolExecutor(max_workers=MAX_TEST_WORKERS) as executor:
+        futures = {executor.submit(process_channel, ch): ch for ch in CHANNELS}
+        for future in as_completed(futures):
+            res = future.result()
+            if not res:
+                continue
+
+            target_name, line_idx, status, best_scored = res
+            if status == "matched" and best_scored:
+                old_url = lines[line_idx]
+                new_url = best_scored.channel.url
+                if old_url != new_url:
+                    lines[line_idx] = new_url
+                    updates_made += 1
+
+                stats.matched.append((target_name, new_url, best_scored.channel.source_url))
+                stats.source_channel_counts[best_scored.channel.source_url] = (
+                    stats.source_channel_counts.get(best_scored.channel.source_url, 0) + 1
+                )
+                print(f"[MATCH] {target_name} -> {new_url} (Score: {best_scored.score:.1f})")
+            else:
+                stats.unmatched.append(target_name)
+                print(f"[UNMATCHED] {target_name} ({status})")
+
+    if updates_made > 0:
+        print(f"Saving {updates_made} stream updates in-place to {PLAYLIST_FILE}...")
+        output_text = newline.join(lines) + newline
+        PLAYLIST_FILE.write_bytes(output_text.encode(encoding))
+    else:
+        print("No stream URL changes required.")
+
+    save_resolved_url_cache(RESOLVED_URL_CACHE)
+
+    # -----------------------------------------------------------------------
+    # Write Reports
+    # -----------------------------------------------------------------------
+    REPORTS_DIR.mkdir(exist_ok=True)
+
+    (REPORTS_DIR / "matched.txt").write_text(
+        "\n".join([f"{name} | {url} | Source: {src}" for name, url, src in stats.matched]), encoding="utf-8"
+    )
+    (REPORTS_DIR / "unmatched.txt").write_text("\n".join(stats.unmatched), encoding="utf-8")
+    (REPORTS_DIR / "duplicate_urls.txt").write_text("\n".join(stats.duplicate_urls), encoding="utf-8")
+    (REPORTS_DIR / "invalid_streams.txt").write_text(
+        "\n".join([f"{name} | {url} | {reason}" for name, url, reason in stats.invalid_streams]), encoding="utf-8"
+    )
+
+    src_stats = [f"{src}: {cnt} channels" for src, cnt in stats.source_channel_counts.items()]
+    (REPORTS_DIR / "source_statistics.txt").write_text("\n".join(src_stats), encoding="utf-8")
+
+    elapsed = time.monotonic() - stats.start_time
+    perf_summary = (
+        f"Total Runtime: {elapsed:.2f}s\n"
+        f"Sources Total/Downloaded/Failed: {stats.total_sources}/{stats.downloaded_sources}/{stats.failed_sources}\n"
+        f"Parsed Channels: {stats.parsed_channels}\n"
+        f"Channels Matched: {len(stats.matched)}\n"
+        f"Channels Unmatched: {len(stats.unmatched)}\n"
+        f"Updates Applied: {updates_made}\n"
+    )
+    (REPORTS_DIR / "performance.txt").write_text(perf_summary, encoding="utf-8")
+
+    print("\nRun Complete!")
+    print(perf_summary)
 
 
 if __name__ == "__main__":

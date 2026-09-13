@@ -406,7 +406,7 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941600&ex
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:3B:4A:A8&stream=941601&extension=m3u8
 
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
-https://bd-mc-flive.fancode.com/mumbai/4249129_hindi_hls_945d08592123772_1ta-di_h264/1080p.m3u8?hdntl=Expires=1789389015~_GO=Generated~acl=/mumbai/4249129_hindi_hls_945d08592123772_1ta-di_h264/*~Signature=AWDec-Hz5oNJVgK-QhNscnE_1b4Zfou1hOjRymGroLWjXRfX8HxRE0Ez0q_Cw4bQY22omNHbu4HXtkYL0xYPotu48yYA
+https://bd-mc-flive.fancode.com/mumbai/4249093_english_hls_1971e7a12289257_1ta-di_h264/1080p.m3u8?hdntl=Expires=1789407208~_GO=Generated~acl=/mumbai/4249093_english_hls_1971e7a12289257_1ta-di_h264/*~Signature=AWDec-FQ_rylMnrJG5qOQwE9TnQVFOwdYWlAGDAjNcxXzod9WCN-oREWxeMo3AuuH9kxSh9DbV-QXFeyiu69YL3o4VoK
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
 https://bd-mc-flive.fancode.com/mumbai/4249129_punjabi_hls_7e42247c0d31701_1ta-di_h264/1080p.m3u8?hdntl=Expires=1789389016~_GO=Generated~acl=/mumbai/4249129_punjabi_hls_7e42247c0d31701_1ta-di_h264/*~Signature=AWDec-FgLsxDDgSsErznY9JOCFO6PCzaqdqKYA3NzQ6gDaEI9TuRfrZrrg1JsuNuNjdThowI0UsGKrQ8oQLPqZY3BaAA
 #EXTINF:-1, tvg-logo="" group-title="Sports", Fancode Cricket
